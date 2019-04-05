@@ -1,7 +1,9 @@
 # Конспекты Highload++ 2018
 
-Конспекты технических докладов с конференции [Highload++ 2018](https://highload.ru). Организаторы — [Олег Бунин и компания](http://ontico.ru/).
+Конспекты докладов с IT-конференций:
+ 
+* [Highload++ 2018](https://highload.ru).
+* [Moscow Python Conf++ 2019](https://conf.python.ru)
 
-Конспекты пишет [Николай Волынкин](https://t.me/nick_volynkin), пуллреквесты всячески приветствуются. Подписывайтесь на канал [@docops](https://t.me/docops) в Telegram.
+Проект [Николая Волынкина](https://t.me/nick_volynkin). Отправляйте пуллреквесты с дополнениями и новыми конспектами. Подписывайтесь на канал [@docops](https://t.me/docops) в Telegram.
 
-Конспекты нетехнических докладов пишет Максим Цепков: http://mtsepkov.org/Highload-2018.
