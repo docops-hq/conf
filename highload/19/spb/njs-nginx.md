@@ -295,7 +295,7 @@ docker run -i -t nginx:mainline /usr/bin/njs
 
 # Ссылки
 
-Репозиторий: [https://github.com/nginx/njs](github.com/nginx/njs)
+Репозиторий: [github.com/nginx/njs](https://github.com/nginx/njs)
 
 Написать автору вопрос или устроиться на работу в команду njs:
 
