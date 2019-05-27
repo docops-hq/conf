@@ -11,11 +11,11 @@
 Андей занимается фронтендом в компании Evil Martians.
 А ещё у него есть opensource-проекты, вот такие:
 
-![](static/opensource01.png)
+> ![](static/opensource01.png)
 
 На самом деле проектов было немного больше:
 
-![](static/opensource02.png)
+> ![](static/opensource02.png)
 
 ## Реальность
 
@@ -80,7 +80,7 @@
 Люди читают не весь текст.
 Примерно вот столько:
 
-![](static/opensource03.png)
+> ![](static/opensource03.png)
 
 Что с этим делать?
 
