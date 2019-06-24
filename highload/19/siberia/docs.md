@@ -1,6 +1,6 @@
 [Как сделать так, чтобы документация не болела?](https://www.highload.ru/siberia/2019/meetups#2171805)
 
-Конспект с митапа.
+Конспект с митапа на [Highload++ Siberia 2019](https://www.highload.ru/siberia/2019).
 
 Ведущие: 
 
