@@ -4,8 +4,8 @@
 
 Ведущие: 
 
-* Семён Факторович, Chief Technical Writing Officer, [documentat.io](documentat.io)
-* Николай Волынкин, технический писатель, [Plesk](plesk.com), телеграм-канал [DocOps](t.me/docops)
+* Семён Факторович, Chief Technical Writing Officer, [documentat.io](http://documentat.io)
+* Николай Волынкин, технический писатель, [Plesk](http://plesk.com), телеграм-канал [@DocOps](http://t.me/docops)
 
 # Определимся с терминами
 
