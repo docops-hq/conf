@@ -1,0 +1,37 @@
+p{
+    font-family: "Times New Roman";
+}
+.catalogue-tags {
+    background-color: #e2e2e2;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    padding-bottom: 0.4rem;
+    padding-top: 0.4rem;
+    margin-right: 0.8rem;
+    border-radius: 4px;
+}
+
+.tags {
+    color: #2f2f2f;
+    font-size: 1rem;
+    font-family: "Times New Roman";
+}
+table {
+    width: 100%;
+}
+tr {
+    background-color: #e8e8e8;
+}
+
+td {
+    horiz-align: left;
+    padding-right: 8px;
+    padding-left: 8px
+}
+th {
+    padding: 8px;
+    text: 16px
+}
+ h2 {
+     font-weight: normal;
+ }
