@@ -1,0 +1,12 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Docops"
+theme = "tale-hugo"
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+[outputs]
+  home = ["HTML", "JSON", "RSS"]
+  blog = ["HTML", "JSON", "RSS"]
+[Params]
+css = ["custom.css"]
