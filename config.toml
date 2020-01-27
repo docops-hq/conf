@@ -1,6 +1,6 @@
-baseURL = "http://example.org/"
+baseURL = "https://docops-hq.github.io/conf/"
 languageCode = "en-us"
-title = "Docops"
+title = "Конспекты"
 theme = "tale-hugo"
 [taxonomies]
     tag = "tags"
