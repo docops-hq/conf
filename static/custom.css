@@ -35,3 +35,12 @@ th {
  h2 {
      font-weight: normal;
  }
+
+ .single__header {
+     margin-bottom: 20px;
+ }
+
+.tag-block {
+    display: flex;
+    justify-content: center;
+}

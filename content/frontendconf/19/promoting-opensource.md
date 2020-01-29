@@ -14,11 +14,11 @@ summary: ""
 Андей занимается фронтендом в компании Evil Martians.
 А ещё у него есть opensource-проекты, вот такие:
 
-> ![](static/opensource01.png)
+> ![promoting-opensource01](../../../images/frontendconf/19/opensource01.png)
 
 На самом деле проектов было немного больше:
 
-> ![](static/opensource02.png)
+> ![promoting-opensource02](../../../images/frontendconf/19/opensource02.png)
 
 ## Реальность
 
@@ -83,7 +83,7 @@ summary: ""
 Люди читают не весь текст.
 Примерно вот столько:
 
-> ![](static/opensource03.png)
+> ![promoting-opensource03](../../../images/frontendconf/19/opensource03.png)
 
 Что с этим делать?
 

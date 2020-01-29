@@ -90,7 +90,7 @@ summary: |
 * Когда статья готова, пиарщик её вычитывает и редактирует.
 * И когда статья опубликована, пиарщик будет её пиарить!
 
-![](./static/ghostwriters01.png)
+![ghostwriters01](../../../images/darvelconf/5/ghostwriters01.png)
 
 
 Прошло ещё 6 месяцев, выпустили первую статью.
@@ -175,7 +175,7 @@ Ghostwriter — человек, влияющий на создание стат
 выглядит так:
 
 
-![](./static/ghostwriters02.png)
+![ghostwriters02](../../../images/darvelconf/5/ghostwriters02.png)
 
 
 # Правила ghostwriter'а
