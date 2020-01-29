@@ -27,7 +27,7 @@ summary: |
 Теперь мы движемся от прокси к API-gateway.
 Теперь nginx умеет ещё и в авторизацию.
 
-![njs-nginx 1](/images/highload19/njs-nginx-01.png)
+![njs-nginx 1](../../../images/highload19/njs-nginx-01.png)
 
 
 Авторизация средствами прокси: nginx проверяет специальный токен.
@@ -101,7 +101,7 @@ summary: |
 Бенчмарк: создаём пустые контексты запроса на основе каждого из интерпретаторов.
 График логарифмический!
 
-![](/images/highload19/njs-nginx-02.png)
+![njs-nginx-2](../../../images/highload19/njs-nginx-02.png)
 
 # njs в nginx
 
@@ -281,4 +281,4 @@ docker run -i -t nginx:mainline /usr/bin/njs
 
 Написать автору вопрос или устроиться на работу в команду njs:
 
-![](/images/highload19/njs-nginx-03.png)
+![njs-nginx-03](../../../images/highload19/njs-nginx-03.png)

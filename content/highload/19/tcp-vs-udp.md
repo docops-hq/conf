@@ -16,12 +16,12 @@ summary: |
 
 Внутри черного ящика есть уровни:
 
-![](/images/highload19/tcp-vs-udp-01.png)
+![tcp-vs-udp-01](../../../images/highload19/tcp-vs-udp-01.png)
 
 Давайте сравним TCP и UDP.
 В них сильно отличается структура пакетов:
 
-![](/images/highload19/tcp-vs-udp-02.png)
+![tcp-vs-udp-02](../../../images/highload19/tcp-vs-udp-02.png)
 
 Главное: TCP задуман как протокол надёжной доставки данных, а UDP — нет.
 Может ли оказаться, что UDP лучше решит задачу надёжной доставки?
@@ -45,11 +45,11 @@ summary: |
 В беспроводных сетях бывают потери пакетов, смена порядка и jitter.
 Протокол TCP/IP скрывает от нас эти ошибки.
 
-![](/images/highload19/tcp-vs-udp-03.png)
+![tcp-vs-udp-03](/images/highload19/tcp-vs-udp-03.png)
 
 Вот средние параметры соединения у пользователей мобильного интернета.
 
-![](/images/highload19/tcp-vs-udp-04.png)
+![tcp-vs-udp-04](../../../images/highload19/tcp-vs-udp-04.png)
 
 Итоги:
 
@@ -67,7 +67,7 @@ summary: |
 
 Ошибки уменьшают утилизацию канала, а распараллеливание при ошибках помогает увеличить утилизацию:
 
-![](/images/highload19/tcp-vs-udp-05.png)
+![tcp-vs-udp-05](../../../images/highload19/tcp-vs-udp-05.png)
 
 # Почему нам не подходит TCP
 
@@ -89,7 +89,7 @@ summary: |
 
 У разного контента разные профили потребления сети.
 
-![](/images/highload19/tcp-vs-udp-06.png)
+![tcp-vs-udp-06](../../../images/highload19/tcp-vs-udp-06.png)
 
 # HTTP 1.1 и HTTP/2
 
@@ -98,7 +98,7 @@ summary: |
 HTTP 1.1 предлагает использовать по одному соединению на каждую единицу контента.
 HTTP/2 — одно мультиплексированное соединение. 
 
-![](/images/highload19/tcp-vs-udp-07.png)
+![tcp-vs-udp-07](../../../images/highload19/tcp-vs-udp-07.png)
 
 
 При этом в HTTP 1.1 клиент (браузер) обычно использует пул соединений.
@@ -107,7 +107,7 @@ HTTP/2 — одно мультиплексированное соединени
 конкурирует с другой, которая впереди в ленте.
 И в HTTP 1.1 сложно отменить загрузку — только закрыть сокет и отменить соединение.
 
-![](/images/highload19/tcp-vs-udp-08.png)
+![tcp-vs-udp-08](../../../images/highload19/tcp-vs-udp-08.png)
 
 HTTP/2 лучше:
 
@@ -119,15 +119,15 @@ HTTP/2 лучше:
 
 Приоритизация позволяет получить приоритетный контент раньше:
 
-![](/images/highload19/tcp-vs-udp-09.png)
+![tcp-vs-udp-09](../../../images/highload19/tcp-vs-udp-09.png)
 
 Server push: сервер может отдать контент, который точно понадобится в будущем.
 
-![](/images/highload19/tcp-vs-udp-10.png)
+![tcp-vs-udp-10](../../../images/highload19/tcp-vs-udp-10.png)
 
 Отмена загрузки: если клиенту уже не понадобится контент, клиент может отказаться от загрузки.
 
-![](./static/tcp-vs-udp-11.png)
+![tcp-vs-udp-11](../../../images/highload19/tcp-vs-udp-11.png)
 
 # Сравниваем TCP и smUDP
 
@@ -145,11 +145,11 @@ Server push: сервер может отдать контент, который
 Сервер держит контент в буфере, пока не получит подтверждение (acknowledgement), что контент получен.
 Но чем больше RTT, тем дольше ждать подтверждения.
 
-![](/images/highload19/tcp-vs-udp-12.png)
+![tcp-vs-udp-12](../../../images/highload19/tcp-vs-udp-12.png)
 
 Если мы увеличим размер буфера, то фактическая ширина канала вырастет.
 
-![](/images/highload19/tcp-vs-udp-13.png)
+![tcp-vs-udp-13](../../../images/highload19/tcp-vs-udp-13.png)
 
 Но всё не так просто.
 Важны on-the-fly packets. 
@@ -167,7 +167,7 @@ Server push: сервер может отдать контент, который
 * раньше отправлять более важные пакеты
 * если клиент отправил cancellation, сбросить пакеты из буфера
 
-![](/images/highload19/tcp-vs-udp-14.png)
+![tcp-vs-udp-14](../../../images/highload19/tcp-vs-udp-14.png)
 
 Как это делается? 
 Присваиваем отправляемым пакетам сквозной sequence number.
@@ -188,14 +188,14 @@ Server push: сервер может отдать контент, который
 Отправитель начинает с 10 и разгоняется, увеличивая количество.
 Если в какой-то момент пакеты теряются, он уменьшает окно и снова разгоняется.
 
-![](/images/highload19/tcp-vs-udp-15.png)
+![tcp-vs-udp-15](../../../images/highload19/tcp-vs-udp-15.png)
 
 Congestion Control придуман для предотвращения перегрузки сети.
 Вот где-то в сети есть роутер, который больше всего нагружен.
 Он умный: не ждёт когда совсем перегрузится, а начинает дропать пакеты чуть раньше, 
 чтобы отправитель уменьшил окно.
 
-![](/images/highload19/tcp-vs-udp-16.png)
+![tcp-vs-udp-16](../../../images/highload19/tcp-vs-udp-16.png)
 
 Вся эта схема придумана давным-давно для проводных сетей.
 Там потеря пакетов могла означать только одно:
@@ -213,11 +213,11 @@ Congestion Control придуман для предотвращения пере
 Congestion Control эволюционирует.
 Нам особенно интересны реализации Cubic и BBR.
 
-![](/images/highload19/tcp-vs-udp-17.png)
+![tcp-vs-udp-17](../../../images/highload19/tcp-vs-udp-17.png)
 
 Если скорсть растёт, BBR схлопывает окно заранее, Cubic дожидается потери пакетов и тогда схлопывает окно.
 
-![](/images/highload19/tcp-vs-udp-18.png)
+![tcp-vs-udp-18](../../../images/highload19/tcp-vs-udp-18.png)
 
 Работают они так:
 
@@ -240,7 +240,7 @@ BBR уязвим к высокому jitter.
 Но в стандартном пакете acknowledgement (ACK Frame) в TCP этой информации нет.
 Зато мы можем добавить её в smUDP ACK Frame.
 
-![](/images/highload19/tcp-vs-udp-20.png)
+![tcp-vs-udp-20](../../../images/highload19/tcp-vs-udp-20.png)
 
 Мобильные сети асимметричны.
 Обычно 70% на приём и 30% на отправку.
@@ -248,10 +248,10 @@ BBR уязвим к высокому jitter.
 
 Какой congestion control выбрать на сервере?
 
-![](/images/highload19/tcp-vs-udp-21.png)
+![tcp-vs-udp-21](../../../images/highload19/tcp-vs-udp-21.png)
 
 А на клиенте всегда Cubic и мы не можем на это повлиять.
 
 Выводы такие:
 
-![](/images/highload19/tcp-vs-udp-22.png)
+![tcp-vs-udp-22](../../../images/highload19/tcp-vs-udp-22.png)

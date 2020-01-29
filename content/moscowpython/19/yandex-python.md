@@ -67,7 +67,7 @@ Django, CherryPy, Web.py
 
 Типичный сервер выглядит так:
 
-![](/images/static/yandex-python-01.png)
+![yandex-python-01](../../../images/static/yandex-python-01.png)
 
 Следствие: на одном сервере все приложения должны иметь одинаковые зависимости.
     Чем больше приложений на сервере, тем сложнее всё это поддерживать.
@@ -121,7 +121,7 @@ Tornado, Flask, Celery для распределённых задач.
 
 Теперь на сервере есть раздельные питоновые зависимости и общие системные:
 
-![](/images/static/yandex-python-02.png)
+![yandex-python-02](../../../images/static/yandex-python-02.png)
 
 ## Общий код
 
@@ -165,7 +165,7 @@ Tornado, Flask, Celery для распределённых задач.
 Оказалось, что uwsgi хорошо справляется с задачей запуска процессов.
 И его же используют для HTTP.
 
-![](/images/static/yandex-python-03.png)
+![yandex-python-03](../../../images/static/yandex-python-03.png)
 
 ## Фреймворки
 
@@ -209,7 +209,7 @@ Tornado, Flask, Celery для распределённых задач.
 
 Мы собираем бинарь и оно просто работает на любой совместимой архитектуре. Чудо!
 
-![](/images/static/yandex-python-04.png)
+![yandex-python-04](../../../images/static/yandex-python-04.png)
 
 ## Плюсы и минусы
 

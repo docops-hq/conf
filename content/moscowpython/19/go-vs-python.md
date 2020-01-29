@@ -171,15 +171,15 @@ Dataset — MovieLens 1M
 
 Можно вот так посмотреть:
 
-![](/images/static/go-vs-python-01.png)
+![go-vs-python-01](../../../images/static/go-vs-python-01.png)
 
 Есть flame-graph:
 
-![](/images/static/go-vs-python-02.png)
+![go-vs-python-02](../../../images/static/go-vs-python-02.png)
 
 Построчный вывод:
 
-![](/images/static/go-vs-python-03.png)
+![go-vs-python-03](../../../images/static/go-vs-python-03.png)
 
 ## Наконец, оптимизация
 
