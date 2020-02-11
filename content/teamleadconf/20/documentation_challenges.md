@@ -1,4 +1,13 @@
-
+---
+title: "“Как сделать так, чтобы документация не болела?"
+author: "Семён Факторович"
+tags: ["TeamLeadConf", "2020"]
+summary: |
+    * Проблемы с документацией.
+    * Как можно решить.
+    * Инструменты.
+    * Контакты.
+---
 
 # Проблемы с документацией
 
@@ -78,7 +87,7 @@
 
 # Контакты:
 
-- [Семён Факторович](mailto:sam@document.io)
+- [Семён Факторович](mailto:sam@documentat.io)
 - [Константин Валеев](mailto:kvaleev@gmail.com)
 - [Чатик DocOps](https://t.me/docsascode)
 - [Канал DocOps](https://t.me/docops)
