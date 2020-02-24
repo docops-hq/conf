@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>
+				Go против Python &middot; Конспекты
+		</title>
+
+		
+  		<link rel="stylesheet" href="/conf/css/style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+		<link rel="stylesheet" href="/conf/custom.css">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/conf/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/conf/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/conf/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Конспекты" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/conf/">
+					<h2 class="nav-title">Конспекты</h2>
+				</a>
+				<ul>
+    <li><a href="/conf/">Posts</a></li>
+</ul>
+
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="single__header">
+			<div class="post-info">
+        Виталий Левченко, организатор Go-митапов в Санкт-Петербурге
+</div>
+
+			<h1 class="post-title">Go против Python</h1>
+<div class="post-line"></div>
+<div class="tag-block"><span class="catalogue-tags"><a href='/conf/tags/moscow-python-conf' class="tags" >Moscow Python Conf</a></span><span class="catalogue-tags"><a href='/conf/tags/2019' class="tags" >2019</a></span><span class="catalogue-tags"><a href='/conf/tags/python' class="tags" >Python</a></span><span class="catalogue-tags"><a href='/conf/tags/go' class="tags" >Go</a></span></div>
+
+		</div>
+
+		
+
+		
+
+<h1 id="бенчмарки">Бенчмарки</h1>
+
+<p>Как нам сравнивать языки?
+Обычно начинают с бенчмарков.
+Ок, давайте тоже так сделаем.</p>
+
+<p>Есть бенчмарк web:</p>
+
+<ul>
+<li>HTTP</li>
+<li>Достать 16 текстов из БД</li>
+<li>Отсортировать и дополнить</li>
+<li>Отрендерить на шаблоне</li>
+<li>(Fortunes test)</li>
+</ul>
+
+<p>Результаты:</p>
+
+<table>
+<thead>
+<tr>
+<th>Язык</th>
+<th align="left">фреймворк</th>
+<th align="right">rps</th>
+<th align="right">latency, ms</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Go</td>
+<td align="left">fasthttp</td>
+<td align="right">329k</td>
+<td align="right">0.4±0.2</td>
+</tr>
+
+<tr>
+<td></td>
+<td align="left">native http, chi</td>
+<td align="right">128k</td>
+<td align="right">2.9±1.7</td>
+</tr>
+
+<tr>
+<td>Python</td>
+<td align="left">uvicorn/starlette, gunicorn</td>
+<td align="right">65-71k</td>
+<td align="right">7.1±3.0</td>
+</tr>
+
+<tr>
+<td></td>
+<td align="left">aiohttp</td>
+<td align="right">30k</td>
+<td align="right">14.9±5.5</td>
+</tr>
+
+<tr>
+<td></td>
+<td align="left">django/tornado/flask</td>
+<td align="right">14-23k</td>
+<td align="right">2.0±0.8</td>
+</tr>
+</tbody>
+</table>
+
+<p>Источник: techempower.com/benchmarks</p>
+
+<!-- https://www.tablesgenerator.com/markdown_tables -->
+
+<h1 id="аллокации-в-python">Аллокации в Python</h1>
+
+<ul>
+<li>List 1M строк = 10k объектов по 100 полей.</li>
+<li>Размер JSON — 20Mb</li>
+<li>Redis отдаёт эти данные за долю миллисекунды</li>
+</ul>
+
+<p><code>json.loads()</code> работает 193 миллисекунды, это долго!</p>
+
+<p>В Go это примерно так же долго, зато там есть кеш в памяти.
+Давайте так же в Python! Что если если shared cache?</p>
+
+<ul>
+<li><code>multiprocessing.Manager</code></li>
+<li>Create dict: 2.2s</li>
+<li>Update dict: 1.7s</li>
+<li>И в это время приложение не может делать ничего другого с кешем.</li>
+</ul>
+
+<p>Так, а если не shared?</p>
+
+<ul>
+<li>1M объектов это примерно 100 MB памяти</li>
+<li>10Gb всего</li>
+<li>На 28 ядер нужно 280 Gb!</li>
+</ul>
+
+<p>Вывод: Python не подходит для обработки большого количества объектов.</p>
+
+<h1 id="асинхронность">Асинхронность</h1>
+
+<p>Кейс — обработка очереди:</p>
+
+<ul>
+<li>Много запросов в БД и арифметики.</li>
+<li>CPU bound</li>
+</ul>
+
+<p>На машине 14 ядер.
+Вопрос: сколько воркеров надо запустить, чтобы утилизировать CPU? Оказывается, что около 100-200, зависит от базы. Если база отвечает медленнее, CPU недогружен. Если быстрее — CPU перегружается, load average 200, машинка перестаёт отвечать.</p>
+
+<p>Нужны корутины.
+Если корутины, то во время запроса в базу приложение обрабатывает другие потоки.
+Если не корутины, то всё залочено.</p>
+
+<p>В Go всё хорошо с асинхронностью:</p>
+
+<ul>
+<li>syscall отдает тред в scheduler;</li>
+<li>mutex-ы отдают управление в scheduler;</li>
+<li>и это всё работает из коробки, в стандартной библиотеке.</li>
+</ul>
+
+<p>Asyncio</p>
+
+<ul>
+<li>Всё круто, асинхронно и без лапши</li>
+<li>&hellip;пока <strong>все</strong> функции неблокирующие.</li>
+<li>А как только блокирующие, то рантайм встаёт, пока функция не разблокируется.</li>
+</ul>
+
+<p>Поэтому приходится выбирать библиотеки, которые поддерживают asyncio.</p>
+
+<ul>
+<li>11 популярных БД: aio-libs</li>
+<li>очень многое не production-ready</li>
+<li>нет важных для продакшена вещей вроде <a href="https://aerospike.com/">aerospike</a></li>
+<li>есть не все таймауты, приходится дорабатывать или страдать</li>
+</ul>
+
+<h2 id="коммуникация-между-тредами">Коммуникация между тредами</h2>
+
+<p>Go: коммуникация между тредами есть из коробки.
+Python: нет.</p>
+
+<ul>
+<li><p>Уведомить корутину о graceful shutdown</p>
+
+<pre><code class="language-go">select {
+case task := &lt;-queue:
+  // processing
+case &lt;-closeChannel:
+  waitGroup.Done()
+}
+</code></pre>
+
+<p>В Python нужна поддержка соответствующих обработчиков и всё равно это неудобно.</p>
+
+<ul>
+<li>Чтение разом из нескольких каналов</li>
+</ul>
+
+<pre><code class="language-go">select {
+case task := &lt;-queue1:
+  // processing
+case task := &lt;-queue2:
+  // processing
+}
+</code></pre>
+
+<p>В Python в этом случае нужно объединять потоки в единый queue c потерей типов, потом разъединить с нахождением типов&hellip;
+Всё сложно.</p></li>
+</ul>
+
+<h1 id="machine-learning">Machine learning</h1>
+
+<p>Go:</p>
+
+<ul>
+<li>мало production-ready библиотек</li>
+<li>но можно сделать своё</li>
+<li>и оно может получиться в разы быстрее</li>
+</ul>
+
+<p>Кейс: рекомендации.
+Dataset — MovieLens 1M</p>
+
+<table>
+<thead>
+<tr>
+<th>Язык</th>
+<th>Scikit</th>
+<th align="right">SVD</th>
+<th align="right">SVD++</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Python</td>
+<td><a href="https://github.com/NicolasHug/Surprise">github.com/NicolasHug/Surprise</a></td>
+<td align="right">2m 13s</td>
+<td align="right"><strong>2h 54m 00s</strong></td>
+</tr>
+
+<tr>
+<td>Go</td>
+<td><a href="https://github.com/zhenghaoz/gorse">github.com/zhenghaoz/gorse</a></td>
+<td align="right">1m 48s</td>
+<td align="right"><strong>0h 02m 47s</strong></td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="оптимизация">Оптимизация</h1>
+
+<h2 id="профилирование">Профилирование</h2>
+
+<p>В Go профилирование делается в одну строку:</p>
+
+<ul>
+<li><p>Онлайн-диагностика:</p>
+
+<pre><code class="language-go">import _ &quot;net/http/pprof&quot;
+</code></pre>
+
+<ul>
+<li>Ссылка работает в консоли</li>
+</ul>
+
+<pre><code class="language-bash">go tool pprof -seconds 5 http://server/debug/pprof/profile
+</code></pre></li>
+
+<li><p>Или сразу в браузере</p></li>
+</ul>
+
+<h2 id="результаты-профилирования">Результаты профилирования</h2>
+
+<ul>
+<li>показывает горячие строки в либах</li>
+<li>list <em>func</em> даёт листинг функции</li>
+<li>disasm <em>func</em> даёт asm-код функции</li>
+</ul>
+
+<p>Можно вот так посмотреть:</p>
+
+<p><img src="../../../images/static/go-vs-python-01.png" alt="go-vs-python-01" /></p>
+
+<p>Есть flame-graph:</p>
+
+<p><img src="../../../images/static/go-vs-python-02.png" alt="go-vs-python-02" /></p>
+
+<p>Построчный вывод:</p>
+
+<p><img src="../../../images/static/go-vs-python-03.png" alt="go-vs-python-03" /></p>
+
+<h2 id="наконец-оптимизация">Наконец, оптимизация</h2>
+
+<ul>
+<li><code>gcflag -S</code> и <code>disasm</code> дают исполняемый asm-код</li>
+<li><code>gcflag -m</code> сообщает об инлайн-функциях и аллокациях на heap&rsquo;е</li>
+<li>Можно переписать <em>функцию</em> на C или asm</li>
+<li>Можно сравнить 2 профайлинга</li>
+</ul>
+
+<p>Разработчики языка всерьёз занимаются оптимизацией и часто рассказывают о результатах.</p>
+
+<h2 id="online-tooling">Online tooling</h2>
+
+<p><code>pprof</code> очень хорош:</p>
+
+<ul>
+<li>есть профилирование CPU и памяти (heap)</li>
+<li>есть профилирование блокировок и их использования</li>
+<li>есть стектрейс для горутин</li>
+<li>и полный трейсинг работы приложения</li>
+<li>можно отслеживать создание тредов</li>
+</ul>
+
+<h2 id="moar-tooling">Moar Tooling</h2>
+
+<p>Ещё фишечки:</p>
+
+<ul>
+<li><code>go build -race</code></li>
+<li><code>go test -bench -benchmem</code></li>
+</ul>
+
+<h1 id="разработка">Разработка</h1>
+
+<ul>
+<li>В Go снова всё хорошо. Апгрейды мажорных версий Go не вызывают проблем.</li>
+
+<li><p>Обновление библиотек редко ломается.</p>
+
+<p>Тут важное отступление.
+Долгое время работа с зависимостями работала так: <code>go get</code> — и последняя версия
+библиотеки прилетает прямо из ветки <code>master</code> на гитхабе.
+Мейнтейнеры библиотек привыкли, что если что-то несовместимо поменять,
+придёт много недовольных пользователей.</p></li>
+
+<li><p>Python 3.6→3.7 — ломаются библиотеки.</p></li>
+
+<li><p>Обновление мажорных версий библиотек часто ломает совместимость.</p></li>
+</ul>
+
+<h2 id="зависимости-в-go">Зависимости в Go</h2>
+
+<ul>
+<li>Зависимости от внешних библиотек бывают редко.
+Если что-то нужно, то это берут и пишут в этой библиотеке.</li>
+<li>В 1.12 появился go mod: 1 файл, заполняется автоматически, везде semver</li>
+<li>Все зависимости лежат в общем месте с версионностью, без vendor / virtualenv.
+Нет папочки вроде <code>venv</code> или <code>node_modules</code>, в которой лежит половина интернетов.</li>
+<li>Библиотеки версионируются, подписываются ключиками и проверяются по контрольным суммам.</li>
+<li>Библиотеки не переделывают рантайм, не вмешиваются в работу GC, не патчат системные функции.
+Импорт библиотеки не влечёт сторонних эффектов.
+<br /></li>
+</ul>
+
+<h2 id="своя-библиотека-в-go">Своя библиотека в Go</h2>
+
+<ul>
+<li>Берём библиотеку с go mod</li>
+<li>Анонс = git push</li>
+<li>Документация сразу будет на godoc.org</li>
+<li>PR приняли — можно пользоваться.
+А если (пока) не приняли, то забираем из своего форка.</li>
+</ul>
+
+<p>В Go высокодоступная документация.
+<code>godoc http</code> — и документация доступна на локальной машине, даже если вы в самолёте.
+Есть один способ собирать документацию — godoc.</p>
+
+<h1 id="обработка-ошибок">Обработка ошибок</h1>
+
+<p>Говорят, в Go нет исключений.
+Неправда, они есть, просто называются паниками.</p>
+
+<p>Задачка: в скольки местах это может сломаться с исключением?</p>
+
+<pre><code class="language-python">def fetch_user(id: int) -&gt; 'User':
+    response = requests.get('/api/users/{0}'.format(id))
+    response.raise_for_status()
+    return response.json()
+</code></pre>
+
+<p>Тут могут быть разные исключения, хорошо бы их все обработать.
+Go позволяет нам это сделать и даже заставляет.</p>
+
+<pre><code class="language-go">func fetchUser(id string)
+  (*User, error) {
+  resp, err := http.Get(`/api/users/`+id)
+  if err != nil {
+    return nil, errors.Wrap(err, `get user by id`)
+    }
+
+  // теперь обработаем код ответа
+  if resp.StatusCode != http.StatusOK {
+    return nil, errors.Wrap(errors.New(&quot;API got status &quot; + resp.Status), `get user by id`
+  }
+  user := &amp;User{}
+
+  // теперь декодируем
+  if err = json.NewDecoder(resp.Body).Decode(user); err != nil {
+    return nil, errors.Wrap(&quot;Incorrect user profile&quot;, err)
+  }
+  return user, nil
+}
+</code></pre>
+
+<h1 id="кодировки">Кодировки</h1>
+
+<ul>
+<li>Go — сразу UTF-8</li>
+<li>Python — вообще UTF-8, но в легаси встречается ASCII</li>
+</ul>
+
+<h1 id="выводы">Выводы</h1>
+
+<p>Опытному бэкендеру на самом деле не важно, на чём писать.</p>
+
+<h2 id="зарплаты">Зарплаты</h2>
+
+<table>
+<thead>
+<tr>
+<th>Язык</th>
+<th align="right">МойКруг, РФ</th>
+<th align="right"></th>
+<th align="right">GetIT, Москва, senior</th>
+<th align="right">StackOverflow, (медиана)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td></td>
+<td align="right">75% (процентиль)</td>
+<td align="right">90% (процентиль)</td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+
+<tr>
+<td>Python</td>
+<td align="right">150 000₽</td>
+<td align="right">185 000 ₽</td>
+<td align="right">175-200 000 ₽</td>
+<td align="right">$98 000 в год</td>
+</tr>
+
+<tr>
+<td>Go</td>
+<td align="right">178 000₽</td>
+<td align="right">225 000 ₽</td>
+<td align="right">201-250 000 ₽</td>
+<td align="right">$110 000 в год</td>
+</tr>
+</tbody>
+</table>
+
+<p>Вывод: писать на Go выгоднее на 20%!</p>
+
+<h2 id="когда-python-лучше">Когда Python лучше</h2>
+
+<ul>
+<li>Когда важна скорость бутстрапинга приложения</li>
+<li>Задачи data science</li>
+<li>Нравится async/await</li>
+</ul>
+
+<h2 id="когда-go-лучше">Когда Go лучше</h2>
+
+<ul>
+<li>CPU/memory/io-bound app</li>
+<li>Важна простота эксплуатации приложения (operations)</li>
+<li>Хочется интересных задач</li>
+<li>Хочется больше денег</li>
+</ul>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/conf/knowledgeconf/19/multimedia-documentation/" class="left arrow">&#8592;</a>
+		<a href="/conf/highload/18/2.1-vk-architecture/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			<span>
+			&copy; <time datetime="2020-02-24 19:15:28.299804 &#43;0700 &#43;07 m=&#43;0.217438508">2020</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>

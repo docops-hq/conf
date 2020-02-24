@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Конспекты</title>
+    <link>https://docops-hq.github.io/conf/</link>
+    <description>Recent content on Конспекты</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://docops-hq.github.io/conf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>(Почти) Объективная оценка людей в IT</title>
+      <link>https://docops-hq.github.io/conf/aletheia/19/assessment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/aletheia/19/assessment/</guid>
+      <description>Автор конспекта — Родион Нагорнов.
+Георгий начал с того, что назвал айтишников творческими людьми и задался тем, как оценивать творчество? А затем перешёл к любимому вопросу «зачем это делать?» Он назвал желание наказать, поощрить и найти точки роста. Затем указал, что легче всего для разработчика измерить строки кода и отработанные Часы. Но это не работает, т.к. легко читерится.
+Метод What &amp;amp; How Что: Вклад в проект, команду; работа для других команд, закрытые тикеты, скорость работы, т.</description>
+    </item>
+    
+    <item>
+      <title>10 компетенций и 6 ролей Knowledge Manager</title>
+      <link>https://docops-hq.github.io/conf/knowledgeconf/19/knowledge-manger-6-10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/knowledgeconf/19/knowledge-manger-6-10/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Обучение и развитие&lt;/li&gt;
+&lt;li&gt;Управление информацией&lt;/li&gt;
+&lt;li&gt;Социология&lt;/li&gt;
+&lt;li&gt;Управление изменениями&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Apache Kafka как основа для велосипедостроения</title>
+      <link>https://docops-hq.github.io/conf/highload/18/1.5-kafka-bicycle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/highload/18/1.5-kafka-bicycle/</guid>
+      <description>Цель okmeter: найти проблему. Для этого нужен контент — метрики. Их собирает агент, отправляет в платформу и считает метрики.</description>
+    </item>
+    
+    <item>
+      <title>Blameless environment: никто не должен писать качественный код</title>
+      <link>https://docops-hq.github.io/conf/qualityconf/19/blameless/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/qualityconf/19/blameless/</guid>
+      <description>&lt;p&gt;Бывает, что всё очень плохо:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Плохой код, никто не думает о качестве кода.&lt;/li&gt;
+&lt;li&gt;Плохие процессы, аутсорс и бардак.&lt;/li&gt;
+&lt;li&gt;Плохие клиенты и вообще всё плохо.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Наверное, это люди виноваты!
+А вот когда люди изменятся, всё станет иначе.
+Ещё наверное, в других местах работают другие люди, и те люди лучше, и там работать лучше.&lt;/p&gt;
+
+&lt;p&gt;Но нет, это неправда.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>FAQ по архитектуре и работе ВКонтакте</title>
+      <link>https://docops-hq.github.io/conf/highload/18/2.1-vk-architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/highload/18/2.1-vk-architecture/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;фронты: независимые сервера с nginx, анонсируют общие IP,терминируют HTTPS/WSS.&lt;/li&gt;
+&lt;li&gt;бэкенды: http сервера на kPHP, модель работы prefork, вместо перезапуска сбрасывают состояние (global/static vars).&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Go против Python</title>
+      <link>https://docops-hq.github.io/conf/moscowpython/19/go-vs-python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/moscowpython/19/go-vs-python/</guid>
+      <description>Как нам сравнивать языки?
+Обычно начинают с бенчмарков.
+Ок, давайте тоже так сделаем.</description>
+    </item>
+    
+    <item>
+      <title>How to Create Compelling Multimedia Documentation</title>
+      <link>https://docops-hq.github.io/conf/knowledgeconf/19/multimedia-documentation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/knowledgeconf/19/multimedia-documentation/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Images and gifs.&lt;/li&gt;
+&lt;li&gt;Video documentation.
+
+&lt;ul&gt;
+&lt;li&gt;Great for making complicated concepts seem simple.&lt;/li&gt;
+&lt;li&gt;But much more expensive to produce.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Webinars and recorded trainings.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Make Your Database Dream of Electric Sheep: Designing for Autonomous Operation</title>
+      <link>https://docops-hq.github.io/conf/highload/18/2.5-make-your-database-dream-of-electric-sheep/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/highload/18/2.5-make-your-database-dream-of-electric-sheep/</guid>
+      <description>&lt;p&gt;Background – complexity of modern systems, DBAs take up 50% of cost.&lt;/p&gt;
+
+&lt;p&gt;1970-2000s – Self-adaptive, self-tuning databases (index selection, partitioning/sharding). Human input, workload trace analysis, human decision.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Trello — эффективная система управления знаниями для небольшой IT-команды</title>
+      <link>https://docops-hq.github.io/conf/knowledgeconf/19/trello-kb/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/knowledgeconf/19/trello-kb/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;Молодой команде нужно быстро расти&lt;/li&gt;
+&lt;li&gt;Для этого требуется место, где собраны все референсы&lt;/li&gt;
+&lt;li&gt;Создание такого места капитализирует опыт команды и ускоряет рост сотрудников&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>UDP против TCP, или Будущее сетевого стека</title>
+      <link>https://docops-hq.github.io/conf/highload/19/tcp-vs-udp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/highload/19/tcp-vs-udp/</guid>
+      <description>TCP задуман как протокол надёжной доставки данных, а UDP — нет.
+Может ли оказаться, что UDP лучше решит задачу надёжной доставки?</description>
+    </item>
+    
+    <item>
+      <title>njs ‒ родной JavaSсript-скриптинг в nginx</title>
+      <link>https://docops-hq.github.io/conf/highload/19/njs-nginx/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/highload/19/njs-nginx/</guid>
+      <description>Современный proxy-server уже умеет:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;балансировать нагрузку&lt;/li&gt;
+&lt;li&gt;TLS-терминирование,&lt;/li&gt;
+&lt;li&gt;отдавать статику,&lt;/li&gt;
+&lt;li&gt;кешировать.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>werf — наш инструмент для CI/CD в Kubernetes</title>
+      <link>https://docops-hq.github.io/conf/devopsconf/19/werf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/devopsconf/19/werf/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Доставка&lt;/li&gt;
+&lt;li&gt;Сборка (build)&lt;/li&gt;
+&lt;li&gt;Публикация в registry (push)&lt;/li&gt;
+&lt;li&gt;Очистка registry&lt;/li&gt;
+&lt;li&gt;Деплой&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>«Платформа» в Badoo: как мы построили инфраструктурную разработку</title>
+      <link>https://docops-hq.github.io/conf/highload/18/1.8-badoo-infradev/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/highload/18/1.8-badoo-infradev/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Всё растёт. Больше пользователей и нагрузки.&lt;/li&gt;
+&lt;li&gt;Бизнес хочет ещё больше.&lt;/li&gt;
+&lt;li&gt;Инфраструктурные задачи бизнесу непонятны, но необходимы для развития.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Базы данных и Kubernetes</title>
+      <link>https://docops-hq.github.io/conf/highload/18/1.4-bd-k8s/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/highload/18/1.4-bd-k8s/</guid>
+      <description>&lt;ol&gt;
+&lt;li&gt;Философия высокой доступности в k8s&lt;/li&gt;
+&lt;li&gt;Гарантии согласованности в k8s&lt;/li&gt;
+&lt;li&gt;Хранение данных и k8s
+&lt;br /&gt;&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>В поисках Стилевого Грааля</title>
+      <link>https://docops-hq.github.io/conf/frontendconf/19/style_silver_bullet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/frontendconf/19/style_silver_bullet/</guid>
+      <description>Прошлое На заре интернета стили страницы считались статичными и декларативными, и начали появляться решения для подобной стилизации: - tags: abc - JSSS: tags.H1.color - CSS Expressions: expression(a+b) - CSS!
+У CSS есть множество проблем: отсутствие реиспользования, неявность, неинтерактивность, сложность чтения.
+Потом начали появляться решения, которые пытались пофиксить CSS &amp;ndash; например, БЭМ, который вводил новые сущности и абстракции, упрощающие стилизацию приложения. А потом bootstrap, shadow dom, webpack, component, css modules, &amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Дата-инженеры и кому они нужны</title>
+      <link>https://docops-hq.github.io/conf/highload/18/1.9-data-engineers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/highload/18/1.9-data-engineers/</guid>
+      <description>Тема доклада: что такое данные, откуда они берутся и почему онлайн-магазин обуви заинтересован в данных.</description>
+    </item>
+    
+    <item>
+      <title>Добро пожаловать на борт: вводим в строй новых разработчиков</title>
+      <link>https://docops-hq.github.io/conf/knowledgeconf/19/badoo-new-developers-onboarding/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/knowledgeconf/19/badoo-new-developers-onboarding/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;департамент вырос в 2 раза за последние несколько лет&lt;/li&gt;
+&lt;li&gt;ожидание от найма и реальность разнятся, так как на онбординг тратится время не только новичка, но и техлида и ментора
+большой объем новой информации, которую необходимо изучить&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Документирование встреч</title>
+      <link>https://docops-hq.github.io/conf/siberian-community-orgs/documenting-meetings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/siberian-community-orgs/documenting-meetings/</guid>
+      <description>На митапе организаторов сибирских ИТ-сообществ
+обсудили документирование встреч.</description>
+    </item>
+    
+    <item>
+      <title>Естественное развитие: как перейти от e-learning к управлению знаниями</title>
+      <link>https://docops-hq.github.io/conf/knowledgeconf/19/e-learning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/knowledgeconf/19/e-learning/</guid>
+      <description>&lt;p&gt;Большие вложения и мало повторного использования.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Одноразовые курсы.
+Второй раз пройти почти невозможно.
+Сложно использовать как справочник.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Не формируется привычка учиться.
+Разовое обучение не только не даёт нужного результата,
+но и не формирует привычку пользоваться информацией.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Как внедрить систему управления знаниями в бизнес</title>
+      <link>https://docops-hq.github.io/conf/knowledgeconf/19/km-system-and-business/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/knowledgeconf/19/km-system-and-business/</guid>
+      <description>Зачем внедряют системы управления знаниями?&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Чтобы отчитаться: ПИР, стандарт ISO, акционеры.&lt;/li&gt;
+&lt;li&gt;Чтобы было: это модно, CEO захотел, есть иллюзии.&lt;/li&gt;
+&lt;li&gt;Чтобы заработать: нематериальные активы, продукты, тендеры.&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>Как вовлечь всех сотрудников ИТ-компании в обучение новичков и друг друга</title>
+      <link>https://docops-hq.github.io/conf/knowledgeconf/19/knowledge-sharing-involvement/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/knowledgeconf/19/knowledge-sharing-involvement/</guid>
+      <description>В компании пробовали нанимать людей с рынка (как все).
+Столкнулись с проблемой, что у специалистов с рынка недостаточный уровень знаний, а денег хотят много.
+Например, нет знаний даже базовых алгоритмов.
+Еще все хотят работать из дома.
+Решили, что нет смысла ждать своего человека -&amp;gt; надо растить своих специалистов.</description>
+    </item>
+    
+    <item>
+      <title>Как готовить начинающих спикеров, чтобы они превратились в опытных бренд-амбассадоров</title>
+      <link>https://docops-hq.github.io/conf/devrelconf/5/brand-ambassador/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/devrelconf/5/brand-ambassador/</guid>
+      <description>Результаты:  за три года узнаваемость компании повысилась с 5 до 75 процентов у приходящих людей  Зачем создавать бренд? Жизненный цикл &amp;ldquo;докладчика&amp;rdquo;: - приходит в компанию и около года въезжает в работу - полгода делает крутые штуки, про которые можно рассказат - остаётся полгода-год до того как он уйдёт, и в это время его очень важно отправить на конференцию с докладом, чтобы он привёл новых людей!
+Зачем нужно развивать бренд?</description>
+    </item>
+    
+    <item>
+      <title>Как доставить быстро и без боли. Автоматизируем релизы</title>
+      <link>https://docops-hq.github.io/conf/devopsconf/19/fast-releases/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/devopsconf/19/fast-releases/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Оптимизация Code Review&lt;/li&gt;
+&lt;li&gt;Оптимизация тестирования&lt;/li&gt;
+&lt;li&gt;Оптимизация тестовых (бета) стендов&lt;/li&gt;
+&lt;li&gt;Оптимизация деплоя&lt;/li&gt;
+&lt;li&gt;Мониторинг&lt;/li&gt;
+&lt;li&gt;Канареечное тестирование&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Как из менеджера сделать аналитика: опыт подготовки инженеров по знаниям</title>
+      <link>https://docops-hq.github.io/conf/knowledgeconf/19/manager-analyst-km/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/knowledgeconf/19/manager-analyst-km/</guid>
+      <description>О чём доклад&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Мистер/Мисс Х: Аналитик&lt;/li&gt;
+&lt;li&gt;Information Science &amp;amp; Knowledge Engineering&lt;/li&gt;
+&lt;li&gt;Акцент на визуально-аналитическом мышлении&lt;/li&gt;
+&lt;li&gt;Подготовка аналитиков&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Как нейронные сети графике помогали</title>
+      <link>https://docops-hq.github.io/conf/highload/18/1.10-neural-nets-cgi/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/highload/18/1.10-neural-nets-cgi/</guid>
+      <description>Если у вас есть вычислительно сложная задача, которую вы решаете некоторым классическим вычислительным способом, попробуйте найти в этой задаче самое времязатратное место и найти решение с помощью нейронной сети или любого другого алгоритма машинного обучения.</description>
+    </item>
+    
+    <item>
+      <title>Как посмотреть на свой продукт глазами инвестора?</title>
+      <link>https://docops-hq.github.io/conf/whalerider/19/investor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/whalerider/19/investor/</guid>
+      <description>Бывает момент истины, как у разведчиков.
+У стартапов этот момент происходит, когда стартап встречается с инвестором.</description>
+    </item>
+    
+    <item>
+      <title>Как развивался Python в Яндексе</title>
+      <link>https://docops-hq.github.io/conf/moscowpython/19/yandex-python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/moscowpython/19/yandex-python/</guid>
+      <description>&lt;p&gt;Александр в Яндексе с 2008 года, писал Афишу и другие сервисы, потом ушёл во внутренние сервисы.
+Сейчас руководит отрядом из 30 питонистов.&lt;/p&gt;
+
+&lt;p&gt;Важно: Яндекс — большая компания, потому сложно сказать про всех сразу.
+Доклад Александра — в первую очередь про его опыт в Яндексе, его интерпретация событий.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Как сделать так, чтобы документация не болела</title>
+      <link>https://docops-hq.github.io/conf/highload/19/siberia/docs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/highload/19/siberia/docs/</guid>
+      <description>Конспект митапа на Highload++ Siberia 2019.
+Ведущие:
+ Семён Факторович, Chief Technical Writing Officer, documentat.io Николай Волынкин, технический писатель, Plesk, телеграм-канал @DocOps  Определимся с терминами Мы по профессии техписатели, и у нас своя специфика трактовки термина «документация».
+Техписатели традиционно занимаются той документацией, которая пишется после написания кода — справочники API, руководства пользователя, описание архитектуры и дизайн-решений.
+Документация, которая пишется до написания кода (ТЗ, спецификации требований), в нашей картине мира — область ответственности системных аналитиков.</description>
+    </item>
+    
+    <item>
+      <title>Как сделать так, чтобы документация не болела?</title>
+      <link>https://docops-hq.github.io/conf/teamleadconf/20/documentation_challenges/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/teamleadconf/20/documentation_challenges/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Проблемы с документацией.&lt;/li&gt;
+&lt;li&gt;Как можно решить.&lt;/li&gt;
+&lt;li&gt;Инструменты.&lt;/li&gt;
+&lt;li&gt;Контакты.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Как стать классным спецом по базам данных</title>
+      <link>https://docops-hq.github.io/conf/highload/18/2.4-dababase-pro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/highload/18/2.4-dababase-pro/</guid>
+      <description>БД — вещь простая, а люди сложные, поэтому советы могут не всем подойти.
+Сам следовал не всем советам.</description>
+    </item>
+    
+    <item>
+      <title>Как устроить хайлоад на ровном месте</title>
+      <link>https://docops-hq.github.io/conf/highload/18/2.3-such-highload/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/highload/18/2.3-such-highload/</guid>
+      <description>Highload — чисто русское слово. Остальные используют high-volume.
+Хайлоад — это ситуация в системе, грозящая отказом в обслуживании из-за недостатка ресурсов. Внештатная ситуация.
+В идеале хайлоада не должно быть, но есть человеческие ошибки, которые ведут к недостатку ресурсов (железа, людей, денег), а он приводит к угрозе отказа в обслуживании.
+Спешная починка костылями.</description>
+    </item>
+    
+    <item>
+      <title>Как я 15 лет делал себе персональную Wiki для программиста</title>
+      <link>https://docops-hq.github.io/conf/knowledgeconf/19/xi-notes-for-developer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/knowledgeconf/19/xi-notes-for-developer/</guid>
+      <description>2 типа инструментов:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;WYSIWYG, например, Google Doc, Word, и т.п.&lt;/li&gt;
+&lt;li&gt;Lightweight Markup Language, например, markdown, которые можно писать в любом редакторе.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Монолит для сотен версий клиентов: как мы пишем и поддерживаем тесты</title>
+      <link>https://docops-hq.github.io/conf/highload/18/2.2-testing-badoo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/highload/18/2.2-testing-badoo/</guid>
+      <description>Темы:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Наш процесс разработки&lt;/li&gt;
+&lt;li&gt;Юнит-тесты&lt;/li&gt;
+&lt;li&gt;Интеграционные тесты&lt;/li&gt;
+&lt;li&gt;Тесты на API&lt;/li&gt;
+&lt;li&gt;Прогон тестов&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>Не хочешь мокнуть – плыви: добровольно-принудительный обмен знаниями</title>
+      <link>https://docops-hq.github.io/conf/knowledgeconf/19/voluntary-forced-knowledge-sharing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/knowledgeconf/19/voluntary-forced-knowledge-sharing/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;обмен знаниями - катализатор развития&lt;/li&gt;
+&lt;li&gt;два способа обмена - демократический и диктаторский&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Один из вариантов реализации Data Discovery в микросервисной архитектуре</title>
+      <link>https://docops-hq.github.io/conf/highload/18/1.3-data-discovery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/highload/18/1.3-data-discovery/</guid>
+      <description>Николай руководит Data Platform в Avito. Сотни сервисов, сотни баз.
+Как это бывает сначала: shared database.
+У всех сервисов есть связь между собой и через базу.
+Тестировать невозможно.
+Поэтому при переходе на микросервисы у каждого сервиса своя база.
+Если шардов несколько, то базы надо синхронизировать.
+В реальности в компании есть сразу всё: и микросервисы с отдельными базами, и макро, и монолиты с shared database.
+Как начинается переписывание монолита на микросервисы? С доменного моделирования. Кто может его сделать? Никто, но есть люди, которые могут попробовать.</description>
+    </item>
+    
+    <item>
+      <title>Пишем не только код, но и статьи: как помочь разработчику стать техноавтором</title>
+      <link>https://docops-hq.github.io/conf/devrelconf/5/technical-authors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/devrelconf/5/technical-authors/</guid>
+      <description>Нужен ли вам техноблог?  Мы напишем и все придут к нам работать.
+ Нет.
+ Начальник: «Нам нужен блог»
+ Нет.
+ Мы будем продавать продукт через блог.
+ Вряд ли.
+ Это же почти бесплатно.
+ Нет, это очень дорого.
+Какие задачи решает техноблог:  Отвечает на обычные вопросы о компании и технологиях Дает площадку для экспертов Генерирует контент для других каналов Работает как публичная энциклопедия  Однако:</description>
+    </item>
+    
+    <item>
+      <title>Применение практик Тиаго Форте для управления своими знаниями</title>
+      <link>https://docops-hq.github.io/conf/knowledgeconf/19/tiago-forte-practices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/knowledgeconf/19/tiago-forte-practices/</guid>
+      <description>Прочитал полезную статью или послушал доклад.
+Как запомнить полезное?</description>
+    </item>
+    
+    <item>
+      <title>Продвижение опенсорс-проектов (&#43;1 секретный доклад внутри)</title>
+      <link>https://docops-hq.github.io/conf/frontendconf/19/promoting-opensource/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/frontendconf/19/promoting-opensource/</guid>
+      <description>Однажды появилась методология БЭМ. Она была реально прорывной. Однако, о ней до сих пор не весь мир знает. И есть ещё много крутых вещей, которые созданы в России и мало известны миру. Это проблема, давайте её решать.
+Андей занимается фронтендом в компании Evil Martians. А ещё у него есть opensource-проекты, вот такие:
+  На самом деле проектов было немного больше:
+  Реальность  Стать популярным через опенсорс — плохой способ.</description>
+    </item>
+    
+    <item>
+      <title>Проектирование показателей эффективности отдела по управлению знаниями</title>
+      <link>https://docops-hq.github.io/conf/knowledgeconf/19/km-efficiency/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/knowledgeconf/19/km-efficiency/</guid>
+      <description>Дано:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;400 изменений в месяц&lt;/li&gt;
+&lt;li&gt;задача от бизнеса не останавливая работу провести оптимизацию&lt;/li&gt;
+&lt;li&gt;высока конкуренция, услуга компании может быть легко скопирована конкурентами за неделю&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Профессия «Ghostwriter», или Учим программистов писать статьи</title>
+      <link>https://docops-hq.github.io/conf/devrelconf/5/ghostwriters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/devrelconf/5/ghostwriters/</guid>
+      <description>Мария — PR-менеджер в KODE и лидер GDG в Калининграде. Специфика компании:
+ Разработка на аутсорс В регионе Сотрудники молодые Системы обучения нет 1 сотрудник решает все задачи с обучением  Руководство:
+ Хотим статьи разработчиков на Хабре и VC, чтобы нас читали, комментировали и хвалили. И поэтому чтобы к нам шли работать. У топов получается — значит и у нас сработает.
+ Что с этим делать? Да хоть что-нибудь.</description>
+    </item>
+    
+    <item>
+      <title>Разгоняем обработку событий до 1.6М/сек. Опыт Badoo</title>
+      <link>https://docops-hq.github.io/conf/highload/18/1.6-accelerate-events/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/highload/18/1.6-accelerate-events/</guid>
+      <description>Темы доклада:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Зачем собирать статистику&lt;/li&gt;
+&lt;li&gt;Как это делать&lt;/li&gt;
+&lt;li&gt;Как показывать и анализировать&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Разработка базы знаний компании, которой действительно пользуются</title>
+      <link>https://docops-hq.github.io/conf/knowledgeconf/19/biocad-knowledge-base-development/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/knowledgeconf/19/biocad-knowledge-base-development/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;биотехнологическая компания, 50% - R&amp;amp;D&lt;/li&gt;
+&lt;li&gt;необходимо одно место для хранения и переиспользования знаний&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Тернии контейнеризированных приложений и микросервисов</title>
+      <link>https://docops-hq.github.io/conf/highload/18/1.2-per-aspera-ad-paas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/highload/18/1.2-per-aspera-ad-paas/</guid>
+      <description>&lt;p&gt;Бизнес хочет ускорить time to market.&lt;/p&gt;
+
+&lt;p&gt;Есть роли серверов — server role. Новый продукт — новая роль. Надо писать puppet, открывать доступы и порты, конфигурировать-конфигурировать-конфигурироовать. ВРУЧНУЮ.
+Это умеет горстка людей — это узкое звено. Они делают это дни или недели, это тоже.
+Хотим: доступно всем, работает за минуты. Для решения стали строить PaaS.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Топ ошибок со стороны разработки при работе с PostgreSQL</title>
+      <link>https://docops-hq.github.io/conf/highload/18/1.7-postgresql-errors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/highload/18/1.7-postgresql-errors/</guid>
+      <description>&lt;p&gt;В компаниях любого размера бывают проблемы. Откуда они берутся?&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Из фич. Начинаем использовать продвинутые фичи, утилиты и прочее. «Хочется взять дежурный пистолет, положить в ящик стола, иногда достать, застрелиться и работать дальше».&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Из хранения данных. Когда оно усложняется, больше шансов написать кривой запрос.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Из жизненного цикла. Разработчики пилят, админы настраивают, а улучшать систему некому. База работает с дефолтными конфигами и когда-нибудь ломается.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Трансофрмация бизнес-культуры: преодолеть сопротивление, добиться результата</title>
+      <link>https://docops-hq.github.io/conf/aletheia/19/culture-transformation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/aletheia/19/culture-transformation/</guid>
+      <description>Автор конспекта — Родион Нагорнов.
+Марина начинает с вопроса «зачем». Про этот вопрос я уже дважды выступал в этом году, и через пару дней выступлю ещё раз. Так что, я в тренде, у меня есть единомышленники. Кстати, предыдущие спикеры тоже говорили при «зачем».
+Итак, речь о создании дружественной среды для инноваций. Говорят, что многие руководители готовы выделять под это не более 2-3% времени на инновации. Но нормально - это хотя бы 30.</description>
+    </item>
+    
+    <item>
+      <title>Убивай мутантов, спаси свой код</title>
+      <link>https://docops-hq.github.io/conf/moscowpython/19/kill-mutants/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/moscowpython/19/kill-mutants/</guid>
+      <description>Как мы работаем:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Прилетает пуллреквест с изменениями кода и тестов&lt;/li&gt;
+&lt;li&gt;Проходит CI&lt;/li&gt;
+&lt;li&gt;Ревью кода.&lt;/li&gt;
+&lt;li&gt;Мерж в мастер&lt;/li&gt;
+&lt;li&gt;Всё в огне!&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>Управление знаниями при быстром росте компании</title>
+      <link>https://docops-hq.github.io/conf/knowledgeconf/19/ozon-fast-growth-and-knowledge-sharing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/knowledgeconf/19/ozon-fast-growth-and-knowledge-sharing/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;400+ компонентов, 20 лет компании, большой объем знаний&lt;/li&gt;
+&lt;li&gt;база знаний нужна для техподдержки, для новых разработчиков&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Фаззинг или тестирование мусорными данными</title>
+      <link>https://docops-hq.github.io/conf/qualityconf/19/libfuzzer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/qualityconf/19/libfuzzer/</guid>
+      <description>Зачем? В качестве примера — поисковый запрос в 2ГИС, для которого используется не только сам текстовый ввод, но и параметры пользователя: предпочтения, город, текущий участок карты.
+Ручное тестирование подобных вещей из-за количества комбинаций практически нереально.
+Фаззинг Фаззинг — это тестирование случайными входными данными.
+Пример из реальной жизни: это Heartbleed из OpenSSL; уязвимость, которая позволяет читать память на сервере или клиенте, которая затронула гигантское количество устройств и серверов и была обнаружена только спустя два года</description>
+    </item>
+    
+    <item>
+      <title>Холистическое управление знаниями в IТ-компании</title>
+      <link>https://docops-hq.github.io/conf/knowledgeconf/19/holistic-km/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/knowledgeconf/19/holistic-km/</guid>
+      <description>Есть разные пути по созданию системы управления знаниями: сверху и снизу.
+Хорошо это работает совместно (30% сверху  на 70% снизу).
+Перед началов надо определить, что такое управление знаниями.
+Управлением знаниями можно бороться:</description>
+    </item>
+    
+    <item>
+      <title>Что делать, если ваш код на Python тормозит</title>
+      <link>https://docops-hq.github.io/conf/moscowpython/19/accelerate-python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/moscowpython/19/accelerate-python/</guid>
+      <description>&lt;p&gt;Когда в списке &lt;code&gt;resp&lt;/code&gt; оказываются сотни тысяч элементов — а их реально столько
+— программа внезапно очень медленно работает.&lt;/p&gt;
+
+&lt;p&gt;10 000 сообщений:&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Что мы знаем о микросервисах</title>
+      <link>https://docops-hq.github.io/conf/highload/18/1.1-microservices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/highload/18/1.1-microservices/</guid>
+      <description>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
+
+&lt;p&gt;Авито: много сервисов и очень много связей между ними.&lt;/p&gt;
+
+&lt;p&gt;Вот основные проблемы от количества:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Много разных репозиториев. Сложно менять код одновременно везде.&lt;/li&gt;
+&lt;li&gt;Много команд пишут код, не пересекаясь с другими. Знания инкапсулируются и плохо передаются между командами. Нет единой картины. Нет человека, который бы всё знал.&lt;/li&gt;
+&lt;li&gt;Данные фрагментарны.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

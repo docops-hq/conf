@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>QualityConf on Конспекты</title>
+    <link>https://docops-hq.github.io/conf/tags/qualityconf/</link>
+    <description>Recent content in QualityConf on Конспекты</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://docops-hq.github.io/conf/tags/qualityconf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blameless environment: никто не должен писать качественный код</title>
+      <link>https://docops-hq.github.io/conf/qualityconf/19/blameless/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/qualityconf/19/blameless/</guid>
+      <description>&lt;p&gt;Бывает, что всё очень плохо:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Плохой код, никто не думает о качестве кода.&lt;/li&gt;
+&lt;li&gt;Плохие процессы, аутсорс и бардак.&lt;/li&gt;
+&lt;li&gt;Плохие клиенты и вообще всё плохо.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Наверное, это люди виноваты!
+А вот когда люди изменятся, всё станет иначе.
+Ещё наверное, в других местах работают другие люди, и те люди лучше, и там работать лучше.&lt;/p&gt;
+
+&lt;p&gt;Но нет, это неправда.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Фаззинг или тестирование мусорными данными</title>
+      <link>https://docops-hq.github.io/conf/qualityconf/19/libfuzzer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/qualityconf/19/libfuzzer/</guid>
+      <description>Зачем? В качестве примера — поисковый запрос в 2ГИС, для которого используется не только сам текстовый ввод, но и параметры пользователя: предпочтения, город, текущий участок карты.
+Ручное тестирование подобных вещей из-за количества комбинаций практически нереально.
+Фаззинг Фаззинг — это тестирование случайными входными данными.
+Пример из реальной жизни: это Heartbleed из OpenSSL; уязвимость, которая позволяет читать память на сервере или клиенте, которая затронула гигантское количество устройств и серверов и была обнаружена только спустя два года</description>
+    </item>
+    
+  </channel>
+</rss>

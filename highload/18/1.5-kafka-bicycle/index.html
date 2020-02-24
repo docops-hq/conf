@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>
+				Apache Kafka как основа для велосипедостроения &middot; Конспекты
+		</title>
+
+		
+  		<link rel="stylesheet" href="/conf/css/style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+		<link rel="stylesheet" href="/conf/custom.css">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/conf/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/conf/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/conf/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Конспекты" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/conf/">
+					<h2 class="nav-title">Конспекты</h2>
+				</a>
+				<ul>
+    <li><a href="/conf/">Posts</a></li>
+</ul>
+
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="single__header">
+			<div class="post-info">
+        Николай Сивко, okmeter.io
+</div>
+
+			<h1 class="post-title">Apache Kafka как основа для велосипедостроения</h1>
+<div class="post-line"></div>
+<div class="tag-block"><span class="catalogue-tags"><a href='/conf/tags/highload' class="tags" >Highload</a></span><span class="catalogue-tags"><a href='/conf/tags/2018' class="tags" >2018</a></span></div>
+
+		</div>
+
+		
+
+		
+
+<p>Цель okmeter: найти проблему. Для этого нужен контент — метрики. Их собирает агент, отправляет в платформу и считает метрики.</p>
+
+<h2 id="metric-store-v1-chunked">Metric store v1: chunked</h2>
+
+<ul>
+<li>копим данные за 4 часа</li>
+<li>интервал знаем, поэтому не храним timestamp</li>
+<li>сериализуем и жмём lz4</li>
+<li>пишем в cassandra</li>
+<li>при каждой точке перезаписываем весь chunk</li>
+<li>чтобы не читать при записи, версионируем чанки</li>
+<li>при чтении объединяем все версии</li>
+</ul>
+
+<p>Результаты:</p>
+
+<ul>
+<li>примерно десятикратное сжатие объема</li>
+<li>в несколько раз ускорилось чтение</li>
+<li>увеличилась нагрузка на Cassandra</li>
+<li>в результате нагрузка на диск в форме пилы.</li>
+</ul>
+
+<p><img src="../../../images/cassandra-saw.png" alt="" /></p>
+
+<h2 id="metric-store-v1-1-bunched">Metric store v1.1: bunched</h2>
+
+<p>Bunch — набор метрик, который пишется и читается одновременно. Пишем в один BLOB.</p>
+
+<ul>
+<li>Ещё вдвое сжали</li>
+<li>В несколько раз ускорилось чтение</li>
+<li>Иногда читаем лишнее</li>
+</ul>
+
+<h2 id="metric-store-v2-идея">Metric store v2: идея!</h2>
+
+<p>Научиться хранить «хвост» данных в памяти надёжно.</p>
+
+<ul>
+<li>Уметь восстановить откуда-то за разумное время</li>
+<li>несколько консистентных реплик</li>
+</ul>
+
+<p>Сможем хвост читать из этой памяти, а более давние данные — уже из Casssandra.</p>
+
+<p>В результате начали изобретать велосипед. В любой БД есть WAL — write ahead log. Копим данные, а потом асинхронно пишем их, потому что сразу писать — дорого. Есть offset — какие данные мы уже записали.</p>
+
+<p>Концепция такая:</p>
+
+<ul>
+<li>Пишем в primary</li>
+<li>Он реплицируется в реплики</li>
+<li>Читать можем только из реплик</li>
+</ul>
+
+<p>В качестве WAL будем использовать kafka. Это просто надёжный лог. Producer в него пишет, а Consumer читает.</p>
+
+<p>Преимущества kafka:</p>
+
+<ul>
+<li>репликация из коробки</li>
+<li>шардинг из коробки</li>
+</ul>
+
+<p>Как работает Consumer:</p>
+
+<ul>
+<li>на низком уровне: ConsumePartition(&hellip;), GetOffset(&hellip;), и другие методы</li>
+<li>на высоком уровне: Consumer groups.</li>
+</ul>
+
+<p>В okmeter использовали низкоуровневый интерфейс.</p>
+
+<p>Если большой лаг или запрашивают диапазон больше чем у нас есть — ошибка.</p>
+
+<p>In-memory storage: реузльтаты</p>
+
+<ul>
+<li>быстрое чтение</li>
+<li>легко масштабируется</li>
+<li>простой код (ничего не знаем про репликацию, всё из коробки)</li>
+</ul>
+
+<p>Проблема: на полный потк метрик нужно 1,5 ядра на каждом инстансе</p>
+
+<h1 id="long-term-storage">Long-term storage</h1>
+
+<h2 id="long-term-storage-chunker">Long-term storage: chunker</h2>
+
+<ul>
+<li>сидит на потоке и формирует 4х-часовые чанки</li>
+<li>знает, откуда нужно начинать читать</li>
+<li>готовые чанки складывает в отдельный топик</li>
+<li>если пришла точка из прошлого — дописывает в тот же чанк, но с отдельным типом сообщения</li>
+</ul>
+
+<h2 id="long-term-storage-chunks-writer">Long-term storage: chunks-writer</h2>
+
+<ul>
+<li>Читает чанки</li>
+<li>если прилетает чанк — пишем его в C*</li>
+<li>если точка из прошлого — достаём чанк, добавляем точку, перезаписываем</li>
+</ul>
+
+<p>Результаты</p>
+
+<p>Cassandra: 30000 → 150 writes/second.</p>
+
+<h1 id="kafka-в-production">Kafka в production</h1>
+
+<ul>
+<li>6 x brokers v1.o</li>
+<li>подселяем брокеры на ноды k8s</li>
+<li>сырые точки храним 5 дней, это 5 терабайт</li>
+<li>чанки храним 2 месяца, это 3.3 терабайта с учётом репликации</li>
+<li>20000 produced messages/second</li>
+<li>суммарно на kafka: 10 ядер и 45Gb памяти</li>
+</ul>
+
+<h1 id="рекомендации">Рекомендации</h1>
+
+<ul>
+<li>Не обновляйтесь на *.0 релизы, даже если очень хочется. Могут быть баги.</li>
+<li>Kafka не парится о том, чтобы уменьшить количество копирований. Используйте generate.</li>
+<li>Если не задать лимит на скорость копирования, kafka убьёт диск, сеть и проц. После запуска лимит для операций копирования задать нельзя. Но если задать лимит заранее, можно поменять значение лимита.</li>
+<li>Не запускайте много переносов партиций за раз. С одного брокера-лидера только одну партицию за раз.</li>
+</ul>
+
+<h1 id="результат">Результат</h1>
+
+<ul>
+<li>Больше года в продакшене</li>
+<li>Поняли, как всё работает</li>
+</ul>
+
+<p>Бонус: легкость экспериментов.
+* Можно выгрузить настоящие сырые данные
+* можно сесть на поток настоящих сырых данных
+* небольшой overhead на хранение
+* можно хранить много данных на дешёвых и больших дисках</p>
+
+<p>Бонус: точка опоры</p>
+
+<ul>
+<li>от БД теперь не требуется распределённость</li>
+<li>Consumer + standalone db</li>
+</ul>
+
+<h1 id="итоги">Итоги</h1>
+
+<p>Если вы хотите написать свою специализированную БД:</p>
+
+<ul>
+<li>Подумайте 100 раз</li>
+<li>разберитесь, как работают взрослые БД</li>
+<li>используйте kafka в качестве wal</li>
+<li>напишите остаток кода</li>
+<li>Profit!?</li>
+</ul>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/conf/qualityconf/19/blameless/" class="left arrow">&#8592;</a>
+		<a href="/conf/knowledgeconf/19/knowledge-manger-6-10/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			<span>
+			&copy; <time datetime="2020-02-24 19:15:28.289791 &#43;0700 &#43;07 m=&#43;0.207424618">2020</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>

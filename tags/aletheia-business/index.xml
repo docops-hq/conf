@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aletheia Business on Конспекты</title>
+    <link>https://docops-hq.github.io/conf/tags/aletheia-business/</link>
+    <description>Recent content in Aletheia Business on Конспекты</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://docops-hq.github.io/conf/tags/aletheia-business/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>(Почти) Объективная оценка людей в IT</title>
+      <link>https://docops-hq.github.io/conf/aletheia/19/assessment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/aletheia/19/assessment/</guid>
+      <description>Автор конспекта — Родион Нагорнов.
+Георгий начал с того, что назвал айтишников творческими людьми и задался тем, как оценивать творчество? А затем перешёл к любимому вопросу «зачем это делать?» Он назвал желание наказать, поощрить и найти точки роста. Затем указал, что легче всего для разработчика измерить строки кода и отработанные Часы. Но это не работает, т.к. легко читерится.
+Метод What &amp;amp; How Что: Вклад в проект, команду; работа для других команд, закрытые тикеты, скорость работы, т.</description>
+    </item>
+    
+    <item>
+      <title>Трансофрмация бизнес-культуры: преодолеть сопротивление, добиться результата</title>
+      <link>https://docops-hq.github.io/conf/aletheia/19/culture-transformation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/aletheia/19/culture-transformation/</guid>
+      <description>Автор конспекта — Родион Нагорнов.
+Марина начинает с вопроса «зачем». Про этот вопрос я уже дважды выступал в этом году, и через пару дней выступлю ещё раз. Так что, я в тренде, у меня есть единомышленники. Кстати, предыдущие спикеры тоже говорили при «зачем».
+Итак, речь о создании дружественной среды для инноваций. Говорят, что многие руководители готовы выделять под это не более 2-3% времени на инновации. Но нормально - это хотя бы 30.</description>
+    </item>
+    
+  </channel>
+</rss>

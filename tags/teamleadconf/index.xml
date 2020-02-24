@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TeamLeadConf on Конспекты</title>
+    <link>https://docops-hq.github.io/conf/tags/teamleadconf/</link>
+    <description>Recent content in TeamLeadConf on Конспекты</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://docops-hq.github.io/conf/tags/teamleadconf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Как сделать так, чтобы документация не болела?</title>
+      <link>https://docops-hq.github.io/conf/teamleadconf/20/documentation_challenges/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/teamleadconf/20/documentation_challenges/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Проблемы с документацией.&lt;/li&gt;
+&lt;li&gt;Как можно решить.&lt;/li&gt;
+&lt;li&gt;Инструменты.&lt;/li&gt;
+&lt;li&gt;Контакты.&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

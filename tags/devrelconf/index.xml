@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevRelConf on Конспекты</title>
+    <link>https://docops-hq.github.io/conf/tags/devrelconf/</link>
+    <description>Recent content in DevRelConf on Конспекты</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://docops-hq.github.io/conf/tags/devrelconf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Как готовить начинающих спикеров, чтобы они превратились в опытных бренд-амбассадоров</title>
+      <link>https://docops-hq.github.io/conf/devrelconf/5/brand-ambassador/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/devrelconf/5/brand-ambassador/</guid>
+      <description>Результаты:  за три года узнаваемость компании повысилась с 5 до 75 процентов у приходящих людей  Зачем создавать бренд? Жизненный цикл &amp;ldquo;докладчика&amp;rdquo;: - приходит в компанию и около года въезжает в работу - полгода делает крутые штуки, про которые можно рассказат - остаётся полгода-год до того как он уйдёт, и в это время его очень важно отправить на конференцию с докладом, чтобы он привёл новых людей!
+Зачем нужно развивать бренд?</description>
+    </item>
+    
+    <item>
+      <title>Пишем не только код, но и статьи: как помочь разработчику стать техноавтором</title>
+      <link>https://docops-hq.github.io/conf/devrelconf/5/technical-authors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/devrelconf/5/technical-authors/</guid>
+      <description>Нужен ли вам техноблог?  Мы напишем и все придут к нам работать.
+ Нет.
+ Начальник: «Нам нужен блог»
+ Нет.
+ Мы будем продавать продукт через блог.
+ Вряд ли.
+ Это же почти бесплатно.
+ Нет, это очень дорого.
+Какие задачи решает техноблог:  Отвечает на обычные вопросы о компании и технологиях Дает площадку для экспертов Генерирует контент для других каналов Работает как публичная энциклопедия  Однако:</description>
+    </item>
+    
+    <item>
+      <title>Профессия «Ghostwriter», или Учим программистов писать статьи</title>
+      <link>https://docops-hq.github.io/conf/devrelconf/5/ghostwriters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/devrelconf/5/ghostwriters/</guid>
+      <description>Мария — PR-менеджер в KODE и лидер GDG в Калининграде. Специфика компании:
+ Разработка на аутсорс В регионе Сотрудники молодые Системы обучения нет 1 сотрудник решает все задачи с обучением  Руководство:
+ Хотим статьи разработчиков на Хабре и VC, чтобы нас читали, комментировали и хвалили. И поэтому чтобы к нам шли работать. У топов получается — значит и у нас сработает.
+ Что с этим делать? Да хоть что-нибудь.</description>
+    </item>
+    
+  </channel>
+</rss>

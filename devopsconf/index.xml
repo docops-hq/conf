@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devopsconfs on Конспекты</title>
+    <link>https://docops-hq.github.io/conf/devopsconf/</link>
+    <description>Recent content in Devopsconfs on Конспекты</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://docops-hq.github.io/conf/devopsconf/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>werf — наш инструмент для CI/CD в Kubernetes</title>
+      <link>https://docops-hq.github.io/conf/devopsconf/19/werf/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/devopsconf/19/werf/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Доставка&lt;/li&gt;
+&lt;li&gt;Сборка (build)&lt;/li&gt;
+&lt;li&gt;Публикация в registry (push)&lt;/li&gt;
+&lt;li&gt;Очистка registry&lt;/li&gt;
+&lt;li&gt;Деплой&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
+      <title>Как доставить быстро и без боли. Автоматизируем релизы</title>
+      <link>https://docops-hq.github.io/conf/devopsconf/19/fast-releases/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/devopsconf/19/fast-releases/</guid>
+      <description>&lt;ul&gt;
+&lt;li&gt;Оптимизация Code Review&lt;/li&gt;
+&lt;li&gt;Оптимизация тестирования&lt;/li&gt;
+&lt;li&gt;Оптимизация тестовых (бета) стендов&lt;/li&gt;
+&lt;li&gt;Оптимизация деплоя&lt;/li&gt;
+&lt;li&gt;Мониторинг&lt;/li&gt;
+&lt;li&gt;Канареечное тестирование&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>
+				Как стать классным спецом по базам данных &middot; Конспекты
+		</title>
+
+		
+  		<link rel="stylesheet" href="/conf/css/style.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
+		<link rel="stylesheet" href="/conf/custom.css">
+		
+		<link rel="icon" type="image/png" sizes="32x32" href="/conf/images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/conf/images/favicon-16x16.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/conf/images/apple-touch-icon.png">
+
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Конспекты" />
+	</head>
+
+    <body>
+        		<nav class="nav">
+			<div class="nav-container">
+				<a href="/conf/">
+					<h2 class="nav-title">Конспекты</h2>
+				</a>
+				<ul>
+    <li><a href="/conf/">Posts</a></li>
+</ul>
+
+			</div>
+		</nav>
+
+        
+
+<main>
+	<div class="post">
+		<div class="single__header">
+			<div class="post-info">
+        Илья Космодемьянский, Data Egret
+</div>
+
+			<h1 class="post-title">Как стать классным спецом по базам данных</h1>
+<div class="post-line"></div>
+<div class="tag-block"><span class="catalogue-tags"><a href='/conf/tags/highload' class="tags" >Highload</a></span><span class="catalogue-tags"><a href='/conf/tags/2018' class="tags" >2018</a></span></div>
+
+		</div>
+
+		
+
+		
+
+<p>БД — вещь простая, а люди сложные, поэтому советы могут не всем подойти.</p>
+
+<p>Сам следовал не всем советам.</p>
+
+<h1 id="кем-мы-хотим-стать">Кем мы хотим стать</h1>
+
+<p>Карта навыков:</p>
+
+<p><img src="../../../images/db-skills.png" alt="db-skills" /></p>
+
+<p>Любой роли полезно иметь навыки из соседних областей.</p>
+
+<h1 id="надо-ли-оно-нам">Надо ли оно нам</h1>
+
+<ul>
+<li>Скучно точно не будет. БД — это интересно.</li>
+<li>Покуда есть данные, будут и базы. Они могут поменяться, но они будут.</li>
+<li>DBA — как сантехник, но в тепле и за клавиатурой. Иногда не в тепле. :)</li>
+</ul>
+
+<p>Как?</p>
+
+<ul>
+<li>Получить профильное образование?
+Забудьте, нет такого образования.
+Но есть ВУЗы, которые хорошо этому учат.
+Но выйдя из вуза, вы не станете спецом.
+Можно стать классным разработчиком ба данных или спецом по database computer science.</li>
+<li>Пройти курсы?</li>
+<li>Прочитать книжку?</li>
+<li>Методом проб и ошибок?</li>
+</ul>
+
+<p>Идеальный экзамен на DBA в вакууме.</p>
+
+<ul>
+<li>На время починить базу, которую вы видите в первый раз, проблема непонятна, но всё тормозит.</li>
+<li>Экзаменаторов 10-20-30.</li>
+<li>3 спрашивают «ну как» в слаке</li>
+<li>3 спрашивают «ну как» по телефону</li>
+<li>1 требует залогировать время</li>
+<li>3 внедряют скрам прямо сейчас</li>
+</ul>
+
+<h1 id="теоретические-знания">Теоретические знания</h1>
+
+<ul>
+<li><p>Что первым приходит в голову?
+Реляционная алгебра.
+О ней стоит знать, но не изучать её больше недели, потому что она бесконечна.</p>
+
+<p>Пример: первая нормальная форма.
+Надо знать, но этого достаточно.
+Хорошая вводная книга: Новиков, Домбровская: Настройка приложений баз данных.</p></li>
+
+<li><p>Что вторым приходит в голову?
+B+, B* и т.п.
+Тоже не останется времени на дело.</p></li>
+</ul>
+
+<p>Суть: СУБД — это фреймворк для работы с данными.
+Он универсальный, надёжный, производительный.
+Как это происходит — нужно знать досконально.</p>
+
+<h1 id="практические-технические-навыки">Практические технические навыки</h1>
+
+<p>Конкретно что нужно знать:</p>
+
+<ul>
+<li><p>Concurrency control</p>
+
+<ul>
+<li>2 phase locking</li>
+<li>deadlock detection</li>
+<li>multi version concurrency control
+<br /></li>
+</ul></li>
+
+<li><p>Recovery</p>
+
+<ul>
+<li>write ahead log</li>
+<li>redo</li>
+<li>undo
+<br /></li>
+</ul></li>
+
+<li><p>Distributed transactions</p>
+
+<ul>
+<li>2 phase commit</li>
+<li>distributed recovery</li>
+</ul></li>
+</ul>
+
+<p>Что читать?</p>
+
+<ul>
+<li>минимум — википедия</li>
+<li>лучше книжка: G. Weikum, G. Vossen, Tranactional Informatino Systems: Theory, Algorithms, and the Practice of Concurrencty Control and Recovery.</li>
+</ul>
+
+<p>Как читать?</p>
+
+<ul>
+<li>в первый раз не читать про объекты и поисковые структуры</li>
+<li>потом читать ещё и ещё</li>
+</ul>
+
+<p>Подводные камни:</p>
+
+<ul>
+<li>не путать двухфазное блокирование и двухфазный коммит</li>
+<li>не противоставлять двухфазное блокирование и MVCC</li>
+</ul>
+
+<p>Всё это — пессимистические алгоритмы, они самые распространённые, но мир ими не ограничен.</p>
+
+<p>Отвыкайте читать книги и привыкайте читать документацию:</p>
+
+<ul>
+<li>Хороших книг по практике мало.</li>
+<li>Они редко и недолго бывают актуальными.</li>
+</ul>
+
+<p>Как читать документацию?</p>
+
+<ul>
+<li>Если один раз прочитать документацию о каждом параметре <code>postgresql.conf</code>, вы станете намного круче.</li>
+<li>Это же касается любой другой базы.</li>
+<li>Заведите тестовый сервер и экспериментируйте, как влияют разные параметры.</li>
+</ul>
+
+<p>Решаем проблемы</p>
+
+<ul>
+<li>сохраняйте спокойствие</li>
+<li>ищем причину: do not tune the query / know your data — думайте как устроен запрос, а не пытайтесь решить силком</li>
+<li>учите <strong>заранее</strong> средства диагностики — top, iostat, perf и другие</li>
+</ul>
+
+<h1 id="практические-нетехниеские-навыки">Практические нетехниеские навыки</h1>
+
+<ul>
+<li>Учитесь говорить, писать и читать по-русски и по-английски.</li>
+<li>Делайте доклады — учите коллег, выступайте на митапах, подавайтесь на Highload!</li>
+<li>Учитесь общаться с девелоперами, бизнесом и не только с ними. Без девелоперов и бизнеса не будет БД.</li>
+</ul>
+
+<p>Всё это придётся делать одновременно.</p>
+
+
+		
+	</div>
+
+	<div class="pagination">
+		<a href="/conf/highload/18/2.3-such-highload/" class="left arrow">&#8592;</a>
+		<a href="/conf/teamleadconf/20/documentation_challenges/" class="right arrow">&#8594;</a>
+
+		<a href="#" class="top">Top</a>
+	</div>
+</main>
+
+
+        		<footer>
+			<span>
+			&copy; <time datetime="2020-02-24 19:15:28.31769 &#43;0700 &#43;07 m=&#43;0.235324461">2020</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
+			</span>
+		</footer>
+
+    </body>
+</html>

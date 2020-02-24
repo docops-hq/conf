@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Одноклассники on Конспекты</title>
+    <link>https://docops-hq.github.io/conf/tags/%D0%BE%D0%B4%D0%BD%D0%BE%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%BD%D0%B8%D0%BA%D0%B8/</link>
+    <description>Recent content in Одноклассники on Конспекты</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://docops-hq.github.io/conf/tags/%D0%BE%D0%B4%D0%BD%D0%BE%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%BD%D0%B8%D0%BA%D0%B8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>UDP против TCP, или Будущее сетевого стека</title>
+      <link>https://docops-hq.github.io/conf/highload/19/tcp-vs-udp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docops-hq.github.io/conf/highload/19/tcp-vs-udp/</guid>
+      <description>TCP задуман как протокол надёжной доставки данных, а UDP — нет.
+Может ли оказаться, что UDP лучше решит задачу надёжной доставки?</description>
+    </item>
+    
+  </channel>
+</rss>
