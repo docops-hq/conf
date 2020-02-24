@@ -10,3 +10,4 @@ theme = "tale-hugo"
   blog = ["HTML", "JSON", "RSS"]
 [Params]
 css = ["custom.css"]
+ga_id = "UA-107215405-3"
