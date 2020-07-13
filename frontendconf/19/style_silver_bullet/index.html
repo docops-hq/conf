@@ -1,167 +1,38 @@
-<!DOCTYPE html>
-<html lang="en-us">
-    <head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		<title>
-				В поисках Стилевого Грааля &middot; Конспекты
-		</title>
-
-		
-  		<link rel="stylesheet" href="/conf/css/style.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
-		<link rel="stylesheet" href="/conf/custom.css">
-		
-		<link rel="icon" type="image/png" sizes="32x32" href="/conf/images/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/conf/images/favicon-16x16.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/conf/images/apple-touch-icon.png">
-
-		
-		<link href="" rel="alternate" type="application/rss+xml" title="Конспекты" />
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107215405-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-107215405-3');
-  </script>
-	</head>
-
-    <body>
-        		<nav class="nav">
-			<div class="nav-container">
-				<a href="/conf/">
-					<h2 class="nav-title">Конспекты</h2>
-				</a>
-				<ul>
-    <li><a href="/conf/">Posts</a></li>
-</ul>
-
-			</div>
-		</nav>
-
-        
-
-<main>
-	<div class="post">
-		<div class="single__header">
-			<div class="post-info">
-        Артур Кенжаев, Яндекс.Маркет
-</div>
-
-			<h1 class="post-title">В поисках Стилевого Грааля</h1>
-<div class="post-line"></div>
-<div class="tag-block"><span class="catalogue-tags"><a href='/conf/tags/frontendconf' class="tags" >FrontendConf</a></span><span class="catalogue-tags"><a href='/conf/tags/2019' class="tags" >2019</a></span></div>
-
-		</div>
-
-		
-
-		
-
-<h2 id="прошлое">Прошлое</h2>
-
-<p>На заре интернета стили страницы считались статичными и декларативными, и начали появляться решения для подобной
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>В поисках Стилевого Грааля &middot; Конспекты</title><link rel=stylesheet href=/conf/css/style.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700"><link rel=stylesheet href=/conf/custom.css><link rel=icon type=image/png sizes=32x32 href=/conf/images/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/conf/images/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/conf/images/apple-touch-icon.png><link href rel=alternate type=application/rss+xml title=Конспекты><script async src="https://www.googletagmanager.com/gtag/js?id=UA-107215405-3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-107215405-3');</script></head><body><nav class=nav><div class=nav-container><a href=/conf/><h2 class=nav-title>Конспекты</h2></a><ul><li><a href=/conf/>Posts</a></li></ul></div></nav><main><div class=post><div class=single__header><div class=post-info>Артур Кенжаев, Яндекс.Маркет</div><h1 class=post-title>В поисках Стилевого Грааля</h1><div class=post-line></div><div class=tag-block><span class=catalogue-tags><a href=/conf/tags/frontendconf class=tags>FrontendConf</a></span><span class=catalogue-tags><a href=/conf/tags/2019 class=tags>2019</a></span></div></div><h2 id=прошлое>Прошлое</h2><p>На заре интернета стили страницы считались статичными и декларативными, и начали появляться решения для подобной
 стилизации:
- - tags: <font>abc</font>
- - JSSS: tags.H1.color
- - CSS Expressions: expression(a+b)
- - CSS!</p>
-
-<p>У CSS есть множество проблем: отсутствие реиспользования, неявность, неинтерактивность, сложность чтения.</p>
-
-<p>Потом начали появляться решения, которые пытались пофиксить CSS &ndash; например, БЭМ, который вводил новые сущности и
-абстракции, упрощающие стилизацию приложения. А потом bootstrap, shadow dom, webpack, component, css modules, &hellip;</p>
-
-<p>И проснулось дублирование!</p>
-
-<pre><code class="language-html">&lt;button type=&quot;button&quot; class=&quot;btn-cls&quot;&gt;Button&lt;/button&gt;
-</code></pre>
-
-<p>Хотя PostCSS и CSS Modules закрыли большинство вопросов, но остались вопросы:
- - сборка
- - семавнтика
- - порого вхождения
- - темизация
- - tree shaking
- - runtime стили
- - универсальность</p>
-
-<h2 id="css-in-js">CSS-in-JS</h2>
-
-<p>И появился Styled Components, решающий кучу проблем:
- - специфичность
- - сборка
- - семантика
- - порог вхождения
- - темизация</p>
-
-<p><strong>А есть недостатки?</strong></p>
-
-<p>Есть!
- - Производительность, на больших компонентах это тормозит
- - Можно (легко) написать отвратительный код
- - Комбинаторика злая: 4 состояния по 3 значения и у нас гигантский блок кода с дублированием
- - Извлечение статических стилей сложно и ненативно
- - Язык императивен и if-ами писать около-декларативную вещь сложно
- - Отсутствие контроля над внешним интерфейсом
- - Отсутствия контроля над внутренним интерфейсом — непонятно как отделить пропсы от HTML аттрибутов
- - Смешивание глобальных классов, styled components и всего остального</p>
-
-<p>В итоге, решая проблемы мы делаем новые проблемы и попадаем в новый замкнутый цикл проблем. Время посмотреть в
-прошлое и понять что было придумано раньше.</p>
-
-<h2 id="shadow-dom-и-высокоуровневые-абстракции">shadow dom и высокоуровневые абстракции</h2>
-
-<p>Одно из решений — reshadow, позволяет семантически абстрагироваться от HTML и стилей, и писать на высокоуровневые
-тегах, используя shadow dom и не думая о конкретных тегах и селекторах.</p>
-
-<p>Из-за особенностей рендеринга с reshadow (использование модфикаторов и css variables в корневых тегах компонентов),
-есть возможность вынести стили в отдельный файл.</p>
-
-<p>Как менять стили компонентов?
- - модификация компонентов (изменение компонентов)
- - темизация (декларативное определение различных тем)
- - стилизация (прямая передача набора стилей)</p>
-
-<p>Т.к. reshadow позволяет вынести стили в пропсы компонента, то можно использовать стилизацию как интерфейс к
-компоненту и получить все преимущества этого подхода.</p>
-
-<h2 id="плюшки-от-reshadow">Плюшки от reshadow</h2>
-
-<ul>
-<li>вынос динамических вещей и экспериментов в чанки;</li>
-<li>core-компоненты не имеют прямых зависимиостей от других компонентов, не используют контекст;</li>
-<li>в контексте могут быть не только стили, но и любые значения;</li>
-<li>есть возможность переопределения render и lifecycle;</li>
-<li>производительность (из-за обработки стилей во время сборки);</li>
-<li>на выходе получается обычный HTML и CSS, который можно читать;</li>
-<li>возможность построить маппинг всех стилей и состояний;</li>
-<li>можно использовать вместе с PostCSS;</li>
-<li>фреймворк-агностик;</li>
-</ul>
-
-
-		
-	</div>
-
-	<div class="pagination">
-		<a href="/conf/highload/18/1.9-data-engineers/" class="left arrow">&#8592;</a>
-		<a href="/conf/highload/18/1.4-bd-k8s/" class="right arrow">&#8594;</a>
-
-		<a href="#" class="top">Top</a>
-	</div>
-</main>
-
-
-        		<footer>
-			<span>
-			&copy; <time datetime="2020-02-24 20:54:54.106594 &#43;0700 &#43;07 m=&#43;0.245034032">2020</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
-			</span>
-		</footer>
-
-    </body>
-</html>
+- tags: <font>abc</font>
+- JSSS: tags.H1.color
+- CSS Expressions: expression(a+b)
+- CSS!</p><p>У CSS есть множество проблем: отсутствие реиспользования, неявность, неинтерактивность, сложность чтения.</p><p>Потом начали появляться решения, которые пытались пофиксить CSS &ndash; например, БЭМ, который вводил новые сущности и
+абстракции, упрощающие стилизацию приложения. А потом bootstrap, shadow dom, webpack, component, css modules, &hellip;</p><p>И проснулось дублирование!</p><pre><code class=language-html>&lt;button type=&quot;button&quot; class=&quot;btn-cls&quot;&gt;Button&lt;/button&gt;
+</code></pre><p>Хотя PostCSS и CSS Modules закрыли большинство вопросов, но остались вопросы:
+- сборка
+- семавнтика
+- порого вхождения
+- темизация
+- tree shaking
+- runtime стили
+- универсальность</p><h2 id=css-in-js>CSS-in-JS</h2><p>И появился Styled Components, решающий кучу проблем:
+- специфичность
+- сборка
+- семантика
+- порог вхождения
+- темизация</p><p><strong>А есть недостатки?</strong></p><p>Есть!
+- Производительность, на больших компонентах это тормозит
+- Можно (легко) написать отвратительный код
+- Комбинаторика злая: 4 состояния по 3 значения и у нас гигантский блок кода с дублированием
+- Извлечение статических стилей сложно и ненативно
+- Язык императивен и if-ами писать около-декларативную вещь сложно
+- Отсутствие контроля над внешним интерфейсом
+- Отсутствия контроля над внутренним интерфейсом — непонятно как отделить пропсы от HTML аттрибутов
+- Смешивание глобальных классов, styled components и всего остального</p><p>В итоге, решая проблемы мы делаем новые проблемы и попадаем в новый замкнутый цикл проблем. Время посмотреть в
+прошлое и понять что было придумано раньше.</p><h2 id=shadow-dom-и-высокоуровневые-абстракции>shadow dom и высокоуровневые абстракции</h2><p>Одно из решений — reshadow, позволяет семантически абстрагироваться от HTML и стилей, и писать на высокоуровневые
+тегах, используя shadow dom и не думая о конкретных тегах и селекторах.</p><p>Из-за особенностей рендеринга с reshadow (использование модфикаторов и css variables в корневых тегах компонентов),
+есть возможность вынести стили в отдельный файл.</p><p>Как менять стили компонентов?
+- модификация компонентов (изменение компонентов)
+- темизация (декларативное определение различных тем)
+- стилизация (прямая передача набора стилей)</p><p>Т.к. reshadow позволяет вынести стили в пропсы компонента, то можно использовать стилизацию как интерфейс к
+компоненту и получить все преимущества этого подхода.</p><h2 id=плюшки-от-reshadow>Плюшки от reshadow</h2><ul><li>вынос динамических вещей и экспериментов в чанки;</li><li>core-компоненты не имеют прямых зависимиостей от других компонентов, не используют контекст;</li><li>в контексте могут быть не только стили, но и любые значения;</li><li>есть возможность переопределения render и lifecycle;</li><li>производительность (из-за обработки стилей во время сборки);</li><li>на выходе получается обычный HTML и CSS, который можно читать;</li><li>возможность построить маппинг всех стилей и состояний;</li><li>можно использовать вместе с PostCSS;</li><li>фреймворк-агностик;</li></ul></div><div class=pagination><a href=/conf/highload/18/1.9-data-engineers/ class="left arrow">&#8592;</a>
+<a href=/conf/highload/18/1.4-bd-k8s/ class="right arrow">&#8594;</a>
+<a href=# class=top>Top</a></div></main><footer><span>&copy; <time datetime="2020-07-13 11:44:29.11928107 &#43;0000 UTC m=&#43;0.134815186">2020</time> . Made with <a href=https://gohugo.io>Hugo</a> using the <a href=https://github.com/EmielH/tale-hugo/>Tale</a> theme.</span></footer></body></html>

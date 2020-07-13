@@ -1,125 +1,13 @@
-<!DOCTYPE html>
-<html lang="en-us">
-    <head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		<title>
-				Убивай мутантов, спаси свой код &middot; Конспекты
-		</title>
-
-		
-  		<link rel="stylesheet" href="/conf/css/style.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
-		<link rel="stylesheet" href="/conf/custom.css">
-		
-		<link rel="icon" type="image/png" sizes="32x32" href="/conf/images/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/conf/images/favicon-16x16.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/conf/images/apple-touch-icon.png">
-
-		
-		<link href="" rel="alternate" type="application/rss+xml" title="Конспекты" />
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107215405-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-107215405-3');
-  </script>
-	</head>
-
-    <body>
-        		<nav class="nav">
-			<div class="nav-container">
-				<a href="/conf/">
-					<h2 class="nav-title">Конспекты</h2>
-				</a>
-				<ul>
-    <li><a href="/conf/">Posts</a></li>
-</ul>
-
-			</div>
-		</nav>
-
-        
-
-<main>
-	<div class="post">
-		<div class="single__header">
-			<div class="post-info">
-        Никита Соболев, wemake.services
-</div>
-
-			<h1 class="post-title">Убивай мутантов, спаси свой код</h1>
-<div class="post-line"></div>
-<div class="tag-block"><span class="catalogue-tags"><a href='/conf/tags/moscow-python-conf' class="tags" >Moscow Python Conf</a></span><span class="catalogue-tags"><a href='/conf/tags/2019' class="tags" >2019</a></span><span class="catalogue-tags"><a href='/conf/tags/python' class="tags" >Python</a></span></div>
-
-		</div>
-
-		
-
-		
-
-<p>Доклад про мутационное тестирование.
-Если у вас уже есть 100% покрытие по всем параметрам, то вам сюда.</p>
-
-<h1 id="наши-тесты-ничего-не-проверяют-что-с-этим-делать">Наши тесты ничего не проверяют. Что с этим делать</h1>
-
-<p>Как мы работаем:</p>
-
-<ol>
-<li>Прилетает пуллреквест с изменениями кода и тестов</li>
-<li>Проходит CI</li>
-<li>Ревью кода.</li>
-<li>Мерж в мастер</li>
-<li>Всё в огне!</li>
-</ol>
-
-<p>Почему так? Потому что наши тесты ничего не проверяют.</p>
-
-<p>«Логичные» выводы:</p>
-
-<ul>
-<li>писать больше тестов</li>
-<li>увеличивать покрытие</li>
-<li>больше ревьюить.</li>
-</ul>
-
-<p>Давайте разберём их подробнее.</p>
-
-<h2 id="писать-больше-тестов">Писать больше тестов?</h2>
-
-<p>Давайте попробуем.</p>
-
-<ul>
-<li>больше тестов = больше кода (тестов),</li>
-<li>больше кода = больше багов,</li>
-<li>а ещё, больше тестов = больше дубликатов,</li>
-<li>и наконец, больше тестов = затык на CI.</li>
-</ul>
-
-<p>Не надо больше тестов!
-Надо меньше, но лучше.</p>
-
-<h2 id="повысить-покрытие">Повысить покрытие?</h2>
-
-<p>Дальше, повысили покрытие.
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Убивай мутантов, спаси свой код &middot; Конспекты</title><link rel=stylesheet href=/conf/css/style.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700"><link rel=stylesheet href=/conf/custom.css><link rel=icon type=image/png sizes=32x32 href=/conf/images/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/conf/images/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/conf/images/apple-touch-icon.png><link href rel=alternate type=application/rss+xml title=Конспекты><script async src="https://www.googletagmanager.com/gtag/js?id=UA-107215405-3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-107215405-3');</script></head><body><nav class=nav><div class=nav-container><a href=/conf/><h2 class=nav-title>Конспекты</h2></a><ul><li><a href=/conf/>Posts</a></li></ul></div></nav><main><div class=post><div class=single__header><div class=post-info>Никита Соболев, wemake.services</div><h1 class=post-title>Убивай мутантов, спаси свой код</h1><div class=post-line></div><div class=tag-block><span class=catalogue-tags><a href=/conf/tags/moscow-python-conf class=tags>Moscow Python Conf</a></span><span class=catalogue-tags><a href=/conf/tags/2019 class=tags>2019</a></span><span class=catalogue-tags><a href=/conf/tags/python class=tags>Python</a></span></div></div><p>Доклад про мутационное тестирование.
+Если у вас уже есть 100% покрытие по всем параметрам, то вам сюда.</p><h1 id=наши-тесты-ничего-не-проверяют-что-с-этим-делать>Наши тесты ничего не проверяют. Что с этим делать</h1><p>Как мы работаем:</p><ol><li>Прилетает пуллреквест с изменениями кода и тестов</li><li>Проходит CI</li><li>Ревью кода.</li><li>Мерж в мастер</li><li>Всё в огне!</li></ol><p>Почему так? Потому что наши тесты ничего не проверяют.</p><p>«Логичные» выводы:</p><ul><li>писать больше тестов</li><li>увеличивать покрытие</li><li>больше ревьюить.</li></ul><p>Давайте разберём их подробнее.</p><h2 id=писать-больше-тестов>Писать больше тестов?</h2><p>Давайте попробуем.</p><ul><li>больше тестов = больше кода (тестов),</li><li>больше кода = больше багов,</li><li>а ещё, больше тестов = больше дубликатов,</li><li>и наконец, больше тестов = затык на CI.</li></ul><p>Не надо больше тестов!
+Надо меньше, но лучше.</p><h2 id=повысить-покрытие>Повысить покрытие?</h2><p>Дальше, повысили покрытие.
 Ну вот у нас 100% покрытия.
-И что?</p>
-
-<p>Вот функция из одной строчки.
-Она полностью покрыта тестами и работает.</p>
-
-<pre><code class="language-python">def negate(first: float):
+И что?</p><p>Вот функция из одной строчки.
+Она полностью покрыта тестами и работает.</p><pre><code class=language-python>def negate(first: float):
     &quot;&quot;&quot;Return the negated number.&quot;&quot;&quot;
     return 0 - first
-</code></pre>
-
-<p>А вот тест, который полностью покрывает эту функцию.</p>
-
-<pre><code class="language-python">@pytest.mark.parametrize('given, expected', [
+</code></pre><p>А вот тест, который полностью покрывает эту функцию.</p><pre><code class=language-python>@pytest.mark.parametrize('given, expected', [
     (-1,1),
     (0,0),
     (0.5,0.5),
@@ -129,42 +17,16 @@ def test_negate(given, expected):
     
     # TODO: uncomment this line:
     # assert function_result == expected
-</code></pre>
-
-<p>Покрытия мало, нужны сами проверки.
-Вывод: надо тестировать тесты.</p>
-
-<h2 id="cтроже-ревьюить">Cтроже ревьюить?</h2>
-
-<p>В хорошем проекте тестов гораздо больше, чем кода.
+</code></pre><p>Покрытия мало, нужны сами проверки.
+Вывод: надо тестировать тесты.</p><h2 id=cтроже-ревьюить>Cтроже ревьюить?</h2><p>В хорошем проекте тестов гораздо больше, чем кода.
 В коде хорошая понятная логика, а в тестах — сборник непонятных ситуаций, которые могут и не произойти.
-А ещё тесты обычно написаны плохо, но их читаемость можно повышать.</p>
-
-<p>Бывает, что человек удалил тест. Почему?
+А ещё тесты обычно написаны плохо, но их читаемость можно повышать.</p><p>Бывает, что человек удалил тест. Почему?
 Может, тест падал?
 Или он больше не нужен?
-Очень сложно понять это на ревью.</p>
-
-<h2 id="нет-придётся-тестировать-тесты">Нет, придётся тестировать тесты</h2>
-
-<p>Ничего из этого не работает.
+Очень сложно понять это на ревью.</p><h2 id=нет-придётся-тестировать-тесты>Нет, придётся тестировать тесты</h2><p>Ничего из этого не работает.
 Придётся тестировать тесты.
-Давайте поймём, как это делать.</p>
-
-<p>Как обычно выглядит первая задача на новом проекте:</p>
-
-<ul>
-<li>Сотни тысяч строк кода</li>
-<li>Десятки тысяч тестов</li>
-<li>Одна простая новая фича</li>
-</ul>
-
-<p>Мы что-то меняем и проверяем, работает или нет.
-Пока знания кода нет, мы меняем код в случайных местах.</p>
-
-<p>Посмотрим на пример: оптимизировали сортировку пузырьком.</p>
-
-<pre><code class="language-diff">def bubble_sort(array: list) -&gt; list:
+Давайте поймём, как это делать.</p><p>Как обычно выглядит первая задача на новом проекте:</p><ul><li>Сотни тысяч строк кода</li><li>Десятки тысяч тестов</li><li>Одна простая новая фича</li></ul><p>Мы что-то меняем и проверяем, работает или нет.
+Пока знания кода нет, мы меняем код в случайных местах.</p><p>Посмотрим на пример: оптимизировали сортировку пузырьком.</p><pre><code class=language-diff>def bubble_sort(array: list) -&gt; list:
     length = len(array)
     for first in range(length - 1):
 +++     swapped = False    
@@ -176,152 +38,50 @@ def test_negate(given, expected):
 +++     if not swapped:
 +++         break
     return array
-</code></pre>
-
-<p>Тесты проходят, всё отлично, да?
-Давайте точно зафейлим метод:</p>
-
-<pre><code class="language-diff">    length = len(array)
+</code></pre><p>Тесты проходят, всё отлично, да?
+Давайте точно зафейлим метод:</p><pre><code class=language-diff>    length = len(array)
     for first in range(length - 1):
 +++     raise ValueError('Should fail!')  
-</code></pre>
-
-<p>А тесты снова проходят. О_о. Как же так?
+</code></pre><p>А тесты снова проходят. О_о. Как же так?
 Давайте поправим тест, который не упал, а должен был.
-Теперь тесты падают и это нам нравится.</p>
-
-<p>Отлично, давайте теперь ломать весь оставшийся код!
-По очереди немного поменяем каждую строку в проекте.</p>
-
-<p>Например, так.</p>
-
-<pre><code class="language-diff">--- if oversize &gt; 0:
+Теперь тесты падают и это нам нравится.</p><p>Отлично, давайте теперь ломать весь оставшийся код!
+По очереди немного поменяем каждую строку в проекте.</p><p>Например, так.</p><pre><code class=language-diff>--- if oversize &gt; 0:
 +++ if oversize &gt; 1:
         print('{0} exceeds {1} limit by {2}'.format(
             arguments.image,
             arguments.size,
             format_size(oversize, binary=True),
         ))
-</code></pre>
-
-<p>Хорошие тесты должны упасть в этом месте.</p>
-
-<p>А что если поменять формат принта?</p>
-
-<pre><code class="language-diff">if oversize &gt; 0:
+</code></pre><p>Хорошие тесты должны упасть в этом месте.</p><p>А что если поменять формат принта?</p><pre><code class=language-diff>if oversize &gt; 0:
 --- print('{0} exceeds {1} limit by {2}'.format(
 +++ print('XX{0} xx {1} xxx by {2}XX'.format(
         arguments.image,
         arguments.size,
         format_size(oversize, binary=True),
     ))
-</code></pre>
-
-<p>А если поменять <code>True</code> на <code>False</code>?</p>
-
-<pre><code class="language-diff">if oversize &gt; 0:
+</code></pre><p>А если поменять <code>True</code> на <code>False</code>?</p><pre><code class=language-diff>if oversize &gt; 0:
     print('{0} exceeds {1} limit by {2}'.format(
         arguments.image,
         arguments.size,
 ---     format_size(oversize, binary=True),
 +++     format_size(oversize, binary=False),
     ))
-</code></pre>
-
-<p>После каждой мутации мы прогоняем тесты.
-Вот что может случиться:</p>
-
-<ul>
-<li>тесты упадут и убьют мутанта</li>
-<li>таймаут</li>
-<li>WTF</li>
-<li>тесты пропустят мутанта и не упадут</li>
-</ul>
-
-<h1 id="технология-мутации">Технология мутации</h1>
-
-<p>Не регулярками же менять код. Давайте как-нибудь по-умному это делать.</p>
-
-<p>Берём абстрактное синтаксическое дерево (AST).
-Конкретные кусочки меняем на похожие, например так:</p>
-
-<pre><code>+       —&gt;  -
+</code></pre><p>После каждой мутации мы прогоняем тесты.
+Вот что может случиться:</p><ul><li>тесты упадут и убьют мутанта</li><li>таймаут</li><li>WTF</li><li>тесты пропустят мутанта и не упадут</li></ul><h1 id=технология-мутации>Технология мутации</h1><p>Не регулярками же менять код. Давайте как-нибудь по-умному это делать.</p><p>Берём абстрактное синтаксическое дерево (AST).
+Конкретные кусочки меняем на похожие, например так:</p><pre><code>+       —&gt;  -
 True    —&gt;  False
 x       —&gt;  not x
 'a'     —&gt;  'X'
 and     —&gt;  or
 &gt;       —&gt;  &gt;=
-</code></pre>
-
-<p>Вообще, стратегий очень много.</p>
-
-<p>Алгоритм мутационного тестирования такой:</p>
-
-<ul>
-<li>Мутируем строчку кода</li>
-<li>Запускаем тесты</li>
-<li>Собираем статистику: упало или нет</li>
-<li>Повторяем</li>
-</ul>
-
-<h1 id="инструменты">Инструменты</h1>
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Интеграция с pytest</th>
-<th>Отчёты</th>
-<th>Работает</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>CosmicRay</td>
-<td>:x:</td>
-<td>:heavy_check_mark:</td>
-<td>:heavy_check_mark:</td>
-</tr>
-
-<tr>
-<td>MutPy</td>
-<td>:x:</td>
-<td>:heavy_check_mark:</td>
-<td>:x:<a href="#why">*</a></td>
-</tr>
-
-<tr>
-<td>mutmut</td>
-<td>:heavy_check_mark:</td>
-<td>:heavy_check_mark:</td>
-<td>:heavy_check_mark:</td>
-</tr>
-</tbody>
-</table>
-
-<p><span id="why"><sup>*</sup></span>MutPy у Никиты вообще не завёлся.</p>
-
-<h1 id="какие-ошибки-можно-найти">Какие ошибки можно найти</h1>
-
-<h2 id="плохие-данные">Плохие данные</h2>
-
-<pre><code class="language-python">def add(first: float, second: float):
+</code></pre><p>Вообще, стратегий очень много.</p><p>Алгоритм мутационного тестирования такой:</p><ul><li>Мутируем строчку кода</li><li>Запускаем тесты</li><li>Собираем статистику: упало или нет</li><li>Повторяем</li></ul><h1 id=инструменты>Инструменты</h1><table><thead><tr><th></th><th>Интеграция с pytest</th><th>Отчёты</th><th>Работает</th></tr></thead><tbody><tr><td>CosmicRay</td><td>:x:</td><td>:heavy_check_mark:</td><td>:heavy_check_mark:</td></tr><tr><td>MutPy</td><td>:x:</td><td>:heavy_check_mark:</td><td>:x:<a href=#why>*</a></td></tr><tr><td>mutmut</td><td>:heavy_check_mark:</td><td>:heavy_check_mark:</td><td>:heavy_check_mark:</td></tr></tbody></table><p><span id=why><sup>*</sup></span>MutPy у Никиты вообще не завёлся.</p><h1 id=какие-ошибки-можно-найти>Какие ошибки можно найти</h1><h2 id=плохие-данные>Плохие данные</h2><pre><code class=language-python>def add(first: float, second: float):
     &quot;&quot;&quot;Simple function to show the problem.&quot;&quot;&quot;
     return first + second
     
 def test_add():
     assert add(0, 0) == 0
     assert add(2, 2) == 4
-</code></pre>
-
-<p>Тут всё очевидно, а в реальной жизни мы не замечаем плохие тестовые данные, потому что они сложные.</p>
-
-<h2 id="плохие-тесты">Плохие тесты</h2>
-
-<p>Плохие тесты — такие, которые ничего не тестируют.</p>
-
-<pre><code class="language-python">app = Flask(__name__)
+</code></pre><p>Тут всё очевидно, а в реальной жизни мы не замечаем плохие тестовые данные, потому что они сложные.</p><h2 id=плохие-тесты>Плохие тесты</h2><p>Плохие тесты — такие, которые ничего не тестируют.</p><pre><code class=language-python>app = Flask(__name__)
 
 @app.route('/&lt;int:index&gt;')
 def hello(index: int):
@@ -341,205 +101,74 @@ def test_hello_view(flask_client):
     assert response.status_code == 200
     assert b'world' in response.data
     assert b'0' in response.data
-</code></pre>
-
-<p>А <code>1 * index</code> — это вообще бизнес-логика.
+</code></pre><p>А <code>1 * index</code> — это вообще бизнес-логика.
 Её нужно вынести в отдельную функцию и тестировать юнит-тестами.
-Вот так надо:</p>
-
-<pre><code class="language-python">@app.route('/&lt;int:index&gt;')
+Вот так надо:</p><pre><code class=language-python>@app.route('/&lt;int:index&gt;')
 def hello(index: int):
     return 'Hello, world! {0} faith in you.'.format(
         calculate_faith(index),
     )
-</code></pre>
-
-<h2 id="связанные-данные">Связанные данные</h2>
-
-<pre><code class="language-diff">WRONG_LETTERS = [
+</code></pre><h2 id=связанные-данные>Связанные данные</h2><pre><code class=language-diff>WRONG_LETTERS = [
 --- 'a',
 +++ 'X',
 ]
 
 def is_wrong_letter(letter:str) -&gt; bool:
     return letter in WRONG_LETTERS
-</code></pre>
-
-<p>А вот наш тест, который использует те же данные, что и метод:</p>
-
-<pre><code class="language-python">from source import WRONG_LETTERS, is_wrong_letter
+</code></pre><p>А вот наш тест, который использует те же данные, что и метод:</p><pre><code class=language-python>from source import WRONG_LETTERS, is_wrong_letter
 
 @pytest.mark.parametrize('letter', WRONG_LETTERS)
 def test_is_wrong_letter(letter):
     assert is_wrong_letter(letter) is True
-</code></pre>
-
-<p>Правильно — задублировать данные:</p>
-
-<pre><code class="language-python">@pytest.mark.parametrize('letter', ['a'])
+</code></pre><p>Правильно — задублировать данные:</p><pre><code class=language-python>@pytest.mark.parametrize('letter', ['a'])
 def test_is_wrong_letter(letter):
     assert is_wrong_letter(letter) is True
-</code></pre>
-
-<h2 id="частичные-тесты">Частичные тесты</h2>
-
-<pre><code class="language-python">def test_save_subscription(form):
+</code></pre><h2 id=частичные-тесты>Частичные тесты</h2><pre><code class=language-python>def test_save_subscription(form):
     instance = save_subscription(form)
     
     assert instance.id &gt; 0
     assert instance.name == form.data['name']
-</code></pre>
-
-<p>А функция такая.
+</code></pre><p>А функция такая.
 Она не только сохраняет подписку, но ещё и отправляет рассылку.
-И мы это не тестируем, а должны.</p>
-
-<pre><code class="language-diff">def save_subscription(form):
+И мы это не тестируем, а должны.</p><pre><code class=language-diff>def save_subscription(form):
     subscription = form.save()
 --- queue_welcome_email.delay(subscription.id)
 +++ queue_welcome_email.delay(None)
     return subscription
-</code></pre>
-
-<p>Тестируйте сайд-эффекты!</p>
-
-<pre><code class="language-diff">def test_save_subscription(form):
+</code></pre><p>Тестируйте сайд-эффекты!</p><pre><code class=language-diff>def test_save_subscription(form):
     instance = save_subscription(form)
     
     assert instance.id &gt; 0
     assert instance.name == form.data['name']
 +++ assert redis.get(queue(instance))
-</code></pre>
-
-<h2 id="медленные-и-бесконечные-тесты">Медленные и бесконечные тесты</h2>
-
-<p>Ставьте таймаут.
-Тесты с таймаутом помогут вам не уронить прод.</p>
-
-<blockquote>
-<p>pypi.org/project/pytest-timeout</p>
-</blockquote>
-
-<pre><code class="language-diff">CELERY_BROKER_URL = 'redis://{host}:{port}'.format(
+</code></pre><h2 id=медленные-и-бесконечные-тесты>Медленные и бесконечные тесты</h2><p>Ставьте таймаут.
+Тесты с таймаутом помогут вам не уронить прод.</p><blockquote><p>pypi.org/project/pytest-timeout</p></blockquote><pre><code class=language-diff>CELERY_BROKER_URL = 'redis://{host}:{port}'.format(
 --- host=config('HOST', default='localhost'),
 +++ host=config('HOST', default='XXlocalhostXX'),
     ...
 )
-</code></pre>
-
-<h1 id="не-весь-код-полезно-мутировать">Не весь код полезно мутировать</h1>
-
-<p>Как не создавать бесполезных мутантов?</p>
-
-<ol>
-<li>Запускаем конкретный тест.</li>
-<li>Собираем coverage.</li>
-<li>Мутируем только нужный код: <code>--path-to-mutate</code>.</li>
-</ol>
-
-<p>Всё это очень долго.
+</code></pre><h1 id=не-весь-код-полезно-мутировать>Не весь код полезно мутировать</h1><p>Как не создавать бесполезных мутантов?</p><ol><li>Запускаем конкретный тест.</li><li>Собираем coverage.</li><li>Мутируем только нужный код: <code>--path-to-mutate</code>.</li></ol><p>Всё это очень долго.
 Например, если у нас 1 тест и 1000 мутаций, то они займут 16 минут.
-Как оптимизировать?</p>
-
-<ol>
-<li>Отключаем плагины: coverage, random ordering, дополнительные проверки. Стало 15 минут.</li>
-<li>Ничего не пишем: <code>--tb=no --quiet</code>. 10 минут.</li>
-<li>Падаем на первом тесте: <code>--exitfirst</code>. 6 минут.</li>
-<li>А теперь проверяем только тот код, который покрыт тестами: <code>--use-coverage</code>.
+Как оптимизировать?</p><ol><li>Отключаем плагины: coverage, random ordering, дополнительные проверки. Стало 15 минут.</li><li>Ничего не пишем: <code>--tb=no --quiet</code>. 10 минут.</li><li>Падаем на первом тесте: <code>--exitfirst</code>. 6 минут.</li><li>А теперь проверяем только тот код, который покрыт тестами: <code>--use-coverage</code>.
 Тут мы запускаем тесты 1 раз, чтобы посчитать coverage, а потом используем его для мутации.
-Стало 5 минут.</li>
-<li>Плагин <code>pytest.testmon</code>: <code>--testmon</code>.
+Стало 5 минут.</li><li>Плагин <code>pytest.testmon</code>: <code>--testmon</code>.
 Когда мы поменяли кусочек кода, надо запустить именно тот тест, который за него отвечает.
 Это тоже определяется с помощью coverage.
-Теперь 4 минуты.</li>
-</ol>
-
-<h1 id="как-настроить-и-запустить-mutmut">Как настроить и запустить mutmut</h1>
-
-<p>Настроить:</p>
-
-<pre><code class="language-ini">[mutmut]
+Теперь 4 минуты.</li></ol><h1 id=как-настроить-и-запустить-mutmut>Как настроить и запустить mutmut</h1><p>Настроить:</p><pre><code class=language-ini>[mutmut]
 paths_to_mutate=src/
 backup=False
 runner=pytest -x -q --tb=no --testmon -o addopts=&quot;&quot;
 tests_dir=tests/
-</code></pre>
-
-<p>Запустить:</p>
-
-<pre><code class="language-bash">mutmut run --use-coverage -s
-</code></pre>
-
-<h1 id="результаты">Результаты</h1>
-
-<p>Вспомним, что мы хотели, чтобы тестов было меньше и они были лучше.
+</code></pre><p>Запустить:</p><pre><code class=language-bash>mutmut run --use-coverage -s
+</code></pre><h1 id=результаты>Результаты</h1><p>Вспомним, что мы хотели, чтобы тестов было меньше и они были лучше.
 Теперь мы можем найти лишние тесты (которые не падают) и убрать их.
 У mutmut есть хук <code>--post-mutation</code>.
-Мы можем им записать тесты, которые не упали ни разу.</p>
-
-<p>Всё это отлично работает с TDD.
+Мы можем им записать тесты, которые не упали ни разу.</p><p>Всё это отлично работает с TDD.
 Пишем код и сразу тесты.
 Мутируем код, мутируем тесты, всё проверяем.
-Теперь наши тесты сразу хорошие.</p>
-
-<h2 id="property-based-тесты">Property-based тесты</h2>
-
-<p>Если код поменяли, а тесты проходят — значит данные плохие.
-Мутационное тестирование поможет найти места, где нужны такие тесты, и подобрать для них хорошие данные.</p>
-
-<h1 id="когда-не-нужно-использовать-мутационное-тестирование">Когда не нужно использовать мутационное тестирование</h1>
-
-<p>Есть другие способы улучшать проект.
+Теперь наши тесты сразу хорошие.</p><h2 id=property-based-тесты>Property-based тесты</h2><p>Если код поменяли, а тесты проходят — значит данные плохие.
+Мутационное тестирование поможет найти места, где нужны такие тесты, и подобрать для них хорошие данные.</p><h1 id=когда-не-нужно-использовать-мутационное-тестирование>Когда не нужно использовать мутационное тестирование</h1><p>Есть другие способы улучшать проект.
 Их проще внедрять и они дешевле обходятся.
-Вот когда у вас уже есть линтеры, проверка типов, юнит- и интеграционные тесты, property-based тесты и даже тесты на документацию, и вы хотите сделать что-то ещё — вот тогда занимайтесь мутационным тестированием.</p>
-
-<h1 id="выводы">Выводы</h1>
-
-<ul>
-<li><p>Мы напишем больше тестов!</p>
-
-<p><strong>Нет, лучше мы удалим лишние тесты.</strong></p></li>
-
-<li><p>Мы повысим покрытие!</p>
-
-<p><strong>Не просто повысим, но и проверим, что тесты что-то тестируют.</strong></p></li>
-
-<li><p>Будем строже ревьюить!</p>
-
-<p><strong>Наоборот, упростим процесс ревью.</strong></p></li>
-
-<li><p>Автоматизируем всё!</p>
-
-<p><strong>Да.</strong></p></li>
-</ul>
-
-<h1 id="ссылки">Ссылки</h1>
-
-<ul>
-<li><a href="https://github.com/boxed/mutmut">github.com/boxed/mutmut</a></li>
-<li><a href="https://github.com/sobolevn/heisenbug-2019">github.com/sobolevn/heisenbug-2019</a></li>
-<li>Вопросы сюда: <a href="https://github.com/sobolevn">github.com/sobolevn</a></li>
-<li>Читайте <a href="https://sobolevn.me/">sobolevn.me</a></li>
-</ul>
-
-
-		
-	</div>
-
-	<div class="pagination">
-		<a href="/conf/knowledgeconf/19/ozon-fast-growth-and-knowledge-sharing/" class="left arrow">&#8592;</a>
-		<a href="/conf/aletheia/19/culture-transformation/" class="right arrow">&#8594;</a>
-
-		<a href="#" class="top">Top</a>
-	</div>
-</main>
-
-
-        		<footer>
-			<span>
-			&copy; <time datetime="2020-02-24 20:54:54.120751 &#43;0700 &#43;07 m=&#43;0.259190695">2020</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
-			</span>
-		</footer>
-
-    </body>
-</html>
+Вот когда у вас уже есть линтеры, проверка типов, юнит- и интеграционные тесты, property-based тесты и даже тесты на документацию, и вы хотите сделать что-то ещё — вот тогда занимайтесь мутационным тестированием.</p><h1 id=выводы>Выводы</h1><ul><li><p>Мы напишем больше тестов!</p><p><strong>Нет, лучше мы удалим лишние тесты.</strong></p></li><li><p>Мы повысим покрытие!</p><p><strong>Не просто повысим, но и проверим, что тесты что-то тестируют.</strong></p></li><li><p>Будем строже ревьюить!</p><p><strong>Наоборот, упростим процесс ревью.</strong></p></li><li><p>Автоматизируем всё!</p><p><strong>Да.</strong></p></li></ul><h1 id=ссылки>Ссылки</h1><ul><li><a href=https://github.com/boxed/mutmut>github.com/boxed/mutmut</a></li><li><a href=https://github.com/sobolevn/heisenbug-2019>github.com/sobolevn/heisenbug-2019</a></li><li>Вопросы сюда: <a href=https://github.com/sobolevn>github.com/sobolevn</a></li><li>Читайте <a href=https://sobolevn.me/>sobolevn.me</a></li></ul></div><div class=pagination><a href=/conf/knowledgeconf/19/ozon-fast-growth-and-knowledge-sharing/ class="left arrow">&#8592;</a>
+<a href=/conf/aletheia/19/culture-transformation/ class="right arrow">&#8594;</a>
+<a href=# class=top>Top</a></div></main><footer><span>&copy; <time datetime="2020-07-13 11:44:29.147938688 &#43;0000 UTC m=&#43;0.163472804">2020</time> . Made with <a href=https://gohugo.io>Hugo</a> using the <a href=https://github.com/EmielH/tale-hugo/>Tale</a> theme.</span></footer></body></html>

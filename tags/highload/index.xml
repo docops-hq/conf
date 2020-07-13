@@ -1,252 +1,63 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Highload on Конспекты</title>
-    <link>https://docops-hq.github.io/conf/tags/highload/</link>
-    <description>Recent content in Highload on Конспекты</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://docops-hq.github.io/conf/tags/highload/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Apache Kafka как основа для велосипедостроения</title>
-      <link>https://docops-hq.github.io/conf/highload/18/1.5-kafka-bicycle/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/1.5-kafka-bicycle/</guid>
-      <description>Цель okmeter: найти проблему. Для этого нужен контент — метрики. Их собирает агент, отправляет в платформу и считает метрики.</description>
-    </item>
-    
-    <item>
-      <title>FAQ по архитектуре и работе ВКонтакте</title>
-      <link>https://docops-hq.github.io/conf/highload/18/2.1-vk-architecture/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/2.1-vk-architecture/</guid>
-      <description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Highload on Конспекты</title><link>https://docops-hq.github.io/conf/tags/highload/</link><description>Recent content in Highload on Конспекты</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docops-hq.github.io/conf/tags/highload/index.xml" rel="self" type="application/rss+xml"/><item><title>Apache Kafka как основа для велосипедостроения</title><link>https://docops-hq.github.io/conf/highload/18/1.5-kafka-bicycle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/1.5-kafka-bicycle/</guid><description>Цель okmeter: найти проблему. Для этого нужен контент — метрики. Их собирает агент, отправляет в платформу и считает метрики.</description></item><item><title>FAQ по архитектуре и работе ВКонтакте</title><link>https://docops-hq.github.io/conf/highload/18/2.1-vk-architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/2.1-vk-architecture/</guid><description>&lt;ul&gt;
 &lt;li&gt;фронты: независимые сервера с nginx, анонсируют общие IP,терминируют HTTPS/WSS.&lt;/li&gt;
 &lt;li&gt;бэкенды: http сервера на kPHP, модель работы prefork, вместо перезапуска сбрасывают состояние (global/static vars).&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Make Your Database Dream of Electric Sheep: Designing for Autonomous Operation</title>
-      <link>https://docops-hq.github.io/conf/highload/18/2.5-make-your-database-dream-of-electric-sheep/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/2.5-make-your-database-dream-of-electric-sheep/</guid>
-      <description>&lt;p&gt;Background – complexity of modern systems, DBAs take up 50% of cost.&lt;/p&gt;
-
-&lt;p&gt;1970-2000s – Self-adaptive, self-tuning databases (index selection, partitioning/sharding). Human input, workload trace analysis, human decision.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>UDP против TCP, или Будущее сетевого стека</title>
-      <link>https://docops-hq.github.io/conf/highload/19/tcp-vs-udp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/19/tcp-vs-udp/</guid>
-      <description>TCP задуман как протокол надёжной доставки данных, а UDP — нет.
-Может ли оказаться, что UDP лучше решит задачу надёжной доставки?</description>
-    </item>
-    
-    <item>
-      <title>njs ‒ родной JavaSсript-скриптинг в nginx</title>
-      <link>https://docops-hq.github.io/conf/highload/19/njs-nginx/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/19/njs-nginx/</guid>
-      <description>Современный proxy-server уже умеет:&lt;/p&gt;
-
+&lt;/ul&gt;</description></item><item><title>Make Your Database Dream of Electric Sheep: Designing for Autonomous Operation</title><link>https://docops-hq.github.io/conf/highload/18/2.5-make-your-database-dream-of-electric-sheep/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/2.5-make-your-database-dream-of-electric-sheep/</guid><description>&lt;p&gt;Background – complexity of modern systems, DBAs take up 50% of cost.&lt;/p&gt;
+&lt;p&gt;1970-2000s – Self-adaptive, self-tuning databases (index selection, partitioning/sharding). Human input, workload trace analysis, human decision.&lt;/p&gt;</description></item><item><title>UDP против TCP, или Будущее сетевого стека</title><link>https://docops-hq.github.io/conf/highload/19/tcp-vs-udp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/19/tcp-vs-udp/</guid><description>TCP задуман как протокол надёжной доставки данных, а UDP — нет.
+Может ли оказаться, что UDP лучше решит задачу надёжной доставки?</description></item><item><title>njs ‒ родной JavaSсript-скриптинг в nginx</title><link>https://docops-hq.github.io/conf/highload/19/njs-nginx/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/19/njs-nginx/</guid><description>Современный proxy-server уже умеет:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;балансировать нагрузку&lt;/li&gt;
 &lt;li&gt;TLS-терминирование,&lt;/li&gt;
 &lt;li&gt;отдавать статику,&lt;/li&gt;
 &lt;li&gt;кешировать.&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>«Платформа» в Badoo: как мы построили инфраструктурную разработку</title>
-      <link>https://docops-hq.github.io/conf/highload/18/1.8-badoo-infradev/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/1.8-badoo-infradev/</guid>
-      <description>&lt;ul&gt;
+&lt;/ul&gt;</description></item><item><title>«Платформа» в Badoo: как мы построили инфраструктурную разработку</title><link>https://docops-hq.github.io/conf/highload/18/1.8-badoo-infradev/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/1.8-badoo-infradev/</guid><description>&lt;ul&gt;
 &lt;li&gt;Всё растёт. Больше пользователей и нагрузки.&lt;/li&gt;
 &lt;li&gt;Бизнес хочет ещё больше.&lt;/li&gt;
 &lt;li&gt;Инфраструктурные задачи бизнесу непонятны, но необходимы для развития.&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Базы данных и Kubernetes</title>
-      <link>https://docops-hq.github.io/conf/highload/18/1.4-bd-k8s/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/1.4-bd-k8s/</guid>
-      <description>&lt;ol&gt;
+&lt;/ul&gt;</description></item><item><title>Базы данных и Kubernetes</title><link>https://docops-hq.github.io/conf/highload/18/1.4-bd-k8s/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/1.4-bd-k8s/</guid><description>&lt;ol&gt;
 &lt;li&gt;Философия высокой доступности в k8s&lt;/li&gt;
 &lt;li&gt;Гарантии согласованности в k8s&lt;/li&gt;
 &lt;li&gt;Хранение данных и k8s
 &lt;br /&gt;&lt;/li&gt;
-&lt;/ol&gt;</description>
-    </item>
-    
-    <item>
-      <title>Дата-инженеры и кому они нужны</title>
-      <link>https://docops-hq.github.io/conf/highload/18/1.9-data-engineers/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/1.9-data-engineers/</guid>
-      <description>Тема доклада: что такое данные, откуда они берутся и почему онлайн-магазин обуви заинтересован в данных.</description>
-    </item>
-    
-    <item>
-      <title>Как нейронные сети графике помогали</title>
-      <link>https://docops-hq.github.io/conf/highload/18/1.10-neural-nets-cgi/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/1.10-neural-nets-cgi/</guid>
-      <description>Если у вас есть вычислительно сложная задача, которую вы решаете некоторым классическим вычислительным способом, попробуйте найти в этой задаче самое времязатратное место и найти решение с помощью нейронной сети или любого другого алгоритма машинного обучения.</description>
-    </item>
-    
-    <item>
-      <title>Как сделать так, чтобы документация не болела</title>
-      <link>https://docops-hq.github.io/conf/highload/19/siberia/docs/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/19/siberia/docs/</guid>
-      <description>Конспект митапа на Highload++ Siberia 2019.
+&lt;/ol&gt;</description></item><item><title>Дата-инженеры и кому они нужны</title><link>https://docops-hq.github.io/conf/highload/18/1.9-data-engineers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/1.9-data-engineers/</guid><description>Тема доклада: что такое данные, откуда они берутся и почему онлайн-магазин обуви заинтересован в данных.</description></item><item><title>Как нейронные сети графике помогали</title><link>https://docops-hq.github.io/conf/highload/18/1.10-neural-nets-cgi/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/1.10-neural-nets-cgi/</guid><description>Если у вас есть вычислительно сложная задача, которую вы решаете некоторым классическим вычислительным способом, попробуйте найти в этой задаче самое времязатратное место и найти решение с помощью нейронной сети или любого другого алгоритма машинного обучения.</description></item><item><title>Как сделать так, чтобы документация не болела</title><link>https://docops-hq.github.io/conf/highload/19/siberia/docs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/19/siberia/docs/</guid><description>Конспект митапа на Highload++ Siberia 2019.
 Ведущие:
- Семён Факторович, Chief Technical Writing Officer, documentat.io Николай Волынкин, технический писатель, Plesk, телеграм-канал @DocOps  Определимся с терминами Мы по профессии техписатели, и у нас своя специфика трактовки термина «документация».
+Семён Факторович, Chief Technical Writing Officer, documentat.io Николай Волынкин, технический писатель, Plesk, телеграм-канал @DocOps Определимся с терминами Мы по профессии техписатели, и у нас своя специфика трактовки термина «документация».
 Техписатели традиционно занимаются той документацией, которая пишется после написания кода — справочники API, руководства пользователя, описание архитектуры и дизайн-решений.
-Документация, которая пишется до написания кода (ТЗ, спецификации требований), в нашей картине мира — область ответственности системных аналитиков.</description>
-    </item>
-    
-    <item>
-      <title>Как стать классным спецом по базам данных</title>
-      <link>https://docops-hq.github.io/conf/highload/18/2.4-dababase-pro/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/2.4-dababase-pro/</guid>
-      <description>БД — вещь простая, а люди сложные, поэтому советы могут не всем подойти.
-Сам следовал не всем советам.</description>
-    </item>
-    
-    <item>
-      <title>Как устроить хайлоад на ровном месте</title>
-      <link>https://docops-hq.github.io/conf/highload/18/2.3-such-highload/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/2.3-such-highload/</guid>
-      <description>Highload — чисто русское слово. Остальные используют high-volume.
+Документация, которая пишется до написания кода (ТЗ, спецификации требований), в нашей картине мира — область ответственности системных аналитиков.</description></item><item><title>Как стать классным спецом по базам данных</title><link>https://docops-hq.github.io/conf/highload/18/2.4-dababase-pro/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/2.4-dababase-pro/</guid><description>БД — вещь простая, а люди сложные, поэтому советы могут не всем подойти.
+Сам следовал не всем советам.</description></item><item><title>Как устроить хайлоад на ровном месте</title><link>https://docops-hq.github.io/conf/highload/18/2.3-such-highload/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/2.3-such-highload/</guid><description>Highload — чисто русское слово. Остальные используют high-volume.
 Хайлоад — это ситуация в системе, грозящая отказом в обслуживании из-за недостатка ресурсов. Внештатная ситуация.
 В идеале хайлоада не должно быть, но есть человеческие ошибки, которые ведут к недостатку ресурсов (железа, людей, денег), а он приводит к угрозе отказа в обслуживании.
-Спешная починка костылями.</description>
-    </item>
-    
-    <item>
-      <title>Монолит для сотен версий клиентов: как мы пишем и поддерживаем тесты</title>
-      <link>https://docops-hq.github.io/conf/highload/18/2.2-testing-badoo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/2.2-testing-badoo/</guid>
-      <description>Темы:&lt;/p&gt;
-
+Спешная починка костылями.</description></item><item><title>Монолит для сотен версий клиентов: как мы пишем и поддерживаем тесты</title><link>https://docops-hq.github.io/conf/highload/18/2.2-testing-badoo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/2.2-testing-badoo/</guid><description>Темы:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Наш процесс разработки&lt;/li&gt;
 &lt;li&gt;Юнит-тесты&lt;/li&gt;
 &lt;li&gt;Интеграционные тесты&lt;/li&gt;
 &lt;li&gt;Тесты на API&lt;/li&gt;
 &lt;li&gt;Прогон тестов&lt;/li&gt;
-&lt;/ol&gt;</description>
-    </item>
-    
-    <item>
-      <title>Один из вариантов реализации Data Discovery в микросервисной архитектуре</title>
-      <link>https://docops-hq.github.io/conf/highload/18/1.3-data-discovery/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/1.3-data-discovery/</guid>
-      <description>Николай руководит Data Platform в Avito. Сотни сервисов, сотни баз.
+&lt;/ol&gt;</description></item><item><title>Один из вариантов реализации Data Discovery в микросервисной архитектуре</title><link>https://docops-hq.github.io/conf/highload/18/1.3-data-discovery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/1.3-data-discovery/</guid><description>Николай руководит Data Platform в Avito. Сотни сервисов, сотни баз.
 Как это бывает сначала: shared database.
 У всех сервисов есть связь между собой и через базу.
 Тестировать невозможно.
 Поэтому при переходе на микросервисы у каждого сервиса своя база.
 Если шардов несколько, то базы надо синхронизировать.
 В реальности в компании есть сразу всё: и микросервисы с отдельными базами, и макро, и монолиты с shared database.
-Как начинается переписывание монолита на микросервисы? С доменного моделирования. Кто может его сделать? Никто, но есть люди, которые могут попробовать.</description>
-    </item>
-    
-    <item>
-      <title>Разгоняем обработку событий до 1.6М/сек. Опыт Badoo</title>
-      <link>https://docops-hq.github.io/conf/highload/18/1.6-accelerate-events/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/1.6-accelerate-events/</guid>
-      <description>Темы доклада:&lt;/p&gt;
-
+Как начинается переписывание монолита на микросервисы? С доменного моделирования. Кто может его сделать? Никто, но есть люди, которые могут попробовать.</description></item><item><title>Разгоняем обработку событий до 1.6М/сек. Опыт Badoo</title><link>https://docops-hq.github.io/conf/highload/18/1.6-accelerate-events/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/1.6-accelerate-events/</guid><description>Темы доклада:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Зачем собирать статистику&lt;/li&gt;
 &lt;li&gt;Как это делать&lt;/li&gt;
 &lt;li&gt;Как показывать и анализировать&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Тернии контейнеризированных приложений и микросервисов</title>
-      <link>https://docops-hq.github.io/conf/highload/18/1.2-per-aspera-ad-paas/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/1.2-per-aspera-ad-paas/</guid>
-      <description>&lt;p&gt;Бизнес хочет ускорить time to market.&lt;/p&gt;
-
+&lt;/ul&gt;</description></item><item><title>Тернии контейнеризированных приложений и микросервисов</title><link>https://docops-hq.github.io/conf/highload/18/1.2-per-aspera-ad-paas/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/1.2-per-aspera-ad-paas/</guid><description>&lt;p&gt;Бизнес хочет ускорить time to market.&lt;/p&gt;
 &lt;p&gt;Есть роли серверов — server role. Новый продукт — новая роль. Надо писать puppet, открывать доступы и порты, конфигурировать-конфигурировать-конфигурироовать. ВРУЧНУЮ.
 Это умеет горстка людей — это узкое звено. Они делают это дни или недели, это тоже.
-Хотим: доступно всем, работает за минуты. Для решения стали строить PaaS.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Топ ошибок со стороны разработки при работе с PostgreSQL</title>
-      <link>https://docops-hq.github.io/conf/highload/18/1.7-postgresql-errors/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/1.7-postgresql-errors/</guid>
-      <description>&lt;p&gt;В компаниях любого размера бывают проблемы. Откуда они берутся?&lt;/p&gt;
-
+Хотим: доступно всем, работает за минуты. Для решения стали строить PaaS.&lt;/p&gt;</description></item><item><title>Топ ошибок со стороны разработки при работе с PostgreSQL</title><link>https://docops-hq.github.io/conf/highload/18/1.7-postgresql-errors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/1.7-postgresql-errors/</guid><description>&lt;p&gt;В компаниях любого размера бывают проблемы. Откуда они берутся?&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;Из фич. Начинаем использовать продвинутые фичи, утилиты и прочее. «Хочется взять дежурный пистолет, положить в ящик стола, иногда достать, застрелиться и работать дальше».&lt;/p&gt;&lt;/li&gt;
-
 &lt;li&gt;&lt;p&gt;Из хранения данных. Когда оно усложняется, больше шансов написать кривой запрос.&lt;/p&gt;&lt;/li&gt;
-
 &lt;li&gt;&lt;p&gt;Из жизненного цикла. Разработчики пилят, админы настраивают, а улучшать систему некому. База работает с дефолтными конфигами и когда-нибудь ломается.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Что мы знаем о микросервисах</title>
-      <link>https://docops-hq.github.io/conf/highload/18/1.1-microservices/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/1.1-microservices/</guid>
-      <description>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
-
+&lt;/ol&gt;</description></item><item><title>Что мы знаем о микросервисах</title><link>https://docops-hq.github.io/conf/highload/18/1.1-microservices/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/1.1-microservices/</guid><description>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
 &lt;p&gt;Авито: много сервисов и очень много связей между ними.&lt;/p&gt;
-
 &lt;p&gt;Вот основные проблемы от количества:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Много разных репозиториев. Сложно менять код одновременно везде.&lt;/li&gt;
 &lt;li&gt;Много команд пишут код, не пересекаясь с другими. Знания инкапсулируются и плохо передаются между командами. Нет единой картины. Нет человека, который бы всё знал.&lt;/li&gt;
 &lt;li&gt;Данные фрагментарны.&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;/ul&gt;</description></item></channel></rss>

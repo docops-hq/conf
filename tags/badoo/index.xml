@@ -1,72 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Badoo on Конспекты</title>
-    <link>https://docops-hq.github.io/conf/tags/badoo/</link>
-    <description>Recent content in Badoo on Конспекты</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://docops-hq.github.io/conf/tags/badoo/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>«Платформа» в Badoo: как мы построили инфраструктурную разработку</title>
-      <link>https://docops-hq.github.io/conf/highload/18/1.8-badoo-infradev/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/1.8-badoo-infradev/</guid>
-      <description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Badoo on Конспекты</title><link>https://docops-hq.github.io/conf/tags/badoo/</link><description>Recent content in Badoo on Конспекты</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docops-hq.github.io/conf/tags/badoo/index.xml" rel="self" type="application/rss+xml"/><item><title>«Платформа» в Badoo: как мы построили инфраструктурную разработку</title><link>https://docops-hq.github.io/conf/highload/18/1.8-badoo-infradev/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/1.8-badoo-infradev/</guid><description>&lt;ul&gt;
 &lt;li&gt;Всё растёт. Больше пользователей и нагрузки.&lt;/li&gt;
 &lt;li&gt;Бизнес хочет ещё больше.&lt;/li&gt;
 &lt;li&gt;Инфраструктурные задачи бизнесу непонятны, но необходимы для развития.&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Добро пожаловать на борт: вводим в строй новых разработчиков</title>
-      <link>https://docops-hq.github.io/conf/knowledgeconf/19/badoo-new-developers-onboarding/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/knowledgeconf/19/badoo-new-developers-onboarding/</guid>
-      <description>&lt;ul&gt;
+&lt;/ul&gt;</description></item><item><title>Добро пожаловать на борт: вводим в строй новых разработчиков</title><link>https://docops-hq.github.io/conf/knowledgeconf/19/badoo-new-developers-onboarding/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/knowledgeconf/19/badoo-new-developers-onboarding/</guid><description>&lt;ul&gt;
 &lt;li&gt;департамент вырос в 2 раза за последние несколько лет&lt;/li&gt;
 &lt;li&gt;ожидание от найма и реальность разнятся, так как на онбординг тратится время не только новичка, но и техлида и ментора
 большой объем новой информации, которую необходимо изучить&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Монолит для сотен версий клиентов: как мы пишем и поддерживаем тесты</title>
-      <link>https://docops-hq.github.io/conf/highload/18/2.2-testing-badoo/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/2.2-testing-badoo/</guid>
-      <description>Темы:&lt;/p&gt;
-
+&lt;/ul&gt;</description></item><item><title>Монолит для сотен версий клиентов: как мы пишем и поддерживаем тесты</title><link>https://docops-hq.github.io/conf/highload/18/2.2-testing-badoo/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/2.2-testing-badoo/</guid><description>Темы:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Наш процесс разработки&lt;/li&gt;
 &lt;li&gt;Юнит-тесты&lt;/li&gt;
 &lt;li&gt;Интеграционные тесты&lt;/li&gt;
 &lt;li&gt;Тесты на API&lt;/li&gt;
 &lt;li&gt;Прогон тестов&lt;/li&gt;
-&lt;/ol&gt;</description>
-    </item>
-    
-    <item>
-      <title>Разгоняем обработку событий до 1.6М/сек. Опыт Badoo</title>
-      <link>https://docops-hq.github.io/conf/highload/18/1.6-accelerate-events/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/1.6-accelerate-events/</guid>
-      <description>Темы доклада:&lt;/p&gt;
-
+&lt;/ol&gt;</description></item><item><title>Разгоняем обработку событий до 1.6М/сек. Опыт Badoo</title><link>https://docops-hq.github.io/conf/highload/18/1.6-accelerate-events/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/1.6-accelerate-events/</guid><description>Темы доклада:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Зачем собирать статистику&lt;/li&gt;
 &lt;li&gt;Как это делать&lt;/li&gt;
 &lt;li&gt;Как показывать и анализировать&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;/ul&gt;</description></item></channel></rss>

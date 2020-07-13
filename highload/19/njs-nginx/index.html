@@ -1,190 +1,21 @@
-<!DOCTYPE html>
-<html lang="en-us">
-    <head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		<title>
-				njs ‒ родной JavaSсript-скриптинг в nginx &middot; Конспекты
-		</title>
-
-		
-  		<link rel="stylesheet" href="/conf/css/style.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
-		<link rel="stylesheet" href="/conf/custom.css">
-		
-		<link rel="icon" type="image/png" sizes="32x32" href="/conf/images/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/conf/images/favicon-16x16.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/conf/images/apple-touch-icon.png">
-
-		
-		<link href="" rel="alternate" type="application/rss+xml" title="Конспекты" />
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107215405-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-107215405-3');
-  </script>
-	</head>
-
-    <body>
-        		<nav class="nav">
-			<div class="nav-container">
-				<a href="/conf/">
-					<h2 class="nav-title">Конспекты</h2>
-				</a>
-				<ul>
-    <li><a href="/conf/">Posts</a></li>
-</ul>
-
-			</div>
-		</nav>
-
-        
-
-<main>
-	<div class="post">
-		<div class="single__header">
-			<div class="post-info">
-        Дмитрий Волынцев, Nginx, Inc.
-</div>
-
-			<h1 class="post-title">njs ‒ родной JavaSсript-скриптинг в nginx</h1>
-<div class="post-line"></div>
-<div class="tag-block"><span class="catalogue-tags"><a href='/conf/tags/highload' class="tags" >Highload</a></span><span class="catalogue-tags"><a href='/conf/tags/2019' class="tags" >2019</a></span></div>
-
-		</div>
-
-		
-
-		
-
-<p>(модуль для создания переменных и обработчиков стадий запроса на JavaScript)</p>
-
-<h1 id="скриптинг-в-nginx">Скриптинг в nginx</h1>
-
-<p>Современный proxy-server уже умеет:</p>
-
-<ul>
-<li>балансировать нагрузку</li>
-<li>TLS-терминирование,</li>
-<li>отдавать статику,</li>
-<li>кешировать.</li>
-</ul>
-
-<p>Сервисы делятся на микросервисы.
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>njs ‒ родной JavaSсript-скриптинг в nginx &middot; Конспекты</title><link rel=stylesheet href=/conf/css/style.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700"><link rel=stylesheet href=/conf/custom.css><link rel=icon type=image/png sizes=32x32 href=/conf/images/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/conf/images/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/conf/images/apple-touch-icon.png><link href rel=alternate type=application/rss+xml title=Конспекты><script async src="https://www.googletagmanager.com/gtag/js?id=UA-107215405-3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-107215405-3');</script></head><body><nav class=nav><div class=nav-container><a href=/conf/><h2 class=nav-title>Конспекты</h2></a><ul><li><a href=/conf/>Posts</a></li></ul></div></nav><main><div class=post><div class=single__header><div class=post-info>Дмитрий Волынцев, Nginx, Inc.</div><h1 class=post-title>njs ‒ родной JavaSсript-скриптинг в nginx</h1><div class=post-line></div><div class=tag-block><span class=catalogue-tags><a href=/conf/tags/highload class=tags>Highload</a></span><span class=catalogue-tags><a href=/conf/tags/2019 class=tags>2019</a></span></div></div><p>(модуль для создания переменных и обработчиков стадий запроса на JavaScript)</p><h1 id=скриптинг-в-nginx>Скриптинг в nginx</h1><p>Современный proxy-server уже умеет:</p><ul><li>балансировать нагрузку</li><li>TLS-терминирование,</li><li>отдавать статику,</li><li>кешировать.</li></ul><p>Сервисы делятся на микросервисы.
 Теперь мы движемся от прокси к API-gateway.
-Теперь nginx умеет ещё и в авторизацию.</p>
-
-<p><img src="../../../images/highload19/njs-nginx-01.png" alt="njs-nginx 1" /></p>
-
-<p>Авторизация средствами прокси: nginx проверяет специальный токен.</p>
-
-<ul>
-<li>Если токена нет, перенаправляет пользователя к identity provider.</li>
-<li>Если токен есть и это верный токен, то пользователь авторизован и получает доступ к сервисам.
-<br /></li>
-</ul>
-
-<p>Выбор: либо реализовать логику авторизации самостоятельно на низкоуровневом языке, либо&hellip;?</p>
-
-<h2 id="что-не-так-с-openresty">Что не так с openresty?</h2>
-
-<p>Вот что:</p>
-
-<ul>
-<li><p>Создаётся отдельной командой с другим подходом к философии разработки.
+Теперь nginx умеет ещё и в авторизацию.</p><p><img src=../../../images/highload19/njs-nginx-01.png alt="njs-nginx 1"></p><p>Авторизация средствами прокси: nginx проверяет специальный токен.</p><ul><li>Если токена нет, перенаправляет пользователя к identity provider.</li><li>Если токен есть и это верный токен, то пользователь авторизован и получает доступ к сервисам.<br></li></ul><p>Выбор: либо реализовать логику авторизации самостоятельно на низкоуровневом языке, либо&hellip;?</p><h2 id=что-не-так-с-openresty>Что не так с openresty?</h2><p>Вот что:</p><ul><li><p>Создаётся отдельной командой с другим подходом к философии разработки.
 Так, в nginx философия такая: все директивы — это кирпичики, которые хорошо сочетаются между собой.
 А в openresty директивы — это самостоятельные ad-hoc решения.
 Чтобы написать на нём своё решение, надо хорошо знать openresty.
-И ещё директивы могут не работать друг с другом.</p></li>
-
-<li><p>одна виртуальная машина на воркера (до 3Gb памяти на воркера).
+И ещё директивы могут не работать друг с другом.</p></li><li><p>одна виртуальная машина на воркера (до 3Gb памяти на воркера).
 При этом у воркера могут быть десятки тысяч соединений в секунду.
-Если там появится нетривиальная логика, всё может упасть.</p></li>
-
-<li><p>язык Lua — это ограничение:</p>
-
-<ul>
-<li>узкая ниша;</li>
-<li>синтаксис своеобразный, индексация массивов с 1 (еретики!);</li>
-<li>язык не развивается.</li>
-</ul></li>
-</ul>
-
-<h1 id="цели-проекта">Цели проекта</h1>
-
-<p>Хочется написать своё решение, в котором не будет недостатков openresty.
-Вот, что нам важно:</p>
-
-<ul>
-<li>Использовать популярный язык программирования.</li>
-<li>Быстрый и легковесный, nginx way.</li>
-<li>Безопасность и устойчивость.</li>
-</ul>
-
-<p>Выбрали JavaScript:</p>
-
-<ul>
-<li>Все знают JS, это современный lingua-franca.</li>
-<li>С-подобный синтаксис, который хорошо ложится на конфиги в nginx.</li>
-<li>Язык активно развивается, ежегодные релизы, заимствует хорошее из других языков.</li>
-<li>Модель языка хорошо ложится на архитектуру nginx.
-Чтобы обрабатывать десятки тысяч сообщений в секунду, нужен именно такой механизм.</li>
-</ul>
-
-<h1 id="интерпретатор-njs">Интерпретатор njs</h1>
-
-<p>Так, а зачем делать собственный интерпретатор?</p>
-
-<ul>
-<li>V8 и SpiderMonkey неэффективны для задач внутри nginx.</li>
-<li>Duktape предназначен для встраивания в другие процессы.
+Если там появится нетривиальная логика, всё может упасть.</p></li><li><p>язык Lua — это ограничение:</p><ul><li>узкая ниша;</li><li>синтаксис своеобразный, индексация массивов с 1 (еретики!);</li><li>язык не развивается.</li></ul></li></ul><h1 id=цели-проекта>Цели проекта</h1><p>Хочется написать своё решение, в котором не будет недостатков openresty.
+Вот, что нам важно:</p><ul><li>Использовать популярный язык программирования.</li><li>Быстрый и легковесный, nginx way.</li><li>Безопасность и устойчивость.</li></ul><p>Выбрали JavaScript:</p><ul><li>Все знают JS, это современный lingua-franca.</li><li>С-подобный синтаксис, который хорошо ложится на конфиги в nginx.</li><li>Язык активно развивается, ежегодные релизы, заимствует хорошее из других языков.</li><li>Модель языка хорошо ложится на архитектуру nginx.
+Чтобы обрабатывать десятки тысяч сообщений в секунду, нужен именно такой механизм.</li></ul><h1 id=интерпретатор-njs>Интерпретатор njs</h1><p>Так, а зачем делать собственный интерпретатор?</p><ul><li>V8 и SpiderMonkey неэффективны для задач внутри nginx.</li><li>Duktape предназначен для встраивания в другие процессы.
 Но он недостаточно быстро для nginx.
-И он реализует только стандарт языка ES5.1 (это примерно 2009 год).</li>
-<li>Свой интерпретатор может быть заточен под особенности окружения.</li>
-</ul>
-
-<h2 id="чем-njs-не-является">Чем njs не является</h2>
-
-<ul>
-<li>nginx + njs ≠ application server</li>
-<li>полноценной реализацией стандартов ECMAScript тоже не является, хотя работа идёт.</li>
-</ul>
-
-<p>Почему njs работает быстро?</p>
-
-<ul>
-<li>Компиляция в байт-код при старте nginx.</li>
-<li>Новая VM клонируется для каждого запроса (copy-on-write).</li>
-<li>Нет JIT-компиляции.</li>
-<li>Нет сборки мусора.
+И он реализует только стандарт языка ES5.1 (это примерно 2009 год).</li><li>Свой интерпретатор может быть заточен под особенности окружения.</li></ul><h2 id=чем-njs-не-является>Чем njs не является</h2><ul><li>nginx + njs ≠ application server</li><li>полноценной реализацией стандартов ECMAScript тоже не является, хотя работа идёт.</li></ul><p>Почему njs работает быстро?</p><ul><li>Компиляция в байт-код при старте nginx.</li><li>Новая VM клонируется для каждого запроса (copy-on-write).</li><li>Нет JIT-компиляции.</li><li>Нет сборки мусора.
 Она не нужна, потому что для каждого запроса мы создаём
-маленькую VM, которая не успевает создать много объектов.</li>
-</ul>
-
-<p>Бенчмарк: создаём пустые контексты запроса на основе каждого из интерпретаторов.
-График логарифмический!</p>
-
-<p><img src="../../../images/highload19/njs-nginx-02.png" alt="njs-nginx-2" /></p>
-
-<h1 id="njs-в-nginx">njs в nginx</h1>
-
-<h2 id="начало-работы">Начало работы</h2>
-
-<pre><code class="language-bash">apt-get install nginx nginx-module-njs
-</code></pre>
-
-<p>Пример в докере: <a href="github.com/xeioex/njs-examples">https://github.com/xeioex/njs-examples</a></p>
-
-<h2 id="напишем-hello-world">Напишем hello world</h2>
-
-<p>nginx.conf:</p>
-
-<pre><code class="language-nginx">#Сначала загрузим с помощью директивы `load_module`
+маленькую VM, которая не успевает создать много объектов.</li></ul><p>Бенчмарк: создаём пустые контексты запроса на основе каждого из интерпретаторов.
+График логарифмический!</p><p><img src=../../../images/highload19/njs-nginx-02.png alt=njs-nginx-2></p><h1 id=njs-в-nginx>njs в nginx</h1><h2 id=начало-работы>Начало работы</h2><pre><code class=language-bash>apt-get install nginx nginx-module-njs
+</code></pre><p>Пример в докере: <a href=github.com/xeioex/njs-examples>https://github.com/xeioex/njs-examples</a></p><h2 id=напишем-hello-world>Напишем hello world</h2><p>nginx.conf:</p><pre><code class=language-nginx>#Сначала загрузим с помощью директивы `load_module`
 
 load_module
 modules/ngx_http_js_module.so;
@@ -202,23 +33,11 @@ http {
             js_content hello;
         }
 #...
-</code></pre>
-
-<p>Код обработчика в example.njs:</p>
-
-<pre><code class="language-javascript">function  hello(r) {
+</code></pre><p>Код обработчика в example.njs:</p><pre><code class=language-javascript>function  hello(r) {
     r.return(200, &quot;Hello world!&quot;);
 }
-</code></pre>
-
-<h2 id="проксирование-запросов-с-заголовком-авторизации">Проксирование запросов с заголовком авторизации</h2>
-
-<p>Давайте сделаем что-нибудь поинтереснее.
-Будем проксировать запросы в S3 bucket на амазоне.</p>
-
-<p>aws-s3-njs.conf:</p>
-
-<pre><code class="language-nginx">#...
+</code></pre><h2 id=проксирование-запросов-с-заголовком-авторизации>Проксирование запросов с заголовком авторизации</h2><p>Давайте сделаем что-нибудь поинтереснее.
+Будем проксировать запросы в S3 bucket на амазоне.</p><p>aws-s3-njs.conf:</p><pre><code class=language-nginx>#...
 # Вот это стандартные вещи, которые уже есть в nginx:
 location ~* ^/s3/(.*) {
     set $bucket     'test-bucket';
@@ -234,20 +53,10 @@ location ~* ^/s3/(.*) {
     # А тут подписать своим ключом путь, на который мы хотим пойти
     proxy_set_header    Authorization &quot;GET $aws_access:$aws_sign&quot;;
 }   
-</code></pre>
-
-<p>И теперь в начало <code>aws-s3-njs.conf</code> мы добавляем такое:</p>
-
-<pre><code class="language-nginx">js_set $now now;
+</code></pre><p>И теперь в начало <code>aws-s3-njs.conf</code> мы добавляем такое:</p><pre><code class=language-nginx>js_set $now now;
 js_wet $aws_sign aws_sign;
 #...
-</code></pre>
-
-<p>Эти директивы связывают переменные в конфиге nginx с кодом на JS:</p>
-
-<p>aws-s3-njs.njs:</p>
-
-<pre><code class="language-javascript">function now(r) {
+</code></pre><p>Эти директивы связывают переменные в конфиге nginx с кодом на JS:</p><p>aws-s3-njs.njs:</p><pre><code class=language-javascript>function now(r) {
     return new Date().toISOString().replace(/[:\-]|\.\d{3}/g, '');
 }
 
@@ -258,15 +67,7 @@ function aws_sign(r) {
     return require('crypto').createHmac('sha1', v.aws.secret)
                             .update(to_sign).digest('base64');
 }
-</code></pre>
-
-<p>Ура, мы сделали подписанный заголовок авторизации.</p>
-
-<h2 id="сложные-редиректы">Сложные редиректы</h2>
-
-<p>nginx.conf:</p>
-
-<pre><code class="language-nginx">location / {
+</code></pre><p>Ура, мы сделали подписанный заголовок авторизации.</p><h2 id=сложные-редиректы>Сложные редиректы</h2><p>nginx.conf:</p><pre><code class=language-nginx>location / {
     auth_request /resolv;
     auth_request_set $route $sent_http_route;
     proxy_pass http://backend$route$is_args$args;
@@ -282,11 +83,7 @@ location = /_add {
     deny all;
     js_content add;
 }
-</code></pre>
-
-<p>И такой complex_redirects.js:</p>
-
-<pre><code class="language-javascript">function resolv(r) {
+</code></pre><p>И такой complex_redirects.js:</p><pre><code class=language-javascript>function resolv(r) {
     var map = open_db();
     var mapped_uri = map[r.uri];
     // ...
@@ -308,74 +105,7 @@ function add(r) {
     
     r.return(commit_db(map));
 }
-</code></pre>
-
-<h2 id="отладка">Отладка</h2>
-
-<p>Для отладки используем докер:</p>
-
-<pre><code class="language-bash">docker run -i -t nginx:mainline /usr/bin/njs
-</code></pre>
-
-<h2 id="что-уже-есть-в-интерпретаторе">Что уже есть в интерпретаторе</h2>
-
-<ul>
-<li>ES5.1:
-
-<ul>
-<li>Object, Array, Number, String, Date, Regexp, Function, JSON</li>
-<li>exceptions</li>
-<li>closures, anonymous functions</li>
-</ul></li>
-<li>&gt;= ES6:
-
-<ul>
-<li>modules,</li>
-<li>arrow functions — скоро будет</li>
-</ul></li>
-<li>Extra, OS:
-
-<ul>
-<li>crypto, files ops and more
-<br />
-<br /></li>
-</ul></li>
-</ul>
-
-<h2 id="ближайшие-планы">Ближайшие планы</h2>
-
-<ul>
-<li>Писать код на JS прямо в конфиге nginx, без <code>js_include</code>.</li>
-<li>Развитие функциональность модулей.</li>
-<li>Расширение поддержки стандартов ECMAScript.</li>
-</ul>
-
-<h1 id="ссылки">Ссылки</h1>
-
-<p>Репозиторий: <a href="https://github.com/nginx/njs">github.com/nginx/njs</a></p>
-
-<p>Написать автору вопрос или устроиться на работу в команду njs:</p>
-
-<p><img src="../../../images/highload19/njs-nginx-03.png" alt="njs-nginx-03" /></p>
-
-
-		
-	</div>
-
-	<div class="pagination">
-		<a href="/conf/devopsconf/19/werf/" class="left arrow">&#8592;</a>
-		<a href="/conf/highload/19/tcp-vs-udp/" class="right arrow">&#8594;</a>
-
-		<a href="#" class="top">Top</a>
-	</div>
-</main>
-
-
-        		<footer>
-			<span>
-			&copy; <time datetime="2020-02-24 20:54:54.104995 &#43;0700 &#43;07 m=&#43;0.243434846">2020</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
-			</span>
-		</footer>
-
-    </body>
-</html>
+</code></pre><h2 id=отладка>Отладка</h2><p>Для отладки используем докер:</p><pre><code class=language-bash>docker run -i -t nginx:mainline /usr/bin/njs
+</code></pre><h2 id=что-уже-есть-в-интерпретаторе>Что уже есть в интерпретаторе</h2><ul><li>ES5.1:<ul><li>Object, Array, Number, String, Date, Regexp, Function, JSON</li><li>exceptions</li><li>closures, anonymous functions</li></ul></li><li>&gt;= ES6:<ul><li>modules,</li><li>arrow functions — скоро будет</li></ul></li><li>Extra, OS:<ul><li>crypto, files ops and more<br><br></li></ul></li></ul><h2 id=ближайшие-планы>Ближайшие планы</h2><ul><li>Писать код на JS прямо в конфиге nginx, без <code>js_include</code>.</li><li>Развитие функциональность модулей.</li><li>Расширение поддержки стандартов ECMAScript.</li></ul><h1 id=ссылки>Ссылки</h1><p>Репозиторий: <a href=https://github.com/nginx/njs>github.com/nginx/njs</a></p><p>Написать автору вопрос или устроиться на работу в команду njs:</p><p><img src=../../../images/highload19/njs-nginx-03.png alt=njs-nginx-03></p></div><div class=pagination><a href=/conf/devopsconf/19/werf/ class="left arrow">&#8592;</a>
+<a href=/conf/highload/19/tcp-vs-udp/ class="right arrow">&#8594;</a>
+<a href=# class=top>Top</a></div></main><footer><span>&copy; <time datetime="2020-07-13 11:44:29.117372069 &#43;0000 UTC m=&#43;0.132906285">2020</time> . Made with <a href=https://gohugo.io>Hugo</a> using the <a href=https://github.com/EmielH/tale-hugo/>Tale</a> theme.</span></footer></body></html>

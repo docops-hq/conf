@@ -1,24 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>siberian-community-orgs on Конспекты</title>
-    <link>https://docops-hq.github.io/conf/tags/siberian-community-orgs/</link>
-    <description>Recent content in siberian-community-orgs on Конспекты</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://docops-hq.github.io/conf/tags/siberian-community-orgs/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Документирование встреч</title>
-      <link>https://docops-hq.github.io/conf/siberian-community-orgs/documenting-meetings/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/siberian-community-orgs/documenting-meetings/</guid>
-      <description>На митапе организаторов сибирских ИТ-сообществ
-обсудили документирование встреч.</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>siberian-community-orgs on Конспекты</title><link>https://docops-hq.github.io/conf/tags/siberian-community-orgs/</link><description>Recent content in siberian-community-orgs on Конспекты</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docops-hq.github.io/conf/tags/siberian-community-orgs/index.xml" rel="self" type="application/rss+xml"/><item><title>Документирование встреч</title><link>https://docops-hq.github.io/conf/siberian-community-orgs/documenting-meetings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/siberian-community-orgs/documenting-meetings/</guid><description>На митапе организаторов сибирских ИТ-сообществ
+обсудили документирование встреч.</description></item></channel></rss>

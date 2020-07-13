@@ -1,49 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Avito on Конспекты</title>
-    <link>https://docops-hq.github.io/conf/tags/avito/</link>
-    <description>Recent content in Avito on Конспекты</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://docops-hq.github.io/conf/tags/avito/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Один из вариантов реализации Data Discovery в микросервисной архитектуре</title>
-      <link>https://docops-hq.github.io/conf/highload/18/1.3-data-discovery/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/1.3-data-discovery/</guid>
-      <description>Николай руководит Data Platform в Avito. Сотни сервисов, сотни баз.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Avito on Конспекты</title><link>https://docops-hq.github.io/conf/tags/avito/</link><description>Recent content in Avito on Конспекты</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docops-hq.github.io/conf/tags/avito/index.xml" rel="self" type="application/rss+xml"/><item><title>Один из вариантов реализации Data Discovery в микросервисной архитектуре</title><link>https://docops-hq.github.io/conf/highload/18/1.3-data-discovery/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/1.3-data-discovery/</guid><description>Николай руководит Data Platform в Avito. Сотни сервисов, сотни баз.
 Как это бывает сначала: shared database.
 У всех сервисов есть связь между собой и через базу.
 Тестировать невозможно.
 Поэтому при переходе на микросервисы у каждого сервиса своя база.
 Если шардов несколько, то базы надо синхронизировать.
 В реальности в компании есть сразу всё: и микросервисы с отдельными базами, и макро, и монолиты с shared database.
-Как начинается переписывание монолита на микросервисы? С доменного моделирования. Кто может его сделать? Никто, но есть люди, которые могут попробовать.</description>
-    </item>
-    
-    <item>
-      <title>Что мы знаем о микросервисах</title>
-      <link>https://docops-hq.github.io/conf/highload/18/1.1-microservices/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/highload/18/1.1-microservices/</guid>
-      <description>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
-
+Как начинается переписывание монолита на микросервисы? С доменного моделирования. Кто может его сделать? Никто, но есть люди, которые могут попробовать.</description></item><item><title>Что мы знаем о микросервисах</title><link>https://docops-hq.github.io/conf/highload/18/1.1-microservices/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/highload/18/1.1-microservices/</guid><description>&lt;h1 id=&#34;intro&#34;&gt;Intro&lt;/h1&gt;
 &lt;p&gt;Авито: много сервисов и очень много связей между ними.&lt;/p&gt;
-
 &lt;p&gt;Вот основные проблемы от количества:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Много разных репозиториев. Сложно менять код одновременно везде.&lt;/li&gt;
 &lt;li&gt;Много команд пишут код, не пересекаясь с другими. Знания инкапсулируются и плохо передаются между командами. Нет единой картины. Нет человека, который бы всё знал.&lt;/li&gt;
 &lt;li&gt;Данные фрагментарны.&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;/ul&gt;</description></item></channel></rss>

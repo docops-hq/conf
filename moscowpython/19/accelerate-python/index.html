@@ -1,78 +1,7 @@
-<!DOCTYPE html>
-<html lang="en-us">
-    <head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		<title>
-				Что делать, если ваш код на Python тормозит &middot; Конспекты
-		</title>
-
-		
-  		<link rel="stylesheet" href="/conf/css/style.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
-		<link rel="stylesheet" href="/conf/custom.css">
-		
-		<link rel="icon" type="image/png" sizes="32x32" href="/conf/images/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/conf/images/favicon-16x16.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/conf/images/apple-touch-icon.png">
-
-		
-		<link href="" rel="alternate" type="application/rss+xml" title="Конспекты" />
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107215405-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-107215405-3');
-  </script>
-	</head>
-
-    <body>
-        		<nav class="nav">
-			<div class="nav-container">
-				<a href="/conf/">
-					<h2 class="nav-title">Конспекты</h2>
-				</a>
-				<ul>
-    <li><a href="/conf/">Posts</a></li>
-</ul>
-
-			</div>
-		</nav>
-
-        
-
-<main>
-	<div class="post">
-		<div class="single__header">
-			<div class="post-info">
-        Григорий Бакунов, Яндекс
-</div>
-
-			<h1 class="post-title">Что делать, если ваш код на Python тормозит</h1>
-<div class="post-line"></div>
-<div class="tag-block"><span class="catalogue-tags"><a href='/conf/tags/moscow-python-conf' class="tags" >Moscow Python Conf</a></span><span class="catalogue-tags"><a href='/conf/tags/2019' class="tags" >2019</a></span><span class="catalogue-tags"><a href='/conf/tags/%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81' class="tags" >Яндекс</a></span><span class="catalogue-tags"><a href='/conf/tags/python' class="tags" >Python</a></span></div>
-
-		</div>
-
-		
-
-		
-
-<blockquote>
-<p>«Если хочешь делать что-то большое в каком-то интересном тебе проекте,
-    то ты обязан разбираться в его кодовой базе и понимать, что там происходит.
-    А если ты сам код не пишешь — ну как ты будешь разбираться в кодовой базе?»</p>
-</blockquote>
-
-<h1 id="введение">Введение</h1>
-
-<p>Изначальный код, в котором не всё в порядке:</p>
-
-<pre><code class="language-python">from copy import copy
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Что делать, если ваш код на Python тормозит &middot; Конспекты</title><link rel=stylesheet href=/conf/css/style.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700"><link rel=stylesheet href=/conf/custom.css><link rel=icon type=image/png sizes=32x32 href=/conf/images/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/conf/images/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/conf/images/apple-touch-icon.png><link href rel=alternate type=application/rss+xml title=Конспекты><script async src="https://www.googletagmanager.com/gtag/js?id=UA-107215405-3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-107215405-3');</script></head><body><nav class=nav><div class=nav-container><a href=/conf/><h2 class=nav-title>Конспекты</h2></a><ul><li><a href=/conf/>Posts</a></li></ul></div></nav><main><div class=post><div class=single__header><div class=post-info>Григорий Бакунов, Яндекс</div><h1 class=post-title>Что делать, если ваш код на Python тормозит</h1><div class=post-line></div><div class=tag-block><span class=catalogue-tags><a href=/conf/tags/moscow-python-conf class=tags>Moscow Python Conf</a></span><span class=catalogue-tags><a href=/conf/tags/2019 class=tags>2019</a></span><span class=catalogue-tags><a href=/conf/tags/%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81 class=tags>Яндекс</a></span><span class=catalogue-tags><a href=/conf/tags/python class=tags>Python</a></span></div></div><blockquote><p>«Если хочешь делать что-то большое в каком-то интересном тебе проекте,
+то ты обязан разбираться в его кодовой базе и понимать, что там происходит.
+А если ты сам код не пишешь — ну как ты будешь разбираться в кодовой базе?»</p></blockquote><h1 id=введение>Введение</h1><p>Изначальный код, в котором не всё в порядке:</p><pre><code class=language-python>from copy import copy
 def crc_code(text: str) -&gt; int:
     res = 0
     for x in text:
@@ -90,84 +19,34 @@ def send_notification(respondents: list, message: dict) -&gt; None:
         to_send['crc'] = crc_code(to_send['body'])
         
         # rpc_real_send(to_send)
-</code></pre>
-
-<p>Когда в списке <code>resp</code> оказываются сотни тысяч элементов — а их реально столько
-— программа внезапно очень медленно работает.</p>
-
-<p>10 000 сообщений:</p>
-
-<pre><code>* simple        1.69s.
+</code></pre><p>Когда в списке <code>resp</code> оказываются сотни тысяч элементов — а их реально столько
+— программа внезапно очень медленно работает.</p><p>10 000 сообщений:</p><pre><code>* simple        1.69s.
 * with subject  1.68s.
     * with from 1.70s.
-</code></pre>
-
-<p>Возьмём это время 1.69s за эталон, 1х.</p>
-
-<h1 id="cython">Cython</h1>
-
-<p>Будем ускорять код, не особо его оптимизируя.</p>
-
-<pre><code class="language-bash">$ cythonize -a -i modulename.pyx
-</code></pre>
-
-<p>Результат:</p>
-
-<pre><code>* simple        0.5610x
+</code></pre><p>Возьмём это время 1.69s за эталон, 1х.</p><h1 id=cython>Cython</h1><p>Будем ускорять код, не особо его оптимизируя.</p><pre><code class=language-bash>$ cythonize -a -i modulename.pyx
+</code></pre><p>Результат:</p><pre><code>* simple        0.5610x
 * with subject  0.5391x
     * with from 0.5837x
-</code></pre>
-
-<h1 id="pypy">PyPy</h1>
-
-<p>PyPy — альтернативный интерпретатор с другим подходом к интерпретации языка.
-Раньше нижняя строчка была больше, а теперь она меньше.</p>
-
-<pre><code>* simple        0.1040x
+</code></pre><h1 id=pypy>PyPy</h1><p>PyPy — альтернативный интерпретатор с другим подходом к интерпретации языка.
+Раньше нижняя строчка была больше, а теперь она меньше.</p><pre><code>* simple        0.1040x
 * with subject  0.0912x
     * with from 0.0809x
-</code></pre>
-
-<h1 id="numba">numba</h1>
-
-<p>Ок, теперь давайте попробуем менять код.
-Используем <a href="https://numba.pydata.org/">numba</a>:</p>
-
-<pre><code class="language-python">@jit(nogil=True, cache=True)
+</code></pre><h1 id=numba>numba</h1><p>Ок, теперь давайте попробуем менять код.
+Используем <a href=https://numba.pydata.org/>numba</a>:</p><pre><code class=language-python>@jit(nogil=True, cache=True)
 def crc_code(text: str) -&gt; int:
     ...
     
 @jit(nogil=True, cache=True)
 def send_notification(respondents: list, message: dict) -&gt; None:
     ...
-</code></pre>
-
-<p>Стало хуже!</p>
-
-<pre><code>* simple        1.440x
+</code></pre><p>Стало хуже!</p><pre><code>* simple        1.440x
 * with subject  2.197x
     * with from 1.912x
-</code></pre>
-
-<p>Это неспроста.
+</code></pre><p>Это неспроста.
 Цель numba — ускорять работу с научными приложениями и бигдатой.
 Фокус на обработке большими списками и другими структурами данных.
-А при работе со строками становится хуже.</p>
-
-<p>Из официальной документации:</p>
-
-<blockquote>
-<p>Optimized code paths for efficiently accessing single characters may be introduced in the future.</p>
-</blockquote>
-
-<h1 id="вынести-операции-из-цикла">Вынести операции из цикла</h1>
-
-<p>Похоже, придётся менять код.</p>
-
-<p>Если внутри цикла есть операции, которые можно не выполнять внутри цикла,
-    обязательно выполняйте их вне цикла:</p>
-
-<pre><code class="language-python">def send_notification(respondents: list, message: dict) -&gt; None:
+А при работе со строками становится хуже.</p><p>Из официальной документации:</p><blockquote><p>Optimized code paths for efficiently accessing single characters may be introduced in the future.</p></blockquote><h1 id=вынести-операции-из-цикла>Вынести операции из цикла</h1><p>Похоже, придётся менять код.</p><p>Если внутри цикла есть операции, которые можно не выполнять внутри цикла,
+обязательно выполняйте их вне цикла:</p><pre><code class=language-python>def send_notification(respondents: list, message: dict) -&gt; None:
     to_send = copy(message)
     no_subj = &quot;subject&quot; not in to_send
     if &quot;from&quot; not in to_send:
@@ -179,153 +58,63 @@ def send_notification(respondents: list, message: dict) -&gt; None:
         to_send['crc'] = crc_code(to_send['body'])
         
         # rpc_real_send(to_send)
-</code></pre>
-
-<p>Результат так себе:</p>
-
-<pre><code>* simple        0.9633x
+</code></pre><p>Результат так себе:</p><pre><code>* simple        0.9633x
 * with subject  0.9457x
     * with from 0.9446x
-</code></pre>
-
-<p>Когда правишь очевидные вещи, не выигрываешь в производительности.
+</code></pre><p>Когда правишь очевидные вещи, не выигрываешь в производительности.
 Надо профилировать.
 В нашем коде больше всего тормозит самописная «контрольная сумма»,
-которая на самом деле просто сумма.</p>
-
-<h1 id="go">Go</h1>
-
-<p>Можно было бы взять <a href="https://github.com/google/grumpy">grumpy</a> и конвертировать код на Python в код на Go.
+которая на самом деле просто сумма.</p><h1 id=go>Go</h1><p>Можно было бы взять <a href=https://github.com/google/grumpy>grumpy</a> и конвертировать код на Python в код на Go.
 Но он поддерживает только Python 2.6.
-И не работает.</p>
-
-<p>Ок, есть программа для биндинга кода на Go — <a href="https://github.com/gjcarneiro/pybindgen">pybindgen</a>.
+И не работает.</p><p>Ок, есть программа для биндинга кода на Go — <a href=https://github.com/gjcarneiro/pybindgen>pybindgen</a>.
 Пишете программу на Go, а pybindben генерит биндинги, чтобы обращаться из Python.
-Проблема в том, что код работает медленнее, чем на Python 3.7.</p>
-
-<h1 id="nim">Nim</h1>
-
-<p>Попробуем <a href="https://nim-lang.org/">nim</a> и <a href="https://github.com/yglukhov/nimpy">nimpy</a>.
-Вот это мы напишем прямо посреди кода на Python.</p>
-
-<pre><code class="language-nim">import nimpy
+Проблема в том, что код работает медленнее, чем на Python 3.7.</p><h1 id=nim>Nim</h1><p>Попробуем <a href=https://nim-lang.org/>nim</a> и <a href=https://github.com/yglukhov/nimpy>nimpy</a>.
+Вот это мы напишем прямо посреди кода на Python.</p><pre><code class=language-nim>import nimpy
 
 proc crc_code(text: string): int{.exportpy.} =
     var res = 0
     for x in 0..text.len-1:
         res = res + ord(text[x])
     return res
-</code></pre>
-
-<pre><code class="language-bash">$ nim c --app:lib --out:crc.so crc.nim
-</code></pre>
-
-<p>Результат примерно как с PyPy:</p>
-
-<pre><code>* simple        0.1199x
+</code></pre><pre><code class=language-bash>$ nim c --app:lib --out:crc.so crc.nim
+</code></pre><p>Результат примерно как с PyPy:</p><pre><code>* simple        0.1199x
 * with subject  0.0968x
     * with from 0.1085x
-</code></pre>
-
-<p>Но ради этого результата придётся тащить в свой код на Python
+</code></pre><p>Но ради этого результата придётся тащить в свой код на Python
 код на другом языке программирования.
 Готовы ли вы к этому?
 Готова ли команда?
-А вот Григорий готов!</p>
-
-<h1 id="снова-cython">Снова Cython</h1>
-
-<p>Давайте перепишем контрольную сумму с использованием кода на Cython.</p>
-
-<p>Было:</p>
-
-<pre><code class="language-python">from copy import copy
+А вот Григорий готов!</p><h1 id=снова-cython>Снова Cython</h1><p>Давайте перепишем контрольную сумму с использованием кода на Cython.</p><p>Было:</p><pre><code class=language-python>from copy import copy
 def crc_code(text: str) -&gt; int:
     res = 0
     for x in text:
         res += ord(x)
     return res
-</code></pre>
-
-<p>Стало:</p>
-
-<pre><code class="language-cython">def crc_code(text: str) -&gt; int:
+</code></pre><p>Стало:</p><pre><code class=language-cython>def crc_code(text: str) -&gt; int:
     data_text = text.encode('UTF-8')
     cdef char* c_text = data_text
     cdef bint res = 0
     for x from 0 &lt;= x &lt; len(data_text):
         res += c_text[x]
     return  res
-</code></pre>
-
-<p>Важно: Cython плохо совмещает вызов функций из Python и из C в одной строке.
-Поэтому здесь <code>encode</code> и присваивание разнесены на две строки:</p>
-
-<pre><code class="language-cython">data_text = text.encode('UTF-8')
+</code></pre><p>Важно: Cython плохо совмещает вызов функций из Python и из C в одной строке.
+Поэтому здесь <code>encode</code> и присваивание разнесены на две строки:</p><pre><code class=language-cython>data_text = text.encode('UTF-8')
 cdef char* c_text = data_text
-</code></pre>
-
-<p>Результат:</p>
-
-<pre><code>* simple        0.0135x
+</code></pre><p>Результат:</p><pre><code>* simple        0.0135x
 * with subject  0.0114x
     * with from 0.0126x
-</code></pre>
-
-<p>Cython и Nim работают похожим образом: созадют код на C, из которого потом компилируется бинарник.
+</code></pre><p>Cython и Nim работают похожим образом: созадют код на C, из которого потом компилируется бинарник.
 При этом в Cython код получается почти таким же, как если сразу писать на C.
 А накладных расходов на программирование очень мало.
-Программист на Python вполне способен понять, что делает этот код.</p>
-
-<h1 id="выводы">Выводы</h1>
-
-<ul>
-<li>Иногда достаточно PyPy, если он уже поддерживает всё, что вам нужно.
-Ускоряет примерно в 10 раз.</li>
-<li>Оптимизация <em>простого</em> кода тоже важна.
+Программист на Python вполне способен понять, что делает этот код.</p><h1 id=выводы>Выводы</h1><ul><li>Иногда достаточно PyPy, если он уже поддерживает всё, что вам нужно.
+Ускоряет примерно в 10 раз.</li><li>Оптимизация <em>простого</em> кода тоже важна.
 Но если вы оптимизируете код, который уже хорошо написан,
-наверняка вы делаете его менее понятным.</li>
-<li>Инструментарий должен быть стабильным и не регрессировать от релиза к релизу.
-Автор считает стабильными и активно использует PyPy, Cython и Nimpy.</li>
-<li>Не бойтесь эзотерических языков, особенно если это ваш пет-проект или команда маленькая.
+наверняка вы делаете его менее понятным.</li><li>Инструментарий должен быть стабильным и не регрессировать от релиза к релизу.
+Автор считает стабильными и активно использует PyPy, Cython и Nimpy.</li><li>Не бойтесь эзотерических языков, особенно если это ваш пет-проект или команда маленькая.
 Это весело.
-Кстати, Python 3 в Яндексе долгое время считался эзотерическим языком.</li>
-<li>Ускорять приложения с помощью новых приложений — необоснованный риск.
-В большинстве случаев проверенных инструментов и роста производительности в 10-15 раз вам хватит.
-<br /></li>
-</ul>
-
-<h1 id="вопросы-и-ответы">Вопросы и ответы</h1>
-
-<p>Q: Нач что ещё посмотреть из эзотерических вариантов Python?<br />
-A: На GraalVM. В некоторых случаях работает в 3-4 раза быстрее Cython, но нестабилен.</p>
-
-<p>Q: А почему бы не подгружать функции напрямую из C с помощью <a href="https://cffi.readthedocs.io/en/latest/">CFFI</a>?<br />
-A: Потому что придётся писать прямо на C.
-    Автор законтрибьютил 14 строк на C в ядро Linux, и за два года в них нашли 4 ошибки.
-    Но если у вас есть хорошие программисты на C — используйте.</p>
-
-<p>Q: Что из вышеперечисленного используется на проде в Яндексе?<br />
-A: Есть PyPy и Cython, но не везде.</p>
-
-
-		
-	</div>
-
-	<div class="pagination">
-		<a href="/conf/highload/18/1.1-microservices/" class="left arrow">&#8592;</a>
-		<a href="/conf/knowledgeconf/19/holistic-km/" class="right arrow">&#8594;</a>
-
-		<a href="#" class="top">Top</a>
-	</div>
-</main>
-
-
-        		<footer>
-			<span>
-			&copy; <time datetime="2020-02-24 20:54:54.120541 &#43;0700 &#43;07 m=&#43;0.258981250">2020</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
-			</span>
-		</footer>
-
-    </body>
-</html>
+Кстати, Python 3 в Яндексе долгое время считался эзотерическим языком.</li><li>Ускорять приложения с помощью новых приложений — необоснованный риск.
+В большинстве случаев проверенных инструментов и роста производительности в 10-15 раз вам хватит.<br></li></ul><h1 id=вопросы-и-ответы>Вопросы и ответы</h1><p>Q: Нач что ещё посмотреть из эзотерических вариантов Python?<br>A: На GraalVM. В некоторых случаях работает в 3-4 раза быстрее Cython, но нестабилен.</p><p>Q: А почему бы не подгружать функции напрямую из C с помощью <a href=https://cffi.readthedocs.io/en/latest/>CFFI</a>?<br>A: Потому что придётся писать прямо на C.
+Автор законтрибьютил 14 строк на C в ядро Linux, и за два года в них нашли 4 ошибки.
+Но если у вас есть хорошие программисты на C — используйте.</p><p>Q: Что из вышеперечисленного используется на проде в Яндексе?<br>A: Есть PyPy и Cython, но не везде.</p></div><div class=pagination><a href=/conf/highload/18/1.1-microservices/ class="left arrow">&#8592;</a>
+<a href=/conf/knowledgeconf/19/holistic-km/ class="right arrow">&#8594;</a>
+<a href=# class=top>Top</a></div></main><footer><span>&copy; <time datetime="2020-07-13 11:44:29.14969749 &#43;0000 UTC m=&#43;0.165231606">2020</time> . Made with <a href=https://gohugo.io>Hugo</a> using the <a href=https://github.com/EmielH/tale-hugo/>Tale</a> theme.</span></footer></body></html>

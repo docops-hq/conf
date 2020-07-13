@@ -1,356 +1,50 @@
-<!DOCTYPE html>
-<html lang="en-us">
-    <head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-		<title>
-				UDP против TCP, или Будущее сетевого стека &middot; Конспекты
-		</title>
-
-		
-  		<link rel="stylesheet" href="/conf/css/style.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700">
-		<link rel="stylesheet" href="/conf/custom.css">
-		
-		<link rel="icon" type="image/png" sizes="32x32" href="/conf/images/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/conf/images/favicon-16x16.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="/conf/images/apple-touch-icon.png">
-
-		
-		<link href="" rel="alternate" type="application/rss+xml" title="Конспекты" />
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107215405-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-107215405-3');
-  </script>
-	</head>
-
-    <body>
-        		<nav class="nav">
-			<div class="nav-container">
-				<a href="/conf/">
-					<h2 class="nav-title">Конспекты</h2>
-				</a>
-				<ul>
-    <li><a href="/conf/">Posts</a></li>
-</ul>
-
-			</div>
-		</nav>
-
-        
-
-<main>
-	<div class="post">
-		<div class="single__header">
-			<div class="post-info">
-        Александр Тоболь, Одноклассники
-</div>
-
-			<h1 class="post-title">UDP против TCP, или Будущее сетевого стека</h1>
-<div class="post-line"></div>
-<div class="tag-block"><span class="catalogue-tags"><a href='/conf/tags/highload' class="tags" >Highload</a></span><span class="catalogue-tags"><a href='/conf/tags/2019' class="tags" >2019</a></span><span class="catalogue-tags"><a href='/conf/tags/%D0%BE%D0%B4%D0%BD%D0%BE%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%BD%D0%B8%D0%BA%D0%B8' class="tags" >Одноклассники</a></span></div>
-
-		</div>
-
-		
-
-		
-
-<h1 id="что-мы-знаем-об-ip-сетях">Что мы знаем об IP-сетях</h1>
-
-<ul>
-<li>Мы отправляем пакеты</li>
-<li>черный ящик их пересылает клиенту</li>
-<li>клиент собирает пакеты</li>
-</ul>
-
-<p>Внутри черного ящика есть уровни:</p>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-01.png" alt="tcp-vs-udp-01" /></p>
-
-<p>Давайте сравним TCP и UDP.
-В них сильно отличается структура пакетов:</p>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-02.png" alt="tcp-vs-udp-02" /></p>
-
-<p>Главное: TCP задуман как протокол надёжной доставки данных, а UDP — нет.
-Может ли оказаться, что UDP лучше решит задачу надёжной доставки?</p>
-
-<h1 id="цели-на-сегодня">Цели на сегодня</h1>
-
-<ul>
-<li>Как работает сеть</li>
-<li>Зачем сравнивать TCP или что с ним не так</li>
-<li>С чем и на чём сравнивать TCP</li>
-<li>Как это сделал Google</li>
-<li>Какое будущее сетевых протоколов нас ждёт</li>
-</ul>
-
-<p>Теорию и математику обсуждать не будем.
-Будем разбирать практические кейсы.</p>
-
-<h1 id="мобильный-мир-победил">Мобильный мир победил</h1>
-
-<p>Важно: сначала появились проводные сети, но беспроводные, которые появились позже, сейчас явно победили.
-Большая доля трафика — мобильный трафик или хотя бы вайфай.</p>
-
-<p>В беспроводных сетях бывают потери пакетов, смена порядка и jitter.
-Протокол TCP/IP скрывает от нас эти ошибки.</p>
-
-<p><img src="/images/highload19/tcp-vs-udp-03.png" alt="tcp-vs-udp-03" /></p>
-
-<p>Вот средние параметры соединения у пользователей мобильного интернета.</p>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-04.png" alt="tcp-vs-udp-04" /></p>
-
-<p>Итоги:</p>
-
-<ul>
-<li>&gt; 80% используют беспроводной интернет</li>
-<li>парметры беспроводных сетей постоянно меняются</li>
-<li>в них высокие показатели packet loss, jitter, reordering</li>
-<li>фиксированный асимметричный канал, возможна смена IP-адреса</li>
-</ul>
-
-<p>Статистика показывает, что потребление мобильного видео зависит от качества канала.</p>
-
-<p>Получается, что TCP не очень эффективен для доставки контента.</p>
-
-<p>Пробовали распараллелить загрузку данных с клиента — использовать несколько одновременных соединений.
-Получается быстрее.</p>
-
-<p>Ошибки уменьшают утилизацию канала, а распараллеливание при ошибках помогает увеличить утилизацию:</p>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-05.png" alt="tcp-vs-udp-05" /></p>
-
-<h1 id="почему-нам-не-подходит-tcp">Почему нам не подходит TCP</h1>
-
-<p>Итого: зачем же нужно сравнивать ТCP?</p>
-
-<ul>
-<li>беспроводные сети победили и они нестабильны</li>
-<li>потребление контента зависит от скорости интернета
-(а мы хотим, чтобы пользователи потребляли больше)</li>
-<li>TCP плохо утилизирует канл на нестабильных сетях.
-Распараллеливание помогает, но не всё можно распараллелить.</li>
-</ul>
-
-<p>Что с этим делать?</p>
-
-<ul>
-<li>Можно сделать свой протокол рядом с TCP и UDP.
-И годами ждать, пока его поддержат все участники интернетов.</li>
-<li>Или сделать свой надёжный протокол поверх UDP в User Space.</li>
-</ul>
-
-<p>получаем smUDP: self-made UDP</p>
-
-<p>У разного контента разные профили потребления сети.</p>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-06.png" alt="tcp-vs-udp-06" /></p>
-
-<h1 id="http-1-1-и-http-2">HTTP 1.1 и HTTP/2</h1>
-
-<p>Конечно же мы должны сравнить протоколы на HTTP 1.1 и HTTP/2.</p>
-
-<p>HTTP 1.1 предлагает использовать по одному соединению на каждую единицу контента.
-HTTP/2 — одно мультиплексированное соединение.</p>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-07.png" alt="tcp-vs-udp-07" /></p>
-
-<p>При этом в HTTP 1.1 клиент (браузер) обычно использует пул соединений.
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>UDP против TCP, или Будущее сетевого стека &middot; Конспекты</title><link rel=stylesheet href=/conf/css/style.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700"><link rel=stylesheet href=/conf/custom.css><link rel=icon type=image/png sizes=32x32 href=/conf/images/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/conf/images/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/conf/images/apple-touch-icon.png><link href rel=alternate type=application/rss+xml title=Конспекты><script async src="https://www.googletagmanager.com/gtag/js?id=UA-107215405-3"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-107215405-3');</script></head><body><nav class=nav><div class=nav-container><a href=/conf/><h2 class=nav-title>Конспекты</h2></a><ul><li><a href=/conf/>Posts</a></li></ul></div></nav><main><div class=post><div class=single__header><div class=post-info>Александр Тоболь, Одноклассники</div><h1 class=post-title>UDP против TCP, или Будущее сетевого стека</h1><div class=post-line></div><div class=tag-block><span class=catalogue-tags><a href=/conf/tags/highload class=tags>Highload</a></span><span class=catalogue-tags><a href=/conf/tags/2019 class=tags>2019</a></span><span class=catalogue-tags><a href=/conf/tags/%D0%BE%D0%B4%D0%BD%D0%BE%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%BD%D0%B8%D0%BA%D0%B8 class=tags>Одноклассники</a></span></div></div><h1 id=что-мы-знаем-об-ip-сетях>Что мы знаем об IP-сетях</h1><ul><li>Мы отправляем пакеты</li><li>черный ящик их пересылает клиенту</li><li>клиент собирает пакеты</li></ul><p>Внутри черного ящика есть уровни:</p><p><img src=../../../images/highload19/tcp-vs-udp-01.png alt=tcp-vs-udp-01></p><p>Давайте сравним TCP и UDP.
+В них сильно отличается структура пакетов:</p><p><img src=../../../images/highload19/tcp-vs-udp-02.png alt=tcp-vs-udp-02></p><p>Главное: TCP задуман как протокол надёжной доставки данных, а UDP — нет.
+Может ли оказаться, что UDP лучше решит задачу надёжной доставки?</p><h1 id=цели-на-сегодня>Цели на сегодня</h1><ul><li>Как работает сеть</li><li>Зачем сравнивать TCP или что с ним не так</li><li>С чем и на чём сравнивать TCP</li><li>Как это сделал Google</li><li>Какое будущее сетевых протоколов нас ждёт</li></ul><p>Теорию и математику обсуждать не будем.
+Будем разбирать практические кейсы.</p><h1 id=мобильный-мир-победил>Мобильный мир победил</h1><p>Важно: сначала появились проводные сети, но беспроводные, которые появились позже, сейчас явно победили.
+Большая доля трафика — мобильный трафик или хотя бы вайфай.</p><p>В беспроводных сетях бывают потери пакетов, смена порядка и jitter.
+Протокол TCP/IP скрывает от нас эти ошибки.</p><p><img src=/images/highload19/tcp-vs-udp-03.png alt=tcp-vs-udp-03></p><p>Вот средние параметры соединения у пользователей мобильного интернета.</p><p><img src=../../../images/highload19/tcp-vs-udp-04.png alt=tcp-vs-udp-04></p><p>Итоги:</p><ul><li>&gt; 80% используют беспроводной интернет</li><li>парметры беспроводных сетей постоянно меняются</li><li>в них высокие показатели packet loss, jitter, reordering</li><li>фиксированный асимметричный канал, возможна смена IP-адреса</li></ul><p>Статистика показывает, что потребление мобильного видео зависит от качества канала.</p><p>Получается, что TCP не очень эффективен для доставки контента.</p><p>Пробовали распараллелить загрузку данных с клиента — использовать несколько одновременных соединений.
+Получается быстрее.</p><p>Ошибки уменьшают утилизацию канала, а распараллеливание при ошибках помогает увеличить утилизацию:</p><p><img src=../../../images/highload19/tcp-vs-udp-05.png alt=tcp-vs-udp-05></p><h1 id=почему-нам-не-подходит-tcp>Почему нам не подходит TCP</h1><p>Итого: зачем же нужно сравнивать ТCP?</p><ul><li>беспроводные сети победили и они нестабильны</li><li>потребление контента зависит от скорости интернета
+(а мы хотим, чтобы пользователи потребляли больше)</li><li>TCP плохо утилизирует канл на нестабильных сетях.
+Распараллеливание помогает, но не всё можно распараллелить.</li></ul><p>Что с этим делать?</p><ul><li>Можно сделать свой протокол рядом с TCP и UDP.
+И годами ждать, пока его поддержат все участники интернетов.</li><li>Или сделать свой надёжный протокол поверх UDP в User Space.</li></ul><p>получаем smUDP: self-made UDP</p><p>У разного контента разные профили потребления сети.</p><p><img src=../../../images/highload19/tcp-vs-udp-06.png alt=tcp-vs-udp-06></p><h1 id=http-1-1-и-http-2>HTTP 1.1 и HTTP/2</h1><p>Конечно же мы должны сравнить протоколы на HTTP 1.1 и HTTP/2.</p><p>HTTP 1.1 предлагает использовать по одному соединению на каждую единицу контента.
+HTTP/2 — одно мультиплексированное соединение.</p><p><img src=../../../images/highload19/tcp-vs-udp-07.png alt=tcp-vs-udp-07></p><p>При этом в HTTP 1.1 клиент (браузер) обычно использует пул соединений.
 Проблема в том, что между соединениями есть конкуренция.
 Картинка, которую пользователь уже пролистал и больше не увидит,
 конкурирует с другой, которая впереди в ленте.
-И в HTTP 1.1 сложно отменить загрузку — только закрыть сокет и отменить соединение.</p>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-08.png" alt="tcp-vs-udp-08" /></p>
-
-<p>HTTP/2 лучше:</p>
-
-<ul>
-<li>бинарный, со сжатием заголовков;</li>
-<li>есть мультиплексирование,</li>
-<li>приоритизация,</li>
-<li>отмена загрузки,</li>
-<li>и server push.</li>
-</ul>
-
-<p>Приоритизация позволяет получить приоритетный контент раньше:</p>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-09.png" alt="tcp-vs-udp-09" /></p>
-
-<p>Server push: сервер может отдать контент, который точно понадобится в будущем.</p>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-10.png" alt="tcp-vs-udp-10" /></p>
-
-<p>Отмена загрузки: если клиенту уже не понадобится контент, клиент может отказаться от загрузки.</p>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-11.png" alt="tcp-vs-udp-11" /></p>
-
-<h1 id="сравниваем-tcp-и-smudp">Сравниваем TCP и smUDP</h1>
-
-<p>Итого, на чём нам сравнивать TCP и smUDP</p>
-
-<ul>
-<li>Профили сети: WiFi, 3G, LTE</li>
-<li>Профили потребления:
-
-<ul>
-<li>стриминг</li>
-<li>мультиплексирвоание и приоритизация с отменой загрузки (в HTTP/2)</li>
-</ul></li>
-</ul>
-
-<h2 id="простая-сеть-bandwidth-rtt">Простая сеть: bandwidth + RTT</h2>
-
-<p>В TCP важен размер буфера отправки.
+И в HTTP 1.1 сложно отменить загрузку — только закрыть сокет и отменить соединение.</p><p><img src=../../../images/highload19/tcp-vs-udp-08.png alt=tcp-vs-udp-08></p><p>HTTP/2 лучше:</p><ul><li>бинарный, со сжатием заголовков;</li><li>есть мультиплексирование,</li><li>приоритизация,</li><li>отмена загрузки,</li><li>и server push.</li></ul><p>Приоритизация позволяет получить приоритетный контент раньше:</p><p><img src=../../../images/highload19/tcp-vs-udp-09.png alt=tcp-vs-udp-09></p><p>Server push: сервер может отдать контент, который точно понадобится в будущем.</p><p><img src=../../../images/highload19/tcp-vs-udp-10.png alt=tcp-vs-udp-10></p><p>Отмена загрузки: если клиенту уже не понадобится контент, клиент может отказаться от загрузки.</p><p><img src=../../../images/highload19/tcp-vs-udp-11.png alt=tcp-vs-udp-11></p><h1 id=сравниваем-tcp-и-smudp>Сравниваем TCP и smUDP</h1><p>Итого, на чём нам сравнивать TCP и smUDP</p><ul><li>Профили сети: WiFi, 3G, LTE</li><li>Профили потребления:<ul><li>стриминг</li><li>мультиплексирвоание и приоритизация с отменой загрузки (в HTTP/2)</li></ul></li></ul><h2 id=простая-сеть-bandwidth-rtt>Простая сеть: bandwidth + RTT</h2><p>В TCP важен размер буфера отправки.
 Сервер держит контент в буфере, пока не получит подтверждение (acknowledgement), что контент получен.
-Но чем больше RTT, тем дольше ждать подтверждения.</p>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-12.png" alt="tcp-vs-udp-12" /></p>
-
-<p>Если мы увеличим размер буфера, то фактическая ширина канала вырастет.</p>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-13.png" alt="tcp-vs-udp-13" /></p>
-
-<p>Но всё не так просто.
+Но чем больше RTT, тем дольше ждать подтверждения.</p><p><img src=../../../images/highload19/tcp-vs-udp-12.png alt=tcp-vs-udp-12></p><p>Если мы увеличим размер буфера, то фактическая ширина канала вырастет.</p><p><img src=../../../images/highload19/tcp-vs-udp-13.png alt=tcp-vs-udp-13></p><p>Но всё не так просто.
 Важны on-the-fly packets.
 Это те, которые мы отправили, но ещё не получили подтверждения.
 Если буфер слишком мал, то мы недоиспользуем сеть, как мы уже поняли.
 Но если буфер слишком большой, то мы приходим к распуханию буфера (bufferbloat).
-Буфер заполнен кучей on-the-fly пакетов, а скорость снова маленькая.</p>
-
-<p>Казалось бы, давайте временно увеличивать буфер, когда нам нужно отправить много пакетов.
-Но буфер нельзя просто так уменьшить.</p>
-
-<p>А если у нас свой протокол, то мы можем:</p>
-
-<ul>
-<li>уменьшать буфер</li>
-<li>раньше отправлять более важные пакеты</li>
-<li>если клиент отправил cancellation, сбросить пакеты из буфера</li>
-</ul>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-14.png" alt="tcp-vs-udp-14" /></p>
-
-<p>Как это делается?
-Присваиваем отправляемым пакетам сквозной sequence number.</p>
-
-<p>Итак:</p>
-
-<ul>
-<li>размер буфера имеет значение</li>
-<li>mutable buffer — это хорошо</li>
-</ul>
-
-<h2 id="сложная-сеть-bandwidth-rtt-packet-loss">Сложная сеть: bandwidth + RTT + packet loss</h2>
-
-<p>Стандартный алгоритм: если за установленное время сервер не получил acknowledgement, он повторно посылает пакет.
-Давайте снова будем терять пакеты.</p>
-
-<p>Разберёмся, как работает Congestion Control.</p>
-
-<p>Для начала, TCP window: количество одновременно отправляемых пакетов.
+Буфер заполнен кучей on-the-fly пакетов, а скорость снова маленькая.</p><p>Казалось бы, давайте временно увеличивать буфер, когда нам нужно отправить много пакетов.
+Но буфер нельзя просто так уменьшить.</p><p>А если у нас свой протокол, то мы можем:</p><ul><li>уменьшать буфер</li><li>раньше отправлять более важные пакеты</li><li>если клиент отправил cancellation, сбросить пакеты из буфера</li></ul><p><img src=../../../images/highload19/tcp-vs-udp-14.png alt=tcp-vs-udp-14></p><p>Как это делается?
+Присваиваем отправляемым пакетам сквозной sequence number.</p><p>Итак:</p><ul><li>размер буфера имеет значение</li><li>mutable buffer — это хорошо</li></ul><h2 id=сложная-сеть-bandwidth-rtt-packet-loss>Сложная сеть: bandwidth + RTT + packet loss</h2><p>Стандартный алгоритм: если за установленное время сервер не получил acknowledgement, он повторно посылает пакет.
+Давайте снова будем терять пакеты.</p><p>Разберёмся, как работает Congestion Control.</p><p>Для начала, TCP window: количество одновременно отправляемых пакетов.
 Отправитель начинает с 10 и разгоняется, увеличивая количество.
-Если в какой-то момент пакеты теряются, он уменьшает окно и снова разгоняется.</p>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-15.png" alt="tcp-vs-udp-15" /></p>
-
-<p>Congestion Control придуман для предотвращения перегрузки сети.
+Если в какой-то момент пакеты теряются, он уменьшает окно и снова разгоняется.</p><p><img src=../../../images/highload19/tcp-vs-udp-15.png alt=tcp-vs-udp-15></p><p>Congestion Control придуман для предотвращения перегрузки сети.
 Вот где-то в сети есть роутер, который больше всего нагружен.
 Он умный: не ждёт когда совсем перегрузится, а начинает дропать пакеты чуть раньше,
-чтобы отправитель уменьшил окно.</p>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-16.png" alt="tcp-vs-udp-16" /></p>
-
-<p>Вся эта схема придумана давным-давно для проводных сетей.
+чтобы отправитель уменьшил окно.</p><p><img src=../../../images/highload19/tcp-vs-udp-16.png alt=tcp-vs-udp-16></p><p>Вся эта схема придумана давным-давно для проводных сетей.
 Там потеря пакетов могла означать только одно:
 где-то перегружен узел, надо снизить скорость.
 Но в беспроводных сетях не так!
-Там пакеты теряются просто потому что соединение беспроводное.</p>
-
-<p>Получается, есть два типа потерь:</p>
-
-<ul>
-<li>congestion loss, от переполнения</li>
-<li>random loss, от плохого беспроводного соединения</li>
-</ul>
-
-<h2 id="каким-бывает-congestion-control">Каким бывает Congestion Control</h2>
-
-<p>Congestion Control эволюционирует.
-Нам особенно интересны реализации Cubic и BBR.</p>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-17.png" alt="tcp-vs-udp-17" /></p>
-
-<p>Если скорсть растёт, BBR схлопывает окно заранее, Cubic дожидается потери пакетов и тогда схлопывает окно.</p>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-18.png" alt="tcp-vs-udp-18" /></p>
-
-<p>Работают они так:</p>
-
-<ul>
-<li>BBR прощупывает размер окна и поддерживает его.
+Там пакеты теряются просто потому что соединение беспроводное.</p><p>Получается, есть два типа потерь:</p><ul><li>congestion loss, от переполнения</li><li>random loss, от плохого беспроводного соединения</li></ul><h2 id=каким-бывает-congestion-control>Каким бывает Congestion Control</h2><p>Congestion Control эволюционирует.
+Нам особенно интересны реализации Cubic и BBR.</p><p><img src=../../../images/highload19/tcp-vs-udp-17.png alt=tcp-vs-udp-17></p><p>Если скорсть растёт, BBR схлопывает окно заранее, Cubic дожидается потери пакетов и тогда схлопывает окно.</p><p><img src=../../../images/highload19/tcp-vs-udp-18.png alt=tcp-vs-udp-18></p><p>Работают они так:</p><ul><li>BBR прощупывает размер окна и поддерживает его.
 За счёт этого получается минимальная задержка.
-BBR различает congestion loss и random loss.</li>
-<li>Cubic работает агрессивно: переполняет буфер до потери пакетов, сбрасывает скорость,
-потом снова постепенно повышает.</li>
-</ul>
-
-<h2 id="совсем-сложная-сеть-bandwidth-rtt-packet-loss-jitter">Совсем сложная сеть: bandwidth + RTT + packet loss + jitter</h2>
-
-<p>Казалось бы, BBR решит все наши проблемы.
+BBR различает congestion loss и random loss.</li><li>Cubic работает агрессивно: переполняет буфер до потери пакетов, сбрасывает скорость,
+потом снова постепенно повышает.</li></ul><h2 id=совсем-сложная-сеть-bandwidth-rtt-packet-loss-jitter>Совсем сложная сеть: bandwidth + RTT + packet loss + jitter</h2><p>Казалось бы, BBR решит все наши проблемы.
 Но есть ещё и jitter!
 Он влияет в том числе на получение acknowledgements от получателя.
 То есть в некоторых случаях пакет доставляется успешно, но отправитель не успевает
 получить подтверждение и шлёт пакет снова.
-BBR уязвим к высокому jitter.</p>
-
-<p>Было бы здорово, если бы сервер мог знать jitter клиента.
+BBR уязвим к высокому jitter.</p><p>Было бы здорово, если бы сервер мог знать jitter клиента.
 Но в стандартном пакете acknowledgement (ACK Frame) в TCP этой информации нет.
-Зато мы можем добавить её в smUDP ACK Frame.</p>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-20.png" alt="tcp-vs-udp-20" /></p>
-
-<p>Мобильные сети асимметричны.
+Зато мы можем добавить её в smUDP ACK Frame.</p><p><img src=../../../images/highload19/tcp-vs-udp-20.png alt=tcp-vs-udp-20></p><p>Мобильные сети асимметричны.
 Обычно 70% на приём и 30% на отправку.
-Стоит разделить jitter на приём и отправку.</p>
-
-<p>Какой congestion control выбрать на сервере?</p>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-21.png" alt="tcp-vs-udp-21" /></p>
-
-<p>А на клиенте всегда Cubic и мы не можем на это повлиять.</p>
-
-<p>Выводы такие:</p>
-
-<p><img src="../../../images/highload19/tcp-vs-udp-22.png" alt="tcp-vs-udp-22" /></p>
-
-
-		
-	</div>
-
-	<div class="pagination">
-		<a href="/conf/highload/19/njs-nginx/" class="left arrow">&#8592;</a>
-		<a href="/conf/knowledgeconf/19/trello-kb/" class="right arrow">&#8594;</a>
-
-		<a href="#" class="top">Top</a>
-	</div>
-</main>
-
-
-        		<footer>
-			<span>
-			&copy; <time datetime="2020-02-24 20:54:54.104204 &#43;0700 &#43;07 m=&#43;0.242643193">2020</time> . Made with <a href='https://gohugo.io'>Hugo</a> using the <a href='https://github.com/EmielH/tale-hugo/'>Tale</a> theme.
-			</span>
-		</footer>
-
-    </body>
-</html>
+Стоит разделить jitter на приём и отправку.</p><p>Какой congestion control выбрать на сервере?</p><p><img src=../../../images/highload19/tcp-vs-udp-21.png alt=tcp-vs-udp-21></p><p>А на клиенте всегда Cubic и мы не можем на это повлиять.</p><p>Выводы такие:</p><p><img src=../../../images/highload19/tcp-vs-udp-22.png alt=tcp-vs-udp-22></p></div><div class=pagination><a href=/conf/highload/19/njs-nginx/ class="left arrow">&#8592;</a>
+<a href=/conf/knowledgeconf/19/trello-kb/ class="right arrow">&#8594;</a>
+<a href=# class=top>Top</a></div></main><footer><span>&copy; <time datetime="2020-07-13 11:44:29.114379067 &#43;0000 UTC m=&#43;0.129913183">2020</time> . Made with <a href=https://gohugo.io>Hugo</a> using the <a href=https://github.com/EmielH/tale-hugo/>Tale</a> theme.</span></footer></body></html>

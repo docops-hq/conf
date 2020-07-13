@@ -1,69 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Moscow Python Conf on Конспекты</title>
-    <link>https://docops-hq.github.io/conf/tags/moscow-python-conf/</link>
-    <description>Recent content in Moscow Python Conf on Конспекты</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://docops-hq.github.io/conf/tags/moscow-python-conf/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Go против Python</title>
-      <link>https://docops-hq.github.io/conf/moscowpython/19/go-vs-python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/moscowpython/19/go-vs-python/</guid>
-      <description>Как нам сравнивать языки?
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Moscow Python Conf on Конспекты</title><link>https://docops-hq.github.io/conf/tags/moscow-python-conf/</link><description>Recent content in Moscow Python Conf on Конспекты</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://docops-hq.github.io/conf/tags/moscow-python-conf/index.xml" rel="self" type="application/rss+xml"/><item><title>Go против Python</title><link>https://docops-hq.github.io/conf/moscowpython/19/go-vs-python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/moscowpython/19/go-vs-python/</guid><description>Как нам сравнивать языки?
 Обычно начинают с бенчмарков.
-Ок, давайте тоже так сделаем.</description>
-    </item>
-    
-    <item>
-      <title>Как развивался Python в Яндексе</title>
-      <link>https://docops-hq.github.io/conf/moscowpython/19/yandex-python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/moscowpython/19/yandex-python/</guid>
-      <description>&lt;p&gt;Александр в Яндексе с 2008 года, писал Афишу и другие сервисы, потом ушёл во внутренние сервисы.
+Ок, давайте тоже так сделаем.</description></item><item><title>Как развивался Python в Яндексе</title><link>https://docops-hq.github.io/conf/moscowpython/19/yandex-python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/moscowpython/19/yandex-python/</guid><description>&lt;p&gt;Александр в Яндексе с 2008 года, писал Афишу и другие сервисы, потом ушёл во внутренние сервисы.
 Сейчас руководит отрядом из 30 питонистов.&lt;/p&gt;
-
 &lt;p&gt;Важно: Яндекс — большая компания, потому сложно сказать про всех сразу.
-Доклад Александра — в первую очередь про его опыт в Яндексе, его интерпретация событий.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Убивай мутантов, спаси свой код</title>
-      <link>https://docops-hq.github.io/conf/moscowpython/19/kill-mutants/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/moscowpython/19/kill-mutants/</guid>
-      <description>Как мы работаем:&lt;/p&gt;
-
+Доклад Александра — в первую очередь про его опыт в Яндексе, его интерпретация событий.&lt;/p&gt;</description></item><item><title>Убивай мутантов, спаси свой код</title><link>https://docops-hq.github.io/conf/moscowpython/19/kill-mutants/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/moscowpython/19/kill-mutants/</guid><description>Как мы работаем:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Прилетает пуллреквест с изменениями кода и тестов&lt;/li&gt;
 &lt;li&gt;Проходит CI&lt;/li&gt;
 &lt;li&gt;Ревью кода.&lt;/li&gt;
 &lt;li&gt;Мерж в мастер&lt;/li&gt;
 &lt;li&gt;Всё в огне!&lt;/li&gt;
-&lt;/ol&gt;</description>
-    </item>
-    
-    <item>
-      <title>Что делать, если ваш код на Python тормозит</title>
-      <link>https://docops-hq.github.io/conf/moscowpython/19/accelerate-python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docops-hq.github.io/conf/moscowpython/19/accelerate-python/</guid>
-      <description>&lt;p&gt;Когда в списке &lt;code&gt;resp&lt;/code&gt; оказываются сотни тысяч элементов — а их реально столько
+&lt;/ol&gt;</description></item><item><title>Что делать, если ваш код на Python тормозит</title><link>https://docops-hq.github.io/conf/moscowpython/19/accelerate-python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docops-hq.github.io/conf/moscowpython/19/accelerate-python/</guid><description>&lt;p&gt;Когда в списке &lt;code&gt;resp&lt;/code&gt; оказываются сотни тысяч элементов — а их реально столько
 — программа внезапно очень медленно работает.&lt;/p&gt;
-
-&lt;p&gt;10 000 сообщений:&lt;/p&gt;
-</description>
-    </item>
-    
-  </channel>
-</rss>
+&lt;p&gt;10 000 сообщений:&lt;/p&gt;</description></item></channel></rss>
