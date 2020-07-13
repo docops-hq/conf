@@ -1,3 +1,5 @@
+![Deploy to GitHub Pages](https://github.com/docops-hq/conf/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)
+
 # Конспекты IT-конференций
 
 Конспекты докладов с IT-конференций:
